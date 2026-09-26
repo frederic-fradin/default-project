@@ -1,0 +1,653 @@
+<title>Maquettes desktop-tool</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;500;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Planche technique « blueprint » graphite : un seul thème, volontairement sombre. */
+  :root {
+    color-scheme: dark;
+    --page: #15191c;
+    --sheet: #1d2327;
+    --frame: #3a444b;
+    --text: #dfe4e7;
+    --muted: #8f9aa1;
+    --chip: #2a3237;
+    --font-ui: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", Consolas, monospace;
+    --font-display: "Archivo", "Arial Narrow", sans-serif;
+  }
+  body {
+    background: var(--page);
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.5;
+    padding-inline: 16px;
+    padding-block: 32px 64px;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; }
+  header { display: flex; flex-direction: column; gap: 8px; max-width: 72ch; }
+  .eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(28px, 4vw, 40px); line-height: 1.1; margin: 0; text-wrap: balance; }
+  h2 { font-family: var(--font-display); font-weight: 500; font-size: 22px; margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+  .lede { color: var(--muted); }
+  .variant { display: flex; flex-direction: column; gap: 14px; }
+  .variant-head { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+  .tag { font-family: var(--font-mono); font-size: 12px; background: var(--chip); padding: 2px 8px; border-radius: 3px; font-variant-numeric: tabular-nums; color: var(--text); }
+  .tag.ok { background: #d9dfe3; color: #15191c; }
+  .sheet { background: var(--sheet); border: 1px solid var(--frame); border-radius: 4px; overflow-x: auto; }
+  .sheet svg { display: block; width: 100%; min-width: 680px; height: auto; }
+  .pc { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; font-size: 14px; }
+  .pc h3 { font-family: var(--font-mono); font-weight: 500; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 4px; }
+  .pc ul { margin: 0; padding-left: 16px; display: flex; flex-direction: column; gap: 4px; }
+  details { border-top: 1px solid var(--frame); padding-top: 16px; }
+  summary { cursor: pointer; font-family: var(--font-display); font-size: 20px; }
+  summary:focus-visible { outline: 2px solid var(--text); outline-offset: 4px; }
+  details[open] > .stack { margin-top: 20px; }
+  .stack { display: flex; flex-direction: column; gap: 32px; }
+  .notes { display: flex; flex-direction: column; gap: 8px; max-width: 74ch; font-size: 14px; color: var(--muted); }
+  .notes b { color: var(--text); font-weight: 600; }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">desktop-tool · planches de conception · cotes en mm</span>
+    <h1>Le module et son pupitre triangle</h1>
+    <p class="lede">Le pupitre est un volume plein, triangulaire de profil. Le module s'y incruste sur toute son épaisseur, sans aucun rebord devant la façade. Le pupitre déborde de 25 mm à droite et en bas, et s'arrête 36 mm sous le haut du module ; face et dos ont la même pente : le module dépasse à gauche et en haut, prêt à être saisi.</p>
+  </header>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Le module</h2><span class="tag ok">retenu</span><span class="tag">115 × 125 × 26</span></div>
+    <div class="sheet" id="sheet-module"></div>
+    <p class="lede">Dos plat avec 4 aimants : il se pose seul, se prend en main, ou se dépose dans un pupitre. Les pointillés montrent la carte, la batterie (v2), le module de touches et l'encodeur.</p>
+  </section>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Pupitre · module incrusté</h2><span class="tag ok">proposé</span><span class="tag">face et dos à 55°</span><span class="tag">empreinte de 26 mm (100 %)</span><span class="tag">bordures droite et basse 25 mm</span><span class="tag">haut du pupitre 36 mm sous le module</span></div>
+    <div class="sheet" id="sheet-tr"></div>
+    <div class="pc">
+      <div><h3>Principe</h3><ul><li>Volume plein, en triangle symétrique de profil : la face et le dos ont la même pente (55°)</li><li>Une empreinte à la forme du module, profonde de 26 mm : il s'y incruste sur toute son épaisseur, sa façade affleure celle du pupitre ; seules les touches et la molette dépassent</li><li>Aucun rebord devant la façade : le module repose sur la paroi basse, s'appuie sur la paroi droite, et les aimants le plaquent au fond</li></ul></div>
+      <div><h3>Prise en main</h3><ul><li>Empreinte ouverte à gauche et en haut : le module dépasse de 12 mm à gauche et de 36 mm en haut</li><li>Le pupitre s'étend de 25 mm à droite et de 25 mm sous le module : les deux bordures visibles ont la même largeur</li></ul></div>
+      <div><h3>À régler en P1</h3><ul><li>Jeu de l'empreinte : 0,5 mm par côté, à valider par une pièce test</li><li>Arrondis du fond de l'empreinte et congés des arêtes (2 à 3 mm) dessinés dans Fusion</li></ul></div>
+    </div>
+  </section>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Couleurs retenues · 5B + 5C</h2><span class="tag ok">à confirmer par impression test</span><span class="tag">teintes approximatives à l'écran</span></div>
+    <div class="sheet" id="sheet-chosen"></div>
+    <div class="pc">
+      <div><h3>Module</h3><ul><li>Corps et touches : Muted White</li><li>Libellés des touches : Sunrise Orange</li></ul></div>
+      <div><h3>Accent</h3><ul><li>Molette : Sunrise Orange</li></ul></div>
+      <div><h3>Pupitre</h3><ul><li>Fossil Grey : un ton plus soutenu pour détacher le module</li></ul></div>
+    </div>
+  </section>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Test · tout en Muted White, molette Sunrise Orange</h2><span class="tag">teintes approximatives à l'écran</span></div>
+    <div class="sheet" id="sheet-mono"></div>
+    <div class="pc">
+      <div><h3>5 · Monochrome</h3><ul><li>Module, pupitre et touches Muted White, molette Sunrise Orange, libellés Charcoal Black</li><li>La molette devient le seul point de couleur</li></ul></div>
+      <div><h3>5B · Libellés orange</h3><ul><li>Même base, libellés des touches en Sunrise Orange</li><li>L'accent se répète sur toute la colonne de commandes</li></ul></div>
+      <div><h3>5C · Pupitre Fossil Grey</h3><ul><li>Même module, pupitre un ton plus soutenu</li><li>Le module se détache de son support, ton sur ton</li></ul></div>
+    </div>
+  </section>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Couleurs · filaments Panchroma en stock</h2><span class="tag">teintes approximatives à l'écran</span></div>
+    <div class="sheet" id="sheet-colors"></div>
+    <div class="pc">
+      <div><h3>1 · Atelier</h3><ul><li>Module Cotton White, pupitre Ash Grey</li><li>Touches Fossil Grey, molette Sunrise Orange</li><li>Clair et lumineux, esprit « objet design »</li></ul></div>
+      <div><h3>2 · Nuit</h3><ul><li>Module et pupitre Charcoal Black</li><li>Touches Ash Grey, molette Sunrise Orange</li><li>L'image 3 : sobre, l'écran clair ressort fortement</li></ul></div>
+      <div><h3>3 · Pierre</h3><ul><li>Module Fossil Grey, pupitre Ash Grey</li><li>Touches Muted White, molette Army Red</li><li>Tons minéraux, accent discret</li></ul></div>
+      <div><h3>4 · Sauge</h3><ul><li>Module Muted White, pupitre Muted Green</li><li>Touches Muted White, molette Army Blue</li><li>Doux et chaleureux, le plus original</li></ul></div>
+    </div>
+  </section>
+
+  <details>
+    <summary>Études précédentes (variantes et pupitres A, B, C)</summary>
+    <div class="stack">
+  <section class="variant">
+    <div class="variant-head"><h2>Pupitre A · Berceau en L</h2><span class="tag">55°</span><span class="tag">décalé de 30 mm à droite</span></div>
+    <div class="sheet" id="sheet-pa"></div>
+    <div class="pc">
+      <div><h3>Principe</h3><ul><li>Plaque arrière, rebord bas et flanc droit qui reprennent les arrondis du module</li><li>Le module se dépose contre le flanc droit, sans avoir à viser</li></ul></div>
+      <div><h3>Pour</h3><ul><li>Module bien guidé et bien tenu</li><li>Bord gauche libre sur 30 mm pour le saisir</li></ul></div>
+      <div><h3>Contre</h3><ul><li>Le plus massif des trois</li><li>Pied arrière visible de côté</li></ul></div>
+    </div>
+  </section>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Pupitre B · Socle à fente</h2><span class="tag">70°</span><span class="tag">décalé de 35 mm à droite</span></div>
+    <div class="sheet" id="sheet-pb"></div>
+    <div class="pc">
+      <div><h3>Principe</h3><ul><li>Bloc bas posé à plat, sous la partie écran</li><li>Le module se glisse d'en haut dans une fente inclinée, comme un cadre ou une radio</li></ul></div>
+      <div><h3>Pour</h3><ul><li>Très compact, allure d'objet de design</li><li>Aucun pied : la stabilité vient du bloc</li><li>En v2, le fond de la fente peut accueillir la charge</li></ul></div>
+      <div><h3>Contre</h3><ul><li>Fente à imprimer avec un jeu précis</li><li>Le module doit être levé pour sortir</li></ul></div>
+    </div>
+  </section>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Pupitre C · Dos décalé</h2><span class="tag">75°</span><span class="tag">décalé de 16 mm à droite et 9 mm en bas</span></div>
+    <div class="sheet" id="sheet-pc"></div>
+    <div class="pc">
+      <div><h3>Principe</h3><ul><li>Une plaque au contour identique au module, décalée comme une ombre portée</li><li>Le module s'y aimante et repose sur un fin rebord</li></ul></div>
+      <div><h3>Pour</h3><ul><li>Le plus léger et le plus graphique</li><li>Effet de calque fidèle à l'esprit de l'image 5</li></ul></div>
+      <div><h3>Contre</h3><ul><li>Presque vertical : moins stable quand on appuie sur les touches</li><li>Le décalage laisse moins de place à gauche</li></ul></div>
+    </div>
+  </section>
+
+      <section class="variant">
+        <div class="variant-head"><h2>Variante 1 · Colonne</h2><span class="tag">115 × 125 × 26</span></div>
+        <div class="sheet" id="sheet-1"></div>
+      </section>
+      <section class="variant">
+        <div class="variant-head"><h2>Variante 2 · Molette sur la tranche</h2><span class="tag">105 × 125 × 26</span></div>
+        <div class="sheet" id="sheet-2"></div>
+      </section>
+      <section class="variant">
+        <div class="variant-head"><h2>Variante 3 · Grandes touches</h2><span class="tag">112 × 125 × 26</span></div>
+        <div class="sheet" id="sheet-3"></div>
+      </section>
+    </div>
+  </details>
+
+  <section class="notes">
+    <p><b>Batterie.</b> Emplacement dimensionné pour une LiPo plate de type 504060 (5 × 40 × 60 mm, ≈ 2 000 mAh), à acheter en v2. La carte intègre la charge, mais pas de circuit de protection : il faudra une batterie protégée.</p>
+    <p><b>Sans-fil.</b> Le Wi-Fi et le Bluetooth sont intégrés à l'ESP32-S3 : aucun composant ni volume supplémentaire. Il faut simplement éviter les aimants et le métal près de l'antenne de la carte.</p>
+    <p><b>Libellés.</b> MUET, CAPTURE et OUTLOOK sont des exemples ; les libellés seront imprimés en deux couleurs avec l'AMS.</p>
+  </section>
+</div>
+
+<script>
+(function () {
+  const C = Math.cos(Math.PI / 6);
+  const LINE = "#e6eaed";
+  const DIM = "#9fb0bb";
+  const norm = a => { const l = Math.hypot(a[0], a[1], a[2]) || 1; return a.map(c => c / l); };
+  const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
+  const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+
+  const VIEWS = {
+    iso:  { p: v => [(v[0] + v[2]) * C, -(v[1] + (v[0] - v[2]) / 2)], v: norm([-1, 1, 1]) },
+    face: { p: v => [v[0], -v[1]], v: [0, 0, 1] },
+    left: { p: v => [v[2], -v[1]], v: [-1, 0, 0] },
+    top:  { p: v => [v[0], v[2]], v: [0, 1, 0] },
+    back: { p: v => [-v[0], -v[1]], v: [0, 0, -1] }
+  };
+  const LIGHT = norm([-0.45, 0.75, 0.5]);
+  const PAL = {
+    body:   ["#30373d", "#88929a"],
+    stand:  ["#262c31", "#646e76"],
+    key:    ["#3f474f", "#aab2b9"],
+    bezel:  ["#101316", "#2a3035"],
+    paper:  ["#bdc0bb", "#e3e4e0"],
+    accent: ["#48515a", "#b3bbc2"],
+    magnet: ["#5d666e", "#c9cfd4"]
+  };
+  const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+  const mix = (a, b, t) => { const A = hex(a), B = hex(b); return "rgb(" + A.map((c, i) => Math.round(c + (B[i] - c) * t)).join(",") + ")"; };
+  const pts = arr => arr.map(p => p[0].toFixed(2) + "," + p[1].toFixed(2)).join(" ");
+
+  function rrect(x0, y0, w, h, r, seg) {
+    seg = seg || 5;
+    const P = [];
+    const cs = [[x0 + w - r, y0 + h - r, 0], [x0 + r, y0 + h - r, 90], [x0 + r, y0 + r, 180], [x0 + w - r, y0 + r, 270]];
+    for (const [cx, cy, a0] of cs) for (let i = 0; i <= seg; i++) {
+      const a = (a0 + 90 * i / seg) * Math.PI / 180;
+      P.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]);
+    }
+    return P;
+  }
+  const rect = (x0, y0, w, h) => [[x0, y0], [x0 + w, y0], [x0 + w, y0 + h], [x0, y0 + h]];
+  function circle(cx, cy, r, n) {
+    n = n || 40;
+    return Array.from({ length: n }, (_, i) => { const a = 2 * Math.PI * i / n; return [cx + r * Math.cos(a), cy + r * Math.sin(a)]; });
+  }
+  function clip(poly, idx, lim, keepLess) {
+    const inside = p => keepLess ? p[idx] <= lim : p[idx] >= lim;
+    const out = [];
+    for (let i = 0; i < poly.length; i++) {
+      const a = poly[i], b = poly[(i + 1) % poly.length];
+      const ia = inside(a), ib = inside(b);
+      if (ia) out.push(a);
+      if (ia !== ib) { const t = (lim - a[idx]) / (b[idx] - a[idx]); out.push([a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1])]); }
+    }
+    return out;
+  }
+  const to3 = (axis, a, b, t) => axis === "z" ? [a, b, t] : axis === "x" ? [t, a, b] : [a, t, b];
+  function newell(P) {
+    const n = [0, 0, 0];
+    for (let i = 0; i < P.length; i++) {
+      const a = P[i], b = P[(i + 1) % P.length];
+      n[0] += (a[1] - b[1]) * (a[2] + b[2]);
+      n[1] += (a[2] - b[2]) * (a[0] + b[0]);
+      n[2] += (a[0] - b[0]) * (a[1] + b[1]);
+    }
+    return n;
+  }
+  function prism(axis, poly, from, to, kind, layer, extra) {
+    const c0 = poly.map(([a, b]) => to3(axis, a, b, from));
+    const c1 = poly.map(([a, b]) => to3(axis, a, b, to));
+    const verts = c0.concat(c1);
+    const cen = verts.reduce((s, v) => [s[0] + v[0], s[1] + v[1], s[2] + v[2]], [0, 0, 0]).map(c => c / verts.length);
+    const faces = [{ pts: c0, cap: true }, { pts: c1, cap: true }];
+    for (let i = 0; i < poly.length; i++) { const j = (i + 1) % poly.length; faces.push({ pts: [c0[i], c0[j], c1[j], c1[i]] }); }
+    for (const f of faces) {
+      const fc = f.pts.reduce((s, v) => [s[0] + v[0], s[1] + v[1], s[2] + v[2]], [0, 0, 0]).map(c => c / f.pts.length);
+      let n = newell(f.pts);
+      if (dot(n, sub(fc, cen)) < 0) n = n.map(c => -c);
+      f.n = norm(n);
+    }
+    return Object.assign({ axis, from, to, kind, layer, verts, cen, faces, tf: null }, extra || {});
+  }
+  // Transformation rigide (rotation puis translation) d'un prisme ou d'un modèle.
+  const rotX = phi => { const c = Math.cos(phi), s = Math.sin(phi); return v => [v[0], v[1] * c - v[2] * s, v[1] * s + v[2] * c]; };
+  function xform(pr, tf, rot) {
+    const prev = pr.tf;
+    return Object.assign({}, pr, {
+      verts: pr.verts.map(tf), cen: tf(pr.cen),
+      faces: pr.faces.map(f => ({ pts: f.pts.map(tf), cap: f.cap, n: rot(f.n) })),
+      tf: prev ? (v => tf(prev(v))) : tf
+    });
+  }
+  const xformModel = (m, tf, rot) => Object.assign({}, m, { prisms: m.prisms.map(p => xform(p, tf, rot)), hidden: (m.hidden || []).map(p => xform(p, tf, rot)) });
+
+  function hull(P) {
+    const p = P.slice().sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+    const cr = (o, a, b) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+    const lo = [], up = [];
+    for (const q of p) { while (lo.length >= 2 && cr(lo[lo.length - 2], lo[lo.length - 1], q) <= 0) lo.pop(); lo.push(q); }
+    for (let i = p.length - 1; i >= 0; i--) { const q = p[i]; while (up.length >= 2 && cr(up[up.length - 2], up[up.length - 1], q) <= 0) up.pop(); up.push(q); }
+    return lo.slice(0, -1).concat(up.slice(0, -1));
+  }
+  // Transformée affine qui plaque un contenu SVG dessiné en coordonnées de façade sur la face avant du prisme.
+  function contentTransform(view, pr, H) {
+    const f = (fx, fy) => { let p = [fx, H - fy, pr.to]; if (pr.tf) p = pr.tf(p); return VIEWS[view].p(p); };
+    const o = f(0, 0), a = f(1, 0), b = f(0, 1);
+    return "matrix(" + [a[0] - o[0], a[1] - o[1], b[0] - o[0], b[1] - o[1], o[0], o[1]].map(n => n.toFixed(4)).join(",") + ")";
+  }
+
+  function renderView(model, view, id) {
+    const V = VIEWS[view];
+    const lay = pr => (pr.layers && pr.layers[view] != null) ? pr.layers[view] : pr.layer;
+    const list = model.prisms.slice().sort((a, b) => lay(a) - lay(b) || dot(a.cen, V.v) - dot(b.cen, V.v));
+    let s = "";
+    for (const pr of list) {
+      for (const f of pr.faces) {
+        if (dot(f.n, V.v) <= 1e-6) continue;
+        const pp = (model.pal && model.pal[pr.kind]) || PAL[pr.kind];
+        const col = mix(pp[0], pp[1], 0.2 + 0.8 * Math.max(0, dot(f.n, LIGHT)));
+        const P2 = pts(f.pts.map(V.p));
+        s += '<polygon points="' + P2 + '" fill="' + col + '" stroke="' + col + '" stroke-width=".15" stroke-linejoin="round"/>';
+        if (f.cap && pr.kind !== "paper") s += '<polygon points="' + P2 + '" fill="none" stroke="' + LINE + '" stroke-width=".28" stroke-linejoin="round"/>';
+      }
+      const H2 = pts(hull(pr.verts.map(V.p)));
+      if (pr.kind === "accent" && !model.pal) s += '<polygon points="' + H2 + '" fill="url(#hatch-' + id + ')"/>';
+      s += '<polygon points="' + H2 + '" fill="none" stroke="' + LINE + '" stroke-width=".42" stroke-linejoin="round"/>';
+      if (pr.content && dot(pr.faces[1].n, V.v) > 0.05) {
+        const content = (model.pal && model.pal.label) ? pr.content.replace(/#1b2024/g, model.pal.label) : pr.content;
+        s += '<g transform="' + contentTransform(view, pr, model.H) + '">' + content + "</g>";
+      }
+    }
+    return s;
+  }
+  const TXT = 'font-family="IBM Plex Mono, Consolas, monospace"';
+  function renderHidden(model, view, labels) {
+    const V = VIEWS[view];
+    let s = "";
+    for (const pr of model.hidden || []) {
+      const P = pr.verts.map(V.p);
+      s += '<polygon points="' + pts(hull(P)) + '" fill="none" stroke="' + DIM + '" stroke-width=".32" stroke-dasharray="1.6 1" stroke-linejoin="round"/>';
+      if (labels && pr.label) {
+        const c = V.p(pr.cen);
+        s += '<text x="' + c[0].toFixed(1) + '" y="' + (c[1] + (pr.dy || 0)).toFixed(1) + '" text-anchor="middle" ' + TXT + ' font-size="2.6" fill="' + DIM + '" paint-order="stroke" stroke="#1d2327" stroke-width="1.2">' + pr.label + "</text>";
+      }
+    }
+    return s;
+  }
+  function bbox(model, view) {
+    const P = model.prisms.flatMap(pr => pr.verts.map(VIEWS[view].p));
+    const xs = P.map(p => p[0]), ys = P.map(p => p[1]);
+    const b = { minX: Math.min(...xs), maxX: Math.max(...xs), minY: Math.min(...ys), maxY: Math.max(...ys) };
+    b.w = b.maxX - b.minX; b.h = b.maxY - b.minY;
+    return b;
+  }
+  function dimH(x1, x2, y, label) {
+    return '<g stroke="' + DIM + '" stroke-width=".25"><line x1="' + x1 + '" y1="' + y + '" x2="' + x2 + '" y2="' + y + '"/>' +
+      '<line x1="' + x1 + '" y1="' + (y - 2) + '" x2="' + x1 + '" y2="' + (y + 2) + '"/><line x1="' + x2 + '" y1="' + (y - 2) + '" x2="' + x2 + '" y2="' + (y + 2) + '"/></g>' +
+      '<text x="' + ((x1 + x2) / 2) + '" y="' + (y - 1.4) + '" text-anchor="middle" ' + TXT + ' font-size="3.4" fill="' + DIM + '">' + label + "</text>";
+  }
+  function dimV(x, y1, y2, label) {
+    const cy = (y1 + y2) / 2;
+    return '<g stroke="' + DIM + '" stroke-width=".25"><line x1="' + x + '" y1="' + y1 + '" x2="' + x + '" y2="' + y2 + '"/>' +
+      '<line x1="' + (x - 2) + '" y1="' + y1 + '" x2="' + (x + 2) + '" y2="' + y1 + '"/><line x1="' + (x - 2) + '" y1="' + y2 + '" x2="' + (x + 2) + '" y2="' + y2 + '"/></g>' +
+      '<text x="' + (x + 1.6) + '" y="' + cy + '" text-anchor="middle" ' + TXT + ' font-size="3.4" fill="' + DIM + '" transform="rotate(90 ' + (x + 1.6) + " " + cy + ')">' + label + "</text>";
+  }
+  const viewLabel = (x, y, t) => '<text x="' + x + '" y="' + y + '" text-anchor="middle" ' + TXT + ' font-size="4" letter-spacing=".4" fill="' + LINE + '">' + t + "</text>";
+  function defs(id) {
+    return "<defs>" +
+      '<pattern id="grid-' + id + '" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M5 0H0V5" fill="none" stroke="#252c31" stroke-width=".25"/></pattern>' +
+      '<pattern id="gridM-' + id + '" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#2e373d" stroke-width=".35"/></pattern>' +
+      '<pattern id="hatch-' + id + '" width="1.8" height="1.8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="1.8" stroke="#eef1f3" stroke-width=".4" opacity=".6"/></pattern>' +
+      "</defs>";
+  }
+  function frame(id, w, h) {
+    return '<rect width="' + w + '" height="' + h + '" fill="#1d2327"/>' +
+      '<rect width="' + w + '" height="' + h + '" fill="url(#grid-' + id + ')"/>' +
+      '<rect width="' + w + '" height="' + h + '" fill="url(#gridM-' + id + ')"/>' +
+      '<rect x="4" y="4" width="' + (w - 8) + '" height="' + (h - 8) + '" fill="none" stroke="#56636c" stroke-width=".4"/>';
+  }
+  function cartouche(w, h, cells) {
+    const y = h - 18, x0 = 4, x1 = w - 4;
+    let s = '<rect x="' + x0 + '" y="' + y + '" width="' + (x1 - x0) + '" height="14" fill="#1a1f23" stroke="#56636c" stroke-width=".4"/>';
+    const step = (x1 - x0) / cells.length;
+    cells.forEach((c, i) => {
+      const cx = x0 + i * step;
+      if (i) s += '<line x1="' + cx + '" y1="' + y + '" x2="' + cx + '" y2="' + (y + 14) + '" stroke="#56636c" stroke-width=".4"/>';
+      s += '<text x="' + (cx + 3) + '" y="' + (y + 5.2) + '" ' + TXT + ' font-size="2.4" fill="' + DIM + '" letter-spacing=".3">' + c[0] + "</text>";
+      s += '<text x="' + (cx + 3) + '" y="' + (y + 10.8) + '" ' + TXT + ' font-size="3.6" fill="' + LINE + '">' + c[1] + "</text>";
+    });
+    return s;
+  }
+  const cells = t => [["PROJET", "DESKTOP-TOOL"], ["PLANCHE", t], ["UNITÉ", "mm"], ["ÉCRAN", "E-PAPER 4,7″"], ["DATE", "26.09.2026"]];
+
+  // Planche générique : rangées de vues, chacune avec cotes et libellé.
+  function sheetFromRows(id, title, rows) {
+    const M = 20, G = 30;
+    let y = M + 6, W = 0, body = "";
+    for (const row of rows) {
+      const bbs = row.map(it => bbox(it.model, it.view));
+      const rh = Math.max(...bbs.map(b => b.h));
+      let x = M;
+      row.forEach((it, i) => {
+        const b = bbs[i], py = y + (rh - b.h) / 2, r = Math.round;
+        body += '<g transform="translate(' + (x - b.minX).toFixed(2) + "," + (py - b.minY).toFixed(2) + ')">' + renderView(it.model, it.view, id);
+        if (it.hidden) body += renderHidden(it.model, it.view, it.labels);
+        const d = it.dims || [];
+        if (d.includes("w")) body += dimH(b.minX, b.maxX, b.maxY + 7, r(b.w));
+        if (d.includes("h")) body += dimV(b.maxX + 7, b.minY, b.maxY, r(b.h));
+        body += viewLabel((b.minX + b.maxX) / 2, b.maxY + (d.includes("w") ? 17 : 10), it.label) + "</g>";
+        x += b.w + G + (d.includes("h") ? 12 : 0);
+      });
+      W = Math.max(W, x - G + M);
+      y += rh + 24 + G * 0.4;
+    }
+    const H = y + 20;
+    return '<svg viewBox="0 0 ' + W.toFixed(1) + " " + H.toFixed(1) + '" role="img" aria-label="' + title + '">' + defs(id) + frame(id, W, H) + body + cartouche(W, H, cells(title)) + "</svg>";
+  }
+
+  // ----- Modèles -----
+  const D = 26, H = 125;
+  const keyLabel = (cx, cy, t) => '<text x="' + cx + '" y="' + cy + '" text-anchor="middle" ' + TXT + ' font-size="2.5" fill="#1b2024" letter-spacing=".1">' + t + "</text>";
+  const R = (fx, fy, w, h, r, seg) => rrect(fx, H - fy - h, w, h, r, seg || 3);
+
+  const SCREEN1 =
+    '<text x="49" y="20" font-family="IBM Plex Mono, monospace" font-size="2.6" fill="#6f706d">MAR. 29 SEPT.</text>' +
+    '<text x="48.3" y="36" font-family="Archivo, sans-serif" font-size="15" font-weight="800" letter-spacing="-.4" fill="#242424">09:30</text>' +
+    '<line x1="49" y1="41" x2="101" y2="41" stroke="#8a8b87" stroke-width=".25"/>' +
+    '<text x="49" y="47" font-family="IBM Plex Mono, monospace" font-size="2.2" fill="#6f706d" letter-spacing=".2">PROCHAIN</text>' +
+    '<text x="49" y="53" font-family="Archivo, sans-serif" font-size="4.2" font-weight="800" fill="#242424">Point projet F1</text>' +
+    '<text x="49" y="58" font-family="Archivo, sans-serif" font-size="3" font-weight="500" fill="#242424">10:00 · dans 30 min</text>' +
+    '<line x1="49" y1="63" x2="101" y2="63" stroke="#8a8b87" stroke-width=".25"/>' +
+    '<g font-family="IBM Plex Mono, monospace" font-size="2.6" fill="#242424"><text x="49" y="70">11:30  Revue budget</text><text x="49" y="76">14:00  Appel fournisseur</text><text x="49" y="82">16:30  Bloc focus</text><text x="49" y="88" fill="#6f706d">18:00  Sport</text></g>' +
+    '<line x1="49" y1="102" x2="101" y2="102" stroke="#8a8b87" stroke-width=".25"/>' +
+    '<text x="49" y="108" font-family="IBM Plex Mono, monospace" font-size="2.3" fill="#6f706d">✉ 2 NON LUS   ☐ 3 TÂCHES</text>';
+  const SCREEN2 =
+    '<text x="43" y="47" font-family="Archivo, sans-serif" font-size="34" font-weight="800" letter-spacing="-1" fill="#242424">09</text>' +
+    '<text x="43" y="77" font-family="Archivo, sans-serif" font-size="34" font-weight="300" letter-spacing="-1" fill="#242424">30</text>' +
+    '<text x="44" y="86" font-family="Archivo, sans-serif" font-size="3.4" font-weight="500" fill="#242424">mardi 29 septembre</text>' +
+    '<line x1="44" y1="98" x2="93" y2="98" stroke="#8a8b87" stroke-width=".25"/>' +
+    '<text x="44" y="103.5" font-family="IBM Plex Mono, monospace" font-size="2.2" fill="#6f706d" letter-spacing=".2">PROCHAIN · 10:00</text>' +
+    '<text x="44" y="108.5" font-family="Archivo, sans-serif" font-size="3.2" font-weight="800" fill="#242424">Point projet F1</text>';
+  const box = (y, c) => '<rect x="50" y="' + y + '" width="2.8" height="2.8" fill="none" stroke="' + c + '" stroke-width=".35"/>';
+  const tick = y => '<path d="M50.5 ' + (y + 1.4) + ' l.9 .9 l1.6 -1.9" fill="none" stroke="#7d7d7a" stroke-width=".4"/>';
+  const SCREEN3 =
+    '<text x="50" y="21" font-family="IBM Plex Mono, monospace" font-size="2.4" fill="#6f706d" letter-spacing=".2">À FAIRE · 3 / 5</text>' +
+    '<text x="50" y="31" font-family="Archivo, sans-serif" font-size="7" font-weight="800" fill="#242424">Tâches</text>' +
+    '<line x1="50" y1="36" x2="100" y2="36" stroke="#8a8b87" stroke-width=".25"/>' +
+    '<g font-family="Archivo, sans-serif" font-size="3.1" font-weight="500">' +
+    box(42, "#7d7d7a") + tick(42) + '<text x="55" y="44.6" fill="#7d7d7a" text-decoration="line-through">Commander la carte T5</text>' +
+    '<rect x="48.5" y="49" width="53" height="7" rx=".8" fill="#242424"/>' + box(51.1, "#e7e6e1") + '<text x="55" y="53.7" fill="#e7e6e1">Tutoriel Fusion n°1</text>' +
+    box(60.2, "#242424") + '<text x="55" y="62.8" fill="#242424">Pièce test : clips</text>' +
+    box(69.3, "#242424") + '<text x="55" y="71.9" fill="#242424">Relire le cadrage v1.0</text>' +
+    box(78.4, "#7d7d7a") + tick(78.4) + '<text x="55" y="81" fill="#7d7d7a" text-decoration="line-through">Choisir la variante</text>' +
+    "</g>" +
+    '<text x="50" y="108" font-family="IBM Plex Mono, monospace" font-size="2.2" fill="#6f706d">MOLETTE : CHOISIR · APPUI : COCHER</text>';
+
+  function model1() {
+    const W = 115, P = [];
+    P.push(prism("z", rrect(0, 0, W, H, 7, 6), 0, D, "body", 0));
+    P.push(prism("z", R(42, 8, 66, 109, 2.5), D, D + 0.6, "bezel", 1));
+    P.push(prism("z", R(45, 12, 60, 101, 1), D + 0.6, D + 0.9, "paper", 2, { content: SCREEN1 }));
+    const labels = ["MUET", "CAPTURE", "OUTLOOK", "⌂ ACCUEIL"];
+    [43, 62, 81, 100].forEach((fy, i) => P.push(prism("z", R(5, fy, 32, 17, 2), D, D + 6, "key", 3, { content: keyLabel(21, fy + 9.4, labels[i]) })));
+    P.push(prism("z", circle(21, H - 23, 12.5), D, D + 9, "accent", 3, {
+      content: '<line x1="21" y1="14" x2="21" y2="18.5" stroke="#1b2024" stroke-width=".9" stroke-linecap="round"/>'
+    }));
+    // Aimants au dos (affleurants) et composants internes (pointillés).
+    [[12, 12], [103, 12], [12, 85], [103, 85]].forEach(([x, y]) => P.push(prism("z", circle(x, y, 3, 20), -0.3, 0, "magnet", 1)));
+    const hidden = [
+      prism("z", rect(43, 3, 64, 119), D - 11, D - 2, "hidden", 0, { label: "carte e-paper 119×64", dy: -8 }),
+      prism("z", rect(55, 32, 40, 60), 3, 8.5, "hidden", 0, { label: "batterie 5×40×60 (v2)", dy: 8 }),
+      prism("z", rect(11, 6, 20, 78), D - 12, D - 2, "hidden", 0, { label: "NeoKey", dy: 0 }),
+      prism("z", rect(9, 88, 24, 32), D - 16, D - 2, "hidden", 0, { label: "encodeur", dy: 0 }),
+      prism("z", rect(70, 0, 10, 7), D - 9, D - 5, "hidden", 0, { label: "USB-C ?", dy: 6 })
+    ];
+    return { W, H, prisms: P, hidden };
+  }
+  function model2() {
+    const W = 105, P = [];
+    P.push(prism("z", rrect(0, 0, W, H, 7, 6), 0, D, "body", 0));
+    P.push(prism("z", R(36, 8, 64, 109, 2.5), D, D + 0.6, "bezel", 1));
+    P.push(prism("z", R(39, 12, 58, 101, 1), D + 0.6, D + 0.9, "paper", 2, { content: SCREEN2 }));
+    const labels = ["MUET", "CAPTURE", "OUTLOOK", "⌂"];
+    [26, 45, 64, 83].forEach((fy, i) => P.push(prism("z", R(5, fy, 27, 17, 2), D, D + 6, "key", 3, { content: keyLabel(18.5, fy + 9.4, labels[i]) })));
+    P.push(prism("z", clip(circle(7, H - 29, 12), 0, 0, true), D / 2 - 4, D / 2 + 4, "accent", 3));
+    return { W, H, prisms: P };
+  }
+  function model3() {
+    const W = 112, P = [];
+    P.push(prism("z", rrect(0, 0, W, H, 7, 6), 0, D, "body", 0));
+    P.push(prism("z", R(43, 8, 64, 109, 2.5), D, D + 0.6, "bezel", 1));
+    P.push(prism("z", R(46, 12, 58, 101, 1), D + 0.6, D + 0.9, "paper", 2, { content: SCREEN3 }));
+    const labels = ["MUET", "CAPTURE", "OUTLOOK"];
+    [8, 45, 82].forEach((fy, i) => P.push(prism("z", R(5, fy, 34, 35, 2.5), D, D + 5, "key", 3, { content: keyLabel(22, fy + 18.4, labels[i]) })));
+    P.push(prism("x", clip(circle(H - 7, D / 2, 11), 0, H, false), 9, 35, "accent", 3));
+    return { W, H, prisms: P };
+  }
+
+  // ----- Pupitres : conçus dans le repère du module, puis inclinés et posés sur le bureau (y = 0). -----
+  const rotFor = tilt => rotX(-(90 - tilt) * Math.PI / 180);
+  function leg(tf, x0, x1, yTop, yLow, zBack, reach) {
+    const A = tf([0, yTop, zBack]), B = tf([0, yLow, zBack]);
+    const a = [A[1], A[2]], b = [B[1], B[2]];
+    const c = [0, a[1] - reach], d = [0, c[1] + 10];
+    return prism("x", [a, b, d, c], x0, x1, "stand", -1);
+  }
+  // opts : tilt, shell() -> prismes (repère module), ty (optionnel), world() -> prismes (repère bureau), explode
+  function standSet(opts) {
+    const ROTt = rotFor(opts.tilt);
+    const shellM = opts.shell ? opts.shell() : [];
+    let ty = opts.ty;
+    if (ty == null) {
+      const all = shellM.concat(model1().prisms);
+      ty = -Math.min(...all.flatMap(p => p.verts.map(v => ROTt(v)[1])));
+    }
+    const tf = v => { const r = ROTt(v); return [r[0], r[1] + ty, r[2]]; };
+    const standP = shellM.map(p => xform(p, tf, ROTt)).concat(opts.world ? opts.world(tf) : []);
+    const e = ROTt(norm(opts.explode));
+    const make = off => {
+      const m = model1();
+      const tf2 = v => { const q = tf(v); return [q[0] + e[0] * off, q[1] + e[1] * off, q[2] + e[2] * off]; };
+      const mm = xformModel(m, tf2, ROTt);
+      return { W: m.W, H: m.H, prisms: standP.concat(mm.prisms), hidden: [] };
+    };
+    return { asm: make(0), expl: make(opts.explodeDist || 60) };
+  }
+  const yz = (y0, z0, h, d, r) => rrect(y0, z0, h, d, r, 3); // section arrondie dans le plan (y, z)
+
+  // A · Berceau en L : plaque arrière + rebord bas + flanc droit, décalés vers la droite.
+  const standA = standSet({
+    tilt: 55, explode: [0, 0.5, 1],
+    shell: () => [
+      prism("z", rrect(30, -10, 112, 108, 8, 5), -6, 0, "stand", -1),
+      prism("x", yz(-10, -6, 10, 38, 3.5), 30, 142, "stand", -1),
+      prism("x", yz(-10, 27.5, 15, 4.5, 2), 30, 142, "stand", 4),
+      prism("x", yz(-10, -6, 108, 24, 4), 116.5, 142, "stand", -1)
+    ],
+    world: tf => [leg(tf, 70, 110, 80, 58, -6, 48)]
+  });
+
+  // B · Socle à fente : bloc bas décalé à droite, le module s'y glisse verticalement.
+  const standB = (function () {
+    const tilt = 70, ROTt = rotFor(tilt), TYb = 8;
+    const u = ROTt([0, 1, 0]), n = ROTt([0, 0, 1]);
+    const Pb = [TYb, 0], Pf = [TYb + D * n[1], D * n[2]];
+    const onLine = (P, y) => { const t = (y - P[0]) / u[1]; return [y, P[1] + t * u[2]]; };
+    const Hb = 40, Hf = 24, X0 = 35, X1 = 135;
+    const B0 = onLine(Pb, 0), B1 = onLine(Pb, Hb);
+    const F0 = onLine(Pf, 0), F1 = onLine(Pf, Hf);
+    const back = [B0, B1, [Hb, B1[1] - 28], [Hb - 5, B1[1] - 33], [0, B1[1] - 36]];
+    const wedge = [B0, Pb, Pf, F0];
+    const front = [F0, F1, [Hf, F1[1] + 22], [Hf - 5, F1[1] + 27], [0, F1[1] + 30]];
+    return standSet({
+      tilt, ty: TYb, explode: [0, 1, 0], explodeDist: 70,
+      world: () => [
+        prism("x", back, X0, X1, "stand", -1),
+        prism("x", wedge, X0, X1, "stand", -1),
+        prism("x", front, X0, X1, "stand", 4)
+      ]
+    });
+  })();
+
+  // C · Dos décalé : plaque au contour identique au module, décalée à droite et vers le bas, avec pied.
+  const standC = standSet({
+    tilt: 75, explode: [0, 0, 1],
+    shell: () => [
+      prism("z", rrect(16, -9, 115, 125, 7, 6), -8, 0, "stand", -1),
+      prism("x", yz(-9, -8, 9, 36, 3), 16, 131, "stand", -1),
+      prism("x", yz(-9, 27.5, 13, 4.5, 2), 16, 131, "stand", 4)
+    ],
+    world: tf => [leg(tf, 55, 105, 100, 76, -8, 58)]
+  });
+
+  // Solide défini par des anneaux de points correspondants (loft) : premier et dernier anneau = faces pleines.
+  function loft(rings, kind, layer) {
+    const verts = rings.flat();
+    const cen = verts.reduce((s, v) => [s[0] + v[0], s[1] + v[1], s[2] + v[2]], [0, 0, 0]).map(c => c / verts.length);
+    const faces = [{ pts: rings[0], cap: true }, { pts: rings[rings.length - 1], cap: true }];
+    for (let r = 0; r < rings.length - 1; r++) {
+      const A = rings[r], B = rings[r + 1];
+      for (let i = 0; i < A.length; i++) { const j = (i + 1) % A.length; faces.push({ pts: [A[i], A[j], B[j], B[i]] }); }
+    }
+    for (const f of faces) {
+      const fc = f.pts.reduce((s, v) => [s[0] + v[0], s[1] + v[1], s[2] + v[2]], [0, 0, 0]).map(c => c / f.pts.length);
+      let n = newell(f.pts);
+      if (dot(n, sub(fc, cen)) < 0) n = n.map(c => -c);
+      f.n = norm(n);
+    }
+    return { kind, layer, verts, cen, faces, tf: null };
+  }
+  // Pupitre plein, triangulaire de profil, avec une empreinte où le module s'incruste sur la moitié
+  // de son épaisseur. L'empreinte est ouverte à gauche : le module y dépasse pour la prise en main.
+  // outer = [x0, y0, x1, y1, rayon] contour de la face, dans le repère du module.
+  function pocketSet(tilt, outer, h0, depth, backTilt) {
+    const ROTt = rotFor(tilt), W = 115, c = 0.5;
+    const [x0, y0, x1, y1, r] = outer;
+    const outline = rrect(x0, y0, x1 - x0, y1 - y0, r, 6);
+    const floorM = outline.map(([x, y]) => [x, y, 0]);
+    const ty = h0 - Math.min(...floorM.map(v => ROTt(v)[1]));
+    const tf = v => { const q = ROTt(v); return [q[0], q[1] + ty, q[2]]; };
+    const floor = floorM.map(tf);
+    // Au sol : le bas du contour descend à la verticale ; le haut descend vers l'arrière selon la pente du dos.
+    // (rrect : les deux premiers quarts de points sont les coins hauts.)
+    const tanB = backTilt ? Math.tan(backTilt * Math.PI / 180) : Infinity;
+    const half = outline.length / 2;
+    const ground = floor.map((v, i) => i < half ? [v[0], 0, v[2] - v[1] / tanB] : [v[0], 0, v[2]]);
+    const base = loft([ground, floor], "stand", -1);
+    const rim = (poly, layers) => { const pr = xform(prism("z", poly, 0, depth, "stand", -1), tf, ROTt); if (layers) pr.layers = layers; return pr; };
+    const rimBottom = rim(clip(outline, 1, -c, true));
+    const rimRight = rim(clip(outline, 0, W + c, false));
+    const e = ROTt([0, 0, 1]);
+    const make = off => {
+      // Paroi haute seulement si le pupitre dépasse le haut du module.
+      const parts = [base, rimBottom, rimRight];
+      if (y1 > H + c) parts.push(rim(clip(outline, 1, H + c, false), off ? null : { iso: 4, left: 4, top: 4 }));
+      const mod = model1();
+      const tf2 = v => { const q = tf(v); return [q[0] + e[0] * off, q[1] + e[1] * off, q[2] + e[2] * off]; };
+      const mm = xformModel(mod, tf2, ROTt);
+      return { W: mod.W, H: mod.H, prisms: parts.concat(mm.prisms), hidden: [] };
+    };
+    return { asm: make(0), expl: make(55) };
+  }
+  const pocketStand = pocketSet(55, [12, -25, 115 + 25, H - 36, 10], 4, 26, 55);
+
+  const m1 = model1();
+  document.getElementById("sheet-module").innerHTML = sheetFromRows("mod", "MODULE · VAR. 1", [
+    [
+      { model: m1, view: "iso", label: "PERSPECTIVE" },
+      { model: m1, view: "face", label: "FACE · TRANSPARENCE", dims: ["w", "h"], hidden: true, labels: true },
+      { model: m1, view: "left", label: "PROFIL G.", dims: ["w"], hidden: true },
+      { model: m1, view: "back", label: "DOS · 4 AIMANTS Ø6", dims: ["w"] }
+    ]
+  ]);
+  const standSheet = (st, id, t) => sheetFromRows(id, t, [
+    [
+      { model: st.asm, view: "iso", label: "PERSPECTIVE · ASSEMBLÉ" },
+      { model: st.expl, view: "iso", label: "PERSPECTIVE · ÉCLATÉ" }
+    ],
+    [
+      { model: st.asm, view: "left", label: "PROFIL G.", dims: ["w", "h"] },
+      { model: st.asm, view: "face", label: "FACE", dims: ["w"] },
+      { model: st.asm, view: "top", label: "DESSUS", dims: ["h"] }
+    ]
+  ]);
+  // Filaments Panchroma en stock (teintes approximatives à l'écran).
+  const FIL = {
+    charcoal: "#2e2f31", ash: "#8d9194", fossil: "#b9b4aa", armyRed: "#8e3b33", orange: "#e8742d",
+    armyBrown: "#6e5842", mutedWhite: "#e4dfd3", mutedGreen: "#7f8b6c", armyBlue: "#4b5b6d", cotton: "#f1efe9"
+  };
+  const shadeOf = h => { const c = hex(h); const d = c.map(v => Math.round(v * 0.42)), l = c.map(v => Math.min(255, Math.round(v * 1.06 + 6))); const t = a => "#" + a.map(v => v.toString(16).padStart(2, "0")).join(""); return [t(d), t(l)]; };
+  const palette = (body, stand, key, accent, label) => ({ body: shadeOf(body), stand: shadeOf(stand), key: shadeOf(key), accent: shadeOf(accent), label });
+  const PALETTES = [
+    { id: "braun", name: "1 · ATELIER", pal: palette(FIL.cotton, FIL.ash, FIL.fossil, FIL.orange, "#2e2f31") },
+    { id: "nuit", name: "2 · NUIT", pal: palette(FIL.charcoal, FIL.charcoal, FIL.ash, FIL.orange, "#f1efe9") },
+    { id: "pierre", name: "3 · PIERRE", pal: palette(FIL.fossil, FIL.ash, FIL.mutedWhite, FIL.armyRed, "#2e2f31") },
+    { id: "sauge", name: "4 · SAUGE", pal: palette(FIL.mutedWhite, FIL.mutedGreen, FIL.mutedWhite, FIL.armyBlue, "#2e2f31") }
+  ];
+  document.getElementById("sheet-colors").innerHTML = sheetFromRows("col", "PALETTES PANCHROMA", [
+    PALETTES.slice(0, 2).map(p => ({ model: Object.assign({}, pocketStand.asm, { pal: p.pal }), view: "iso", label: p.name })),
+    PALETTES.slice(2).map(p => ({ model: Object.assign({}, pocketStand.asm, { pal: p.pal }), view: "iso", label: p.name }))
+  ]);
+  const MONO = [
+    { name: "5 · MONOCHROME", pal: palette(FIL.mutedWhite, FIL.mutedWhite, FIL.mutedWhite, FIL.orange, "#2e2f31") },
+    { name: "5B · + LIBELLÉS ORANGE", pal: palette(FIL.mutedWhite, FIL.mutedWhite, FIL.mutedWhite, FIL.orange, "#d8641f") },
+    { name: "5C · + PUPITRE FOSSIL GREY", pal: palette(FIL.mutedWhite, FIL.fossil, FIL.mutedWhite, FIL.orange, "#2e2f31") }
+  ];
+  const monoItem = p => ({ model: Object.assign({}, pocketStand.asm, { pal: p.pal }), view: "iso", label: p.name });
+  const CHOSEN = palette(FIL.mutedWhite, FIL.fossil, FIL.mutedWhite, FIL.orange, "#d8641f");
+  const chosenItem = (view, label, dims) => ({ model: Object.assign({}, pocketStand.asm, { pal: CHOSEN }), view, label, dims });
+  document.getElementById("sheet-chosen").innerHTML = sheetFromRows("chosen", "PALETTE RETENUE · 5B + 5C", [
+    [chosenItem("iso", "PERSPECTIVE"), chosenItem("face", "FACE", ["w", "h"])]
+  ]);
+  document.getElementById("sheet-mono").innerHTML = sheetFromRows("mono", "PALETTE MUTED WHITE + ORANGE", [
+    MONO.slice(0, 2).map(monoItem),
+    [monoItem(MONO[2]), { model: Object.assign({}, pocketStand.asm, { pal: MONO[0].pal }), view: "face", label: "5 · FACE", dims: ["w"] }]
+  ]);
+  document.getElementById("sheet-tr").innerHTML = standSheet(pocketStand, "tr", "PUPITRE · MODULE INCRUSTÉ");
+  document.getElementById("sheet-pa").innerHTML = standSheet(standA, "pa", "PUPITRE A · BERCEAU EN L");
+  document.getElementById("sheet-pb").innerHTML = standSheet(standB, "pb", "PUPITRE B · SOCLE À FENTE");
+  document.getElementById("sheet-pc").innerHTML = standSheet(standC, "pc", "PUPITRE C · DOS DÉCALÉ");
+
+  const std = (m, id, t) => sheetFromRows(id, t, [[
+    { model: m, view: "iso", label: "PERSPECTIVE" },
+    { model: m, view: "left", label: "PROFIL G.", dims: ["w"] },
+    { model: m, view: "face", label: "FACE", dims: ["w", "h"] },
+    { model: m, view: "top", label: "DESSUS", dims: ["h"] }
+  ]]);
+  document.getElementById("sheet-1").innerHTML = std(m1, "v1", "VAR. 1 · COLONNE");
+  document.getElementById("sheet-2").innerHTML = std(model2(), "v2", "VAR. 2 · MOLETTE TRANCHE");
+  document.getElementById("sheet-3").innerHTML = std(model3(), "v3", "VAR. 3 · GRANDES TOUCHES");
+})();
+</script>
