@@ -231,7 +231,7 @@ météo, qualité de l'air, tableaux de bord perso (ex. F1)…
 | Couleurs | **Trois styles en balance** (PLA mat Panchroma) : **A** module **Charcoal Black** + molette **Army Red** ; **B** module **Muted White** + molette **Sunrise Orange** ; **C** module **Ash Grey** + touches **Muted White** + molette **Sunrise Orange** (image desktop-9, préférée). **Station de la couleur du corps du module.** `[À VALIDER]` en P1 |
 | Touches | **Symboles neutres** : **1, 2 et 3 barres** sur les touches 1 à 3, **maison** sur la touche 4 ; **fonction de chaque touche affichée à l'écran**, en face d'elle (ADR 004). Symboles **gravés en creux**, touche imprimée **face visible contre le plateau** |
 | Lumière | Aucune lumière émise par l'écran ; seules les LED des touches s'allument, **à faible intensité**, pour les alertes |
-| Posture sur le bureau | **Station modulaire** (ADR 005) : socle avec rainure à stylo et grille d'accroches, pupitre du module et pupitre MagSafe clipsés dessus, inclinés à 65° |
+| Posture sur le bureau | **Station modulaire** (ADR 005) : socle percé de trous ronds (12 colonnes), pupitre du module et pupitre MagSafe clipsés dessus, inclinés à 65°, 2 colonnes libres |
 
 Esquisse de disposition (vue de face, échelle approximative), **en paysage depuis l'ADR 006** :
 
@@ -308,7 +308,7 @@ Voir la fiche de décision [`decisions/001-architecture-objet-compagnon.md`](dec
 └──────────────────────────┬──────────────────────────────────┘
                            │ 1 câble USB-C (alimentation + données série)
 ┌──────────────────────────┴──────────────────────────────────┐
-│  Objet desktop-tool (ESP32-S3 + e-paper 4,7" portrait)        │
+│  Objet desktop-tool (ESP32-S3 + e-paper 4,7" paysage)         │
 │   ├─ Affiche des gabarits génériques (liste, carte, horloge…) │
 │   ├─ 4 touches à LED + molette (I²C, sans soudure)            │
 │   └─ Renvoie les événements (« touche 2 », « molette +1 »)    │
