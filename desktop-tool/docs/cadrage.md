@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | v1.7 — style C, station de la couleur du module |
+| **Version** | v1.8 — module en paysage (ADR 006), station à 12 colonnes percée |
 | **Date** | 2026-09-26 |
 | **Auteur** | Frédéric Fradin |
 | **Statut** | ✅ Cadrage validé le 2026-09-26 — document de référence. Les éléments encore marqués `[À VALIDER]` seront tranchés en P1 |
@@ -226,32 +226,29 @@ météo, qualité de l'air, tableaux de bord perso (ex. F1)…
 |---|---|
 | Esprit | Épuré, précis, **discret** (n'attire pas l'œil), avec **une petite touche de couleur** |
 | Format | Encombrement max **≈ 5" × 5" (127 × 127 mm)** en façade |
-| Écran | **Noir et blanc (e-paper)**, **plus haut que large** (portrait), typographie forte comme l'image 5 |
-| Commandes | **Colonne à gauche** (utilisateur gaucher) : molette + touches empilées |
+| Écran | **Noir et blanc (e-paper)**, **en paysage** depuis l'ADR 006 (portrait auparavant), typographie forte comme l'image 5 |
+| Commandes | **En bas** (ADR 006) : molette en bas à gauche, sous le pouce gauche (utilisateur gaucher) ; 4 touches en ligne en bas à droite |
 | Couleurs | **Trois styles en balance** (PLA mat Panchroma) : **A** module **Charcoal Black** + molette **Army Red** ; **B** module **Muted White** + molette **Sunrise Orange** ; **C** module **Ash Grey** + touches **Muted White** + molette **Sunrise Orange** (image desktop-9, préférée). **Station de la couleur du corps du module.** `[À VALIDER]` en P1 |
 | Touches | **Symboles neutres** : **1, 2 et 3 barres** sur les touches 1 à 3, **maison** sur la touche 4 ; **fonction de chaque touche affichée à l'écran**, en face d'elle (ADR 004). Symboles **gravés en creux**, touche imprimée **face visible contre le plateau** |
 | Lumière | Aucune lumière émise par l'écran ; seules les LED des touches s'allument, **à faible intensité**, pour les alertes |
 | Posture sur le bureau | **Station modulaire** (ADR 005) : socle avec rainure à stylo et grille d'accroches, pupitre du module et pupitre MagSafe clipsés dessus, inclinés à 65° |
 
-Esquisse de disposition (vue de face, échelle approximative) :
+Esquisse de disposition (vue de face, échelle approximative), **en paysage depuis l'ADR 006** :
 
 ```
- ◄──────────── ≈ 115 mm ───────────►
-┌─────────────┬────────────────────┐   ▲
-│   ╭─────╮   │                    │   │
-│   │  ◉  │   │                    │   │
-│   ╰─────╯   │                    │   │
-│   molette   │                    │   │
-├─────────────┤      ÉCRAN         │   │
-│  touche 1   │    e-paper 4,7"    │ ≈ 125 mm
-├─────────────┤    (portrait)      │   │
-│  touche 2   │   noir et blanc    │   │
-├─────────────┤                    │   │
-│  touche 3   │                    │   │
-├─────────────┤                    │   │
-│  Accueil    │                    │   │
-└─────────────┴────────────────────┘   ▼
-   ≈ 40 mm         ≈ 70 mm
+ ◄────────────────── ≈ 125 mm ──────────────────►
+┌───────────────────────────────────────────────┐   ▲
+│                                               │   │
+│              ÉCRAN e-paper 4,7"               │   │
+│          (paysage)  noir et blanc             │   │
+│                                               │ ≈ 115 mm
+│     MUET ▾   CAPTURE ▾  OUTLOOK ▾  ACCUEIL ▾   │   │
+├───────────┬───────────────────────────────────┤   │
+│  ╭─────╮  │  ┌────┐ ┌────┐ ┌────┐ ┌────┐       │   │
+│  │  ◉  │  │  │ |  │ │ || │ │||| │ │ ⌂  │       │   │
+│  ╰─────╯  │  └────┘ └────┘ └────┘ └────┘       │   │
+└───────────┴───────────────────────────────────┘   ▼
+  molette        4 touches (pas de 19 mm)
 ```
 
 > **Challenge — L'écart entre les touches est imposé.** Le module de touches sans soudure
@@ -278,8 +275,8 @@ Voir la fiche [`decisions/003-module-pupitre-batterie.md`](decisions/003-module-
 
 | Élément | Choix |
 |---|---|
-| **Module** | Variante 1 : molette ronde en haut à gauche, 4 touches larges (3 raccourcis + Accueil), écran portrait à droite. **115 × 125 × 26 mm** |
-| **Station** ✅ (ADR 005, remplace le pupitre ci-dessous) | **Socle** 220 × 98 × 10 mm, rainure à stylo de 180 mm, **grille de 22 accroches** au pas de 20 mm ; **éléments clipsés** : pupitre du module (lame à 65°, connecteur USB-C magnétique noyé dans la lame) et pupitre MagSafe (iPhone Pro en portrait, palet déjà possédé) ; autres éléments possibles plus tard |
+| **Module** | Variante 1 **tournée en paysage** (ADR 006) : écran en haut, molette en bas à gauche, 4 touches en ligne en bas à droite (3 raccourcis + Accueil), USB-C au dos. **125 × 115 × 26 mm** |
+| **Station** ✅ (ADR 005, remplace le pupitre ci-dessous) | **Socle** 250 × 90 × 10 mm **percé de 48 trous ronds** (12 colonnes × 4 rangées, pas de 20 mm) ; **éléments clipsés** par 4 tenons ronds : pupitre du module (6 colonnes, lame à 65°, connecteur USB-C magnétique noyé dans la lame) et pupitre MagSafe (4 colonnes, iPhone 13 Pro en portrait, palet déjà possédé, sans rebord devant) ; **2 colonnes libres** pour un futur élément ; station de la couleur du module |
 | ~~Pupitre~~ *(abandonné, trop massif)* | Objet séparé qui **reprend la forme du module** (mêmes arrondis, mêmes plaques), **décalé vers la droite** pour laisser le bord gauche libre à la prise en main. Le module s'y dépose et tient par **4 aimants** (Ø6 mm au dos). Forme retenue ✅ : **volume plein, en triangle symétrique de profil** (face et dos à ≈ 55°), avec une **empreinte de 26 mm** où le module s'incruste sur **toute son épaisseur** (façade au même niveau que le pupitre, seules touches et molette dépassent) ; **aucun rebord devant la façade** ; empreinte **ouverte à gauche et en haut** : le module dépasse de 12 mm à gauche ; pupitre avec **bordures droite et basse de 25 mm** et **arrêté 36 mm sous le haut du module** ; arêtes arrondies ; aimants hauts du module à redescendre vers ≈ 75 mm pour rester sur le pupitre |
 | **Module seul** | Dos plat avec patins : se pose à plat ou se prend en main |
 | **Batterie (v2)** | Emplacement réservé derrière la carte pour une LiPo plate ≈ 5 × 40 × 60 mm (≈ 2 000 mAh). La carte intègre déjà le circuit de charge |
@@ -401,7 +398,7 @@ Jalons                           J1              J2          J3
 | R11 | Touches imprimées qui accrochent (tolérance sur le switch) | 🟡 | Faible | Pièces test en P1, plusieurs jeux de tolérance |
 | R12 | Batterie LiPo : la carte n'a **pas de circuit de protection**, et le sens du connecteur varie selon les fabricants | 🟡 | Haut | Batterie **avec protection intégrée**, connecteur vérifié avant branchement (v2) |
 | R13 | Autonomie sans fil décevante | 🟡 | Moyen | Pupitre qui recharge, mise en veille de l'objet, mesures en v2 |
-| R16 | Affichage en portrait : la bibliothèque officielle LilyGO ne gère pas la rotation | 🟢 | Moyen | Bibliothèque epdiy à jour (`epd_set_rotation(EPD_ROT_PORTRAIT)`), ou pages dessinées déjà tournées par le PC (Python/Pillow). Test dès P1 |
+| R16 | ~~Affichage en portrait : la bibliothèque officielle LilyGO ne gère pas la rotation~~ **Levé (ADR 006)** : le module passe en paysage, orientation native de la carte | ⚪ | — | Bibliothèque epdiy à jour (`epd_set_rotation(EPD_ROT_PORTRAIT)`), ou pages dessinées déjà tournées par le PC (Python/Pillow). Test dès P1 |
 | R15 | Pupitre : module incrusté à 100 % difficile à retirer, ou ensemble instable à l'appui | 🟡 | Moyen | Pièce test en P1 ; encoche pour le doigt, patins antidérapants, lest si besoin |
 | R14 | Lanceur de commandes détourné (exécution non voulue) | 🟢 | Haut | Liste blanche de commandes dans le fichier de configuration uniquement |
 
@@ -438,7 +435,7 @@ Jalons                           J1              J2          J3
 | Q12 | Disponibilité ? | 4 h / semaine |
 | Q14 | Accès Outlook ? | Compte pro, déjà utilisé dans des scripts Python → pas de problème d'accès |
 | Q16 | Direction design ? | **B « Panneau »**, référence image 5, avec une touche de couleur |
-| Q17 | Disposition ? | Écran portrait, commandes **à gauche** (gaucher) |
+| Q17 | Disposition ? | ~~Écran portrait, commandes à gauche~~ → **écran paysage en haut, molette en bas à gauche, touches en bas à droite** (ADR 006) |
 | Q19 | Taille ? | Objet ≈ 5" × 5" max |
 | Q20 | Logiciel 3D ? | Fusion |
 | — | Type d'écran ? | Noir et blanc, pour rester discret |
@@ -484,3 +481,4 @@ Jalons                           J1              J2          J3
 | v1.5 | 2026-09-27 | Budget : dépenses réelles relevées, **149,64 €** pour un plafond de 150 € |
 | v1.6 | 2026-09-27 | ADR 005 : pupitre triangle abandonné (trop massif) au profit d'une **station modulaire** (socle + pupitre module + pupitre MagSafe clipsés) ; USB-C au dos du module via connecteur magnétique |
 | v1.7 | 2026-09-27 | Style C « gris chaud + orange » (image desktop-9) ajouté ; station de la couleur du corps du module |
+| v1.8 | 2026-09-27 | ADR 006 : module en paysage (écran en haut, commandes en bas) ; R16 levé ; station à 12 colonnes (250 × 90 mm) percée de 48 trous ronds, sans rainure à stylo, iPhone 13 Pro, 2 colonnes libres |

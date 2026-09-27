@@ -24,25 +24,34 @@ et un stylo. Les usages de l'objet évolueront : le support ne doit pas figer l'
 **Option 4, en version modulaire** (voir `docs/design/maquettes.html`, planche « F · Station
 modulaire ») :
 
-- **Socle** : dalle 220 × 98 × 10 mm aux arrondis du module ; **rainure à stylo** de
-  180 × 12 × 6 mm, centrée, devant ; **grille de 22 accroches** (2 rangées de 11 logements
-  10 × 10 × 6 mm, au pas de 20 mm).
-- **Éléments clipsés** sur la grille, chacun avec une semelle de 3 mm et des tenons
-  (9,6 × 9,6 × 6 mm, fente et ergot) :
-  - **pupitre module** : lame d'appui à 65°, renfort, cale ; **USB-C du module au dos**
+- **Socle** : dalle **250 × 90 × 10 mm** aux arrondis du module, **percée sur toute sa
+  surface de 48 trous ronds** Ø 10 × 6 mm (12 colonnes × 4 rangées, au pas de 20 mm, 15 mm de
+  marge). 12 colonnes : le maximum imprimable posé droit sur l'A1 (256 mm). La profondeur est
+  celle des semelles : aucun trou ne reste vide devant ou derrière un élément.
+- **Éléments clipsés** sur la grille, chacun avec une semelle de 3 mm et **4 tenons ronds**
+  aux coins (Ø 9,6 × 6 mm, fendus, avec ergot) :
+  - **pupitre module** (6 colonnes) : lame d'appui à 65°, renfort, assise sous l'arête basse
+    (face avant en pente douce) ; **USB-C du module au dos**
     (rallonge à montage sur panneau), branché par un **connecteur USB-C magnétique noyé dans la
     lame** : poser le module suffit à le brancher ;
-  - **pupitre MagSafe** : iPhone Pro **en portrait**, lame 80 × 112 mm avec empreinte
-    Ø 56,5 × 5,5 mm pour le palet, cale et griffe de sécurité.
+  - **pupitre MagSafe** (4 colonnes) : iPhone 13 Pro avec coque (74 × 149 × 12 mm) **en
+    portrait**, lame 62 × 112 mm avec empreinte Ø 56,5 × 5,5 mm pour le palet ; assise sous le
+    téléphone en pente douce, **sans rebord devant** (le palet tient le téléphone) ;
+  - **2 colonnes libres** à droite, pour un futur élément (boîte à crayons…) ; le support
+    AirPods a été écarté.
+- Plus d'éléments : une **rallonge de socle** clipsable, reliée par des pions dans les trous de
+  bord.
+- *Révision du 2026-09-27* : rainure à stylo et grille de 22 accroches carrées remplacées par la
+  surface percée de trous ronds ; socle élargi pour le module en paysage (ADR 006).
 - Les câbles passent en gorge au dos des lames puis sous les semelles.
 - **Couleur** : la station (socle et éléments) prend **la couleur du corps du module**, pour que
   l'ensemble se lise comme un seul objet.
 
 ## Conséquences
 
-- ✅ Objet **évolutif** : de nouveaux éléments (vide-poche, porte-stylos, support d'écouteurs,
+- ✅ Objet **évolutif** : de nouveaux éléments (boîte à crayons, repose-stylo, vide-poche,
   logement de batterie en v2) se clipsent sans refaire le socle ; les éléments se déplacent par
-  pas de 20 mm.
+  pas de 20 mm ; un tenon rond se clipse sans orientation imposée.
 - ✅ Pièces séparées, plus simples à imprimer ; toutes tiennent sur le plateau de l'A1.
 - ✅ Le module reste amovible ; le connecteur magnétique se détache seul.
 - ✅ Palet MagSafe déjà possédé : aucun achat pour la charge du téléphone.
@@ -51,5 +60,6 @@ modulaire ») :
 - ❌ Position du port USB-C au dos à valider avec la carte T5 réelle (livraison mi-octobre).
 - ❌ Tenons clipsables à régler par une pièce test (jeu ≈ 0,2 mm par côté, ergot ≈ 0,4 mm) ;
   en secours, 2 aimants Ø 6 × 3 mm par élément.
-- ❌ Emprise plus large que le pupitre seul (220 × 98 mm) ; le haut du téléphone culmine à
-  ≈ 156 mm.
+- ❌ Emprise plus large que le pupitre seul (250 × 90 mm) ; le haut du téléphone culmine à
+  ≈ 152 mm.
+- ❌ Socle de 250 mm : 3 mm de jeu par côté sur le plateau de l'A1.

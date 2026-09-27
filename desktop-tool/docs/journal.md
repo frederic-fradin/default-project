@@ -101,3 +101,20 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - **Station de la couleur du corps du module** (remplace le « pupitre Fossil Grey »).
 - Maquette : planches de couleur redessinées sur la station modulaire ; pupitre triangle et
   pupitres allégés archivés dans « Études précédentes ». Cadrage passé en v1.7.
+
+**Module en paysage et station affinée (même jour)**
+- Impression test à l'échelle du module : en main, la molette tombait trop haut pour le pouce.
+- **Décision (ADR 006)** : module tourné de 90° vers la gauche → **125 × 115 × 26**, écran en
+  paysage en haut, molette en bas à gauche (sous le pouce gauche), 4 touches en ligne en bas à
+  droite, étiquettes des touches en bas de l'écran. Risque R16 (portrait) levé.
+- Station (ADR 005 révisée) : rainure à stylo retirée ; socle **250 × 90 × 10** percé de
+  **48 trous ronds** (12 colonnes × 4 rangées, maximum posé droit sur l'A1) ; 4 tenons ronds par
+  élément ; assises en pente douce ; support du téléphone **sans rebord devant** ; iPhone 13 Pro
+  avec coque (74 × 149 × 12) ; lame MagSafe réduite à 62 mm.
+- Support AirPods Pro 3 essayé puis écarté : **2 colonnes libres** à droite, usage à définir
+  (boîte à crayons…).
+- Cadrage passé en v1.8.
+
+**Suite**
+- Pièce test : molette et barre de touches dans un coin de module en paysage (accès au pouce).
+- Pièce test des tenons ronds fendus (jeu ≈ 0,2 mm, ergot ≈ 0,4 mm).
