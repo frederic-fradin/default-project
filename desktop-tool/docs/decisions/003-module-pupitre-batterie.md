@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Date** | 2026-09-26 |
-| **Statut** | ✅ Acceptée |
+| **Statut** | ✅ Acceptée — pupitre remplacé par la station modulaire ([ADR 005](005-station-modulaire.md)) |
 
 ## Contexte
 

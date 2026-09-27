@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | v1.1 — couleurs retenues (à confirmer) |
+| **Version** | v1.6 — station de bureau modulaire (ADR 005) |
 | **Date** | 2026-09-26 |
 | **Auteur** | Frédéric Fradin |
 | **Statut** | ✅ Cadrage validé le 2026-09-26 — document de référence. Les éléments encore marqués `[À VALIDER]` seront tranchés en P1 |
@@ -230,7 +230,7 @@ météo, qualité de l'air, tableaux de bord perso (ex. F1)…
 | Couleurs | **Deux styles en balance après les premiers tests** (PLA mat Panchroma) : **A** module **Charcoal Black** + molette **Army Red** ; **B** module **Muted White** + molette **Sunrise Orange**. Pupitre : Fossil Grey pressenti. `[À VALIDER]` en P1 |
 | Touches | **Symboles neutres** : **1, 2 et 3 barres** sur les touches 1 à 3, **maison** sur la touche 4 ; **fonction de chaque touche affichée à l'écran**, en face d'elle (ADR 004). Symboles **gravés en creux**, touche imprimée **face visible contre le plateau** |
 | Lumière | Aucune lumière émise par l'écran ; seules les LED des touches s'allument, **à faible intensité**, pour les alertes |
-| Posture sur le bureau | Pupitre incliné ou vertical avec pied : à décider en P3 |
+| Posture sur le bureau | **Station modulaire** (ADR 005) : socle avec rainure à stylo et grille d'accroches, pupitre du module et pupitre MagSafe clipsés dessus, inclinés à 65° |
 
 Esquisse de disposition (vue de face, échelle approximative) :
 
@@ -278,10 +278,11 @@ Voir la fiche [`decisions/003-module-pupitre-batterie.md`](decisions/003-module-
 | Élément | Choix |
 |---|---|
 | **Module** | Variante 1 : molette ronde en haut à gauche, 4 touches larges (3 raccourcis + Accueil), écran portrait à droite. **115 × 125 × 26 mm** |
-| **Pupitre** | Objet séparé qui **reprend la forme du module** (mêmes arrondis, mêmes plaques), **décalé vers la droite** pour laisser le bord gauche libre à la prise en main. Le module s'y dépose et tient par **4 aimants** (Ø6 mm au dos). Forme retenue ✅ : **volume plein, en triangle symétrique de profil** (face et dos à ≈ 55°), avec une **empreinte de 26 mm** où le module s'incruste sur **toute son épaisseur** (façade au même niveau que le pupitre, seules touches et molette dépassent) ; **aucun rebord devant la façade** ; empreinte **ouverte à gauche et en haut** : le module dépasse de 12 mm à gauche ; pupitre avec **bordures droite et basse de 25 mm** et **arrêté 36 mm sous le haut du module** ; arêtes arrondies ; aimants hauts du module à redescendre vers ≈ 75 mm pour rester sur le pupitre |
+| **Station** ✅ (ADR 005, remplace le pupitre ci-dessous) | **Socle** 220 × 98 × 10 mm, rainure à stylo de 180 mm, **grille de 22 accroches** au pas de 20 mm ; **éléments clipsés** : pupitre du module (lame à 65°, connecteur USB-C magnétique noyé dans la lame) et pupitre MagSafe (iPhone Pro en portrait, palet déjà possédé) ; autres éléments possibles plus tard |
+| ~~Pupitre~~ *(abandonné, trop massif)* | Objet séparé qui **reprend la forme du module** (mêmes arrondis, mêmes plaques), **décalé vers la droite** pour laisser le bord gauche libre à la prise en main. Le module s'y dépose et tient par **4 aimants** (Ø6 mm au dos). Forme retenue ✅ : **volume plein, en triangle symétrique de profil** (face et dos à ≈ 55°), avec une **empreinte de 26 mm** où le module s'incruste sur **toute son épaisseur** (façade au même niveau que le pupitre, seules touches et molette dépassent) ; **aucun rebord devant la façade** ; empreinte **ouverte à gauche et en haut** : le module dépasse de 12 mm à gauche ; pupitre avec **bordures droite et basse de 25 mm** et **arrêté 36 mm sous le haut du module** ; arêtes arrondies ; aimants hauts du module à redescendre vers ≈ 75 mm pour rester sur le pupitre |
 | **Module seul** | Dos plat avec patins : se pose à plat ou se prend en main |
 | **Batterie (v2)** | Emplacement réservé derrière la carte pour une LiPo plate ≈ 5 × 40 × 60 mm (≈ 2 000 mAh). La carte intègre déjà le circuit de charge |
-| **Câble** | USB-C sur la tranche basse (position exacte à confirmer), passage par le rebord du pupitre. En v2, le pupitre peut devenir la **station de charge** |
+| **Câble** | USB-C **au dos du module** (rallonge à montage sur panneau), branché par le **connecteur magnétique de la lame** ; câble en gorge au dos de la lame puis sous la semelle. En v2, la station peut devenir la **station de charge** |
 | **Antenne** | Aucun aimant ni métal devant l'antenne de la carte |
 
 > **Challenge — L'autonomie sur batterie sera limitée.** L'e-paper ne consomme presque rien,
@@ -480,3 +481,4 @@ Jalons                           J1              J2          J3
 | v1.3 | 2026-09-27 | Après tests d'impression : icônes **en creux**, touches imprimées face visible côté plateau ; couleurs rouvertes entre deux styles (noir + rouge / blanc + orange) |
 | v1.4 | 2026-09-27 | ADR 004 : touches à symboles neutres, fonctions affichées à l'écran en face de chaque touche |
 | v1.5 | 2026-09-27 | Budget : dépenses réelles relevées, **149,64 €** pour un plafond de 150 € |
+| v1.6 | 2026-09-27 | ADR 005 : pupitre triangle abandonné (trop massif) au profit d'une **station modulaire** (socle + pupitre module + pupitre MagSafe clipsés) ; USB-C au dos du module via connecteur magnétique |

@@ -73,3 +73,19 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - Un seul câble STEMMA QT ↔ broches mâles (4209) commandé, pas de rechange.
 - Détail dans `hardware/bom.md` (section « Dépenses réelles ») et cadrage §4.5 (v1.5).
 - ⚠️ Tout nouvel achat (filament, pièce de rechange) fera dépasser le plafond.
+
+**Maquette : touches et station de bureau (même jour)**
+- Maquette mise à jour avec l'ADR 004 : symboles **gravés en creux, sans couleur**, plus petits
+  (barres 0,8 × 5 mm, écart 1,5 mm ; maison 5 mm) ; colonne d'étiquettes à gauche de l'écran,
+  alignée sur les touches.
+- Pupitre triangle jugé **trop massif**. Trois pistes allégées dessinées : béquille, ailettes,
+  plateau.
+- **Décision (ADR 005)** : **station modulaire** — socle 220 × 98 × 10 (rainure à stylo de
+  180 mm, grille de 22 accroches au pas de 20 mm) + éléments clipsés : pupitre du module et
+  pupitre MagSafe (iPhone Pro en portrait, palet déjà possédé). Cadrage passé en v1.6.
+- USB-C du module déplacé **au dos**, branché par un connecteur magnétique noyé dans la lame.
+- ⚠️ Connecteur USB-C magnétique + rallonge sur panneau : ≈ 10 à 15 € hors budget.
+
+**Suite**
+- Pièce test des tenons clipsables (morceau de grille + 2 tenons) pour régler le jeu.
+- À réception de la carte T5 : position réelle du port USB-C, cheminement de la rallonge.
