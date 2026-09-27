@@ -64,3 +64,12 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - **Décision (ADR 004)** : touches à symboles neutres + maison ; la fonction de chaque touche est
   affichée à l'écran, en face d'elle. Cadrage passé en v1.4.
 - Symboles des touches 1 à 3 : **1, 2 et 3 barres** gravées en creux.
+
+**Budget (même jour)**
+- Dépenses réelles relevées sur les factures : Amazon **92,16 €**, DigiKey **57,48 €** (port 30 € TTC
+  compris), filament en stock → **149,64 €** pour un plafond de 150 €, reste **0,36 €**.
+- Écarts : port DigiKey non prévu et carte plus chère que l'estimation (59 €) ; compensés par le
+  filament déjà en stock.
+- Un seul câble STEMMA QT ↔ broches mâles (4209) commandé, pas de rechange.
+- Détail dans `hardware/bom.md` (section « Dépenses réelles ») et cadrage §4.5 (v1.5).
+- ⚠️ Tout nouvel achat (filament, pièce de rechange) fera dépasser le plafond.
