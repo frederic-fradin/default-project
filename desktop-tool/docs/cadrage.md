@@ -218,6 +218,7 @@ météo, qualité de l'air, tableaux de bord perso (ex. F1)…
 | desktop-4 — panneau blanc | Grille écran + grandes touches plates à libellés + molette |
 | **desktop-5 — panneau carré** ⭐ | **Référence principale** : écran + touches empilées sur le côté, grosse typographie noir et blanc |
 | desktop-6 — thermostat | Écran en haut, touches à pictogrammes, blanc et noir |
+| **desktop-9 — panneau gris** ⭐ | **Référence couleurs et symboles** (2026-09-27) : corps gris chaud mat, touches gris clair aux symboles fins et discrets, **un seul bouton d'accent orange** |
 
 ### 6.2 Direction retenue : B « Panneau », inspirée de l'image 5 ✅
 

@@ -89,3 +89,8 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 **Suite**
 - Pièce test des tenons clipsables (morceau de grille + 2 tenons) pour régler le jeu.
 - À réception de la carte T5 : position réelle du port USB-C, cheminement de la rallonge.
+
+**Référence visuelle (même jour)**
+- Ajout de `images/desktop-9.jpg` : **image préférée pour les couleurs et les symboles des
+  touches** — corps gris chaud mat, touches gris clair aux symboles fins et discrets, un seul
+  bouton d'accent orange.
