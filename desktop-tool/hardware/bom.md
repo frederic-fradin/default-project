@@ -11,7 +11,7 @@ commandes à gauche. Prix indicatifs relevés le 2026-09-26, **hors frais de por
 | 2 | **Adafruit NeoKey 1x4 QT I2C** (réf. 4980) | 4 touches mécaniques enfichables, LED RGB, 2 connecteurs STEMMA QT (sous la carte, aux deux bouts), 76,5 × 21,5 × 4,6 mm | 1 | 10,22 € | [DigiKey](https://www.digikey.fr/fr/products/detail/adafruit-industries-llc/4980/14319123) |
 | 3 | **Adafruit Kailh Mechanical Key Switches – Tactile Brown** (réf. 4954, lot de 10, compatibles MX) | Touches : relief tactile sans clic ; si besoin, joints toriques sous les capuchons pour réduire le bruit | 1 lot (4 utilisés + 6 de rechange) | 7,14 € | [DigiKey](https://www.digikey.fr/fr/products/detail/adafruit-industries-llc/4954/14113455) |
 | 4 | **Adafruit I2C Stemma QT Rotary Encoder Breakout with Encoder** (réf. **5880**, molette déjà soudée — ne pas confondre avec la 4991 vendue sans molette) | Molette crantée + clic + 1 LED RGB, I²C adresse 0x36, carte 25 × 25 mm | 1 | 8,17 € | [DigiKey](https://www.digikey.fr/fr/products/detail/adafruit-industries-llc/5880/22596384) |
-| 5 | Câble **STEMMA QT ↔ broches mâles** (Adafruit 4209, ≈ 150 mm) | Carte (connecteur femelle, broches I²C SDA 18 / SCL 17 / 3,3 V / GND) → NeoKey | 1 (+ 1 de rechange) | 0,97 € pièce | [DigiKey](https://www.digikey.fr/fr/products/detail/adafruit-industries-llc/4209/10230003) |
+| 5 | Câble **STEMMA QT ↔ broches mâles** (Adafruit 4209, ≈ 150 mm) | Carte (connecteur femelle, broches I²C SDA 18 / SCL 17 / 3,3 V / GND) → NeoKey | 1 | 0,97 € | [DigiKey](https://www.digikey.fr/fr/products/detail/adafruit-industries-llc/4209/10230003) |
 | 6 | Câble STEMMA QT ↔ STEMMA QT ≈ 100 mm (réf. 4210) | NeoKey → molette | 1 | ≈ 1 € | [DigiKey](https://www.digikey.fr/fr/products/detail/adafruit-industries-llc/4210/10230021) |
 | 7 | Câble USB-C ↔ USB (A ou C selon le PC), **données**, 1–1,5 m, coudé si possible | Alimentation + communication avec le PC | 1 | ≈ 6–10 € | Amazon |
 | 8 | Vis auto-taraudeuses pour plastique M2/M2,5 (assortiment) | Fixations | 1 lot | ≈ 5–8 € | Amazon |
@@ -29,14 +29,53 @@ commandes à gauche. Prix indicatifs relevés le 2026-09-26, **hors frais de por
 | 2 | Adafruit NeoKey 1x4 QT I2C (4980) | ✅ Commandé (DigiKey) | 2026-09-26 | ≈ 3 jours |
 | 3 | Kailh Tactile Brown × 10 (4954) | ✅ Commandé (DigiKey) | 2026-09-26 | ≈ 3 jours |
 | 4 | Molette Adafruit 5880 | ✅ Commandé (DigiKey) | 2026-09-26 | ≈ 3 jours |
-| 5 | Câble STEMMA QT ↔ broches mâles (4209) × 2 | ✅ Commandé (DigiKey) | 2026-09-26 | ≈ 3 jours |
+| 5 | Câble STEMMA QT ↔ broches mâles (4209) | ✅ Commandé (DigiKey) | 2026-09-26 | ≈ 3 jours |
 | 6 | Câble STEMMA QT ↔ QT (4210) | ✅ Commandé (DigiKey) | 2026-09-26 | ≈ 3 jours |
 | 7 | Câble USB-C data | ✅ Commandé (Amazon) | 2026-09-26 | |
 | 8–10 | Vis, aimants 6 × 2 mm N52, patins | ✅ Commandé (Amazon) | 2026-09-26 | |
 | 11 | Filament PLA | ✅ En stock | | |
 
-Revendeur retenu pour 2 à 6 : **DigiKey**, un seul panier (≈ 29 € + 25 € de port, gratuit dès 75 €).
+Revendeur retenu pour 2 à 6 : **DigiKey**, un seul panier (port gratuit dès 75 €, non atteint).
 Botland, BerryBase et Opencircuit n'avaient plus le NeoKey en stock (2026-09-26).
+
+## Dépenses réelles
+
+Montants payés, relevés sur les commandes du 2026-09-26.
+
+**Amazon** (prix TTC)
+
+| # | Article | Payé |
+|---|---|---|
+| 1 | LilyGO T5 4,7" V2.3 ESP32-S3 « Welded » | 59,00 € |
+| 7 | Câble USB-C data | 6,59 € |
+| 8 | Vis | 8,99 € |
+| 9 | Aimants 6 × 2 mm N52 | 11,99 € |
+| 10 | Patins | 5,59 € |
+| | **Sous-total Amazon** | **92,16 €** |
+
+**DigiKey** (prix HT, TVA 20 % sur l'ensemble, port compris)
+
+| # | Article | Payé HT |
+|---|---|---|
+| 2 | Adafruit NeoKey 1x4 QT I2C (4980) | 8,52 € |
+| 3 | Kailh Tactile Brown × 10 (4954) | 5,95 € |
+| 4 | Molette Adafruit 5880 | 6,81 € |
+| 5 | Câble STEMMA QT ↔ broches mâles (4209) | 0,81 € |
+| 6 | Câble STEMMA QT ↔ QT 100 mm (4210) | 0,81 € |
+| | Transport | 25,00 € |
+| | TVA 20 % | 9,58 € |
+| | **Sous-total DigiKey TTC** | **57,48 €** |
+
+**Filament PLA** : en stock, 0 €.
+
+| | Montant |
+|---|---|
+| **Total dépensé** | **149,64 €** |
+| Plafond | 150,00 € |
+| **Reste** | **0,36 €** |
+
+Le port DigiKey (30 € TTC) n'était pas prévu dans l'estimation : c'est lui qui consomme presque
+toute la marge. Tout nouvel achat (filament, pièce de rechange) fera dépasser le plafond.
 
 ## 2. Branchement (sans soudure)
 

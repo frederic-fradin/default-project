@@ -116,14 +116,20 @@ boîtier. Blender reste possible pour des rendus, sans obligation.
 
 ### 4.5 Budget — plafond 150 €
 
-| Poste | Estimation |
-|---|---|
-| Carte ESP32-S3 avec écran e-paper 4,7" (livraison comprise) | 40 – 55 € |
-| Module 4 touches mécaniques sans soudure + switches | 15 – 25 € |
-| Molette (encodeur) sans soudure | 9 – 12 € |
-| Câbles à connecteurs + câble USB-C data + petit matériel (vis, aimants, patins) | 15 – 20 € |
-| Filament PLA (3–4 couleurs, itérations) | 20 – 35 € |
-| **Total** | **~100 – 145 €** |
+| Poste | Estimation | Réel (TTC) |
+|---|---|---|
+| Carte ESP32-S3 avec écran e-paper 4,7" (livraison comprise) | 40 – 55 € | 59,00 € |
+| Module 4 touches mécaniques sans soudure + switches | 15 – 25 € | 17,36 € |
+| Molette (encodeur) sans soudure | 9 – 12 € | 8,17 € |
+| Câbles à connecteurs + câble USB-C data + petit matériel (vis, aimants, patins) | 15 – 20 € | 35,11 € |
+| Frais de port DigiKey | — (non prévu) | 30,00 € |
+| Filament PLA (3–4 couleurs, itérations) | 20 – 35 € | 0 € (en stock) |
+| **Total** | **~100 – 145 €** | **149,64 €** |
+
+**Reste disponible : 0,36 €** (au 2026-09-27, tout le matériel v1 est commandé). La TVA DigiKey est
+répartie sur chaque poste ; le centime d'arrondi est porté sur le petit matériel. Le dépassement
+vient du port DigiKey et de la carte, plus chère que prévu ; il est compensé par le filament déjà
+en stock. Tout achat supplémentaire (filament, rechange) fera dépasser le plafond.
 
 Détail, alternatives et liens : [`hardware/bom.md`](../hardware/bom.md). Pas de coût d'API IA
 en v1. On achète **après** validation de la liste (fin P0). La batterie (≈ 10–15 €) est achetée
@@ -473,3 +479,4 @@ Jalons                           J1              J2          J3
 | v1.2 | 2026-09-27 | Touches : **icônes au lieu de libellés texte** (ex. maison = Accueil), pour ne pas figer une touche à une fonctionnalité |
 | v1.3 | 2026-09-27 | Après tests d'impression : icônes **en creux**, touches imprimées face visible côté plateau ; couleurs rouvertes entre deux styles (noir + rouge / blanc + orange) |
 | v1.4 | 2026-09-27 | ADR 004 : touches à symboles neutres, fonctions affichées à l'écran en face de chaque touche |
+| v1.5 | 2026-09-27 | Budget : dépenses réelles relevées, **149,64 €** pour un plafond de 150 € |
