@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | v1.6 — station de bureau modulaire (ADR 005) |
+| **Version** | v1.7 — style C, station de la couleur du module |
 | **Date** | 2026-09-26 |
 | **Auteur** | Frédéric Fradin |
 | **Statut** | ✅ Cadrage validé le 2026-09-26 — document de référence. Les éléments encore marqués `[À VALIDER]` seront tranchés en P1 |
@@ -228,7 +228,7 @@ météo, qualité de l'air, tableaux de bord perso (ex. F1)…
 | Format | Encombrement max **≈ 5" × 5" (127 × 127 mm)** en façade |
 | Écran | **Noir et blanc (e-paper)**, **plus haut que large** (portrait), typographie forte comme l'image 5 |
 | Commandes | **Colonne à gauche** (utilisateur gaucher) : molette + touches empilées |
-| Couleurs | **Deux styles en balance après les premiers tests** (PLA mat Panchroma) : **A** module **Charcoal Black** + molette **Army Red** ; **B** module **Muted White** + molette **Sunrise Orange**. Pupitre : Fossil Grey pressenti. `[À VALIDER]` en P1 |
+| Couleurs | **Trois styles en balance** (PLA mat Panchroma) : **A** module **Charcoal Black** + molette **Army Red** ; **B** module **Muted White** + molette **Sunrise Orange** ; **C** module **Ash Grey** + touches **Muted White** + molette **Sunrise Orange** (image desktop-9, préférée). **Station de la couleur du corps du module.** `[À VALIDER]` en P1 |
 | Touches | **Symboles neutres** : **1, 2 et 3 barres** sur les touches 1 à 3, **maison** sur la touche 4 ; **fonction de chaque touche affichée à l'écran**, en face d'elle (ADR 004). Symboles **gravés en creux**, touche imprimée **face visible contre le plateau** |
 | Lumière | Aucune lumière émise par l'écran ; seules les LED des touches s'allument, **à faible intensité**, pour les alertes |
 | Posture sur le bureau | **Station modulaire** (ADR 005) : socle avec rainure à stylo et grille d'accroches, pupitre du module et pupitre MagSafe clipsés dessus, inclinés à 65° |
@@ -453,7 +453,7 @@ Jalons                           J1              J2          J3
 
 | # | Question | Impact | Statut |
 |---|---|---|---|
-| Q27 | Couleurs 5B + 5C (Muted White / Sunrise Orange / Fossil Grey) : validation définitive après une plaquette test imprimée | Design | ⏳ |
+| Q27 | Couleurs : choix entre les styles A, B et C (station de la couleur du module), validation définitive après une plaquette test imprimée | Design | ⏳ |
 | Q26 | Pupitre, à confirmer à l'essai en P1 : **stabilité** avec l'incrustation à 100 % (appuis sur les touches et la molette), **facilité pour retirer le module** (prévoir une encoche pour le doigt si besoin), angle de 55° | Conception P3 (n'empêche pas la commande) | ⏳ |
 
 ---
@@ -483,3 +483,4 @@ Jalons                           J1              J2          J3
 | v1.4 | 2026-09-27 | ADR 004 : touches à symboles neutres, fonctions affichées à l'écran en face de chaque touche |
 | v1.5 | 2026-09-27 | Budget : dépenses réelles relevées, **149,64 €** pour un plafond de 150 € |
 | v1.6 | 2026-09-27 | ADR 005 : pupitre triangle abandonné (trop massif) au profit d'une **station modulaire** (socle + pupitre module + pupitre MagSafe clipsés) ; USB-C au dos du module via connecteur magnétique |
+| v1.7 | 2026-09-27 | Style C « gris chaud + orange » (image desktop-9) ajouté ; station de la couleur du corps du module |

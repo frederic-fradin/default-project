@@ -35,6 +35,8 @@ modulaire ») :
   - **pupitre MagSafe** : iPhone Pro **en portrait**, lame 80 × 112 mm avec empreinte
     Ø 56,5 × 5,5 mm pour le palet, cale et griffe de sécurité.
 - Les câbles passent en gorge au dos des lames puis sous les semelles.
+- **Couleur** : la station (socle et éléments) prend **la couleur du corps du module**, pour que
+  l'ensemble se lise comme un seul objet.
 
 ## Conséquences
 

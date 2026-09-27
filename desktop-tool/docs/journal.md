@@ -94,3 +94,10 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - Ajout de `images/desktop-9.jpg` : **image préférée pour les couleurs et les symboles des
   touches** — corps gris chaud mat, touches gris clair aux symboles fins et discrets, un seul
   bouton d'accent orange.
+
+**Couleurs (même jour)**
+- Style **C « gris chaud + orange »** ajouté d'après l'image desktop-9 : module Ash Grey, touches
+  Muted White, molette Sunrise Orange. Trois styles en balance (A, B, C).
+- **Station de la couleur du corps du module** (remplace le « pupitre Fossil Grey »).
+- Maquette : planches de couleur redessinées sur la station modulaire ; pupitre triangle et
+  pupitres allégés archivés dans « Études précédentes ». Cadrage passé en v1.7.
