@@ -32,3 +32,35 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - Installer Fusion (licence Personal Use) et suivre un premier tutoriel.
 - Premières pièces test à imprimer : plaquette couleurs (Muted White / Fossil Grey / Sunrise Orange),
   logements d'aimant 6 × 2 mm (jeux 6,1 / 6,2 / 6,3 mm), jeu d'une empreinte.
+
+---
+
+## 2026-09-27 — Fusion, première pièce (P1)
+
+**Fait**
+- Fusion installé (licence Personal Use).
+- Plaquette test modélisée pas à pas (`cad/plaquette-test`) : 105 × 30 × 4 mm, paramètres utilisateur
+  (`cote`, `largeur`, `epaisseur`), 3 carreaux en corps séparés (Blanc / Gris / Orange), « DESK » en
+  relief 0,6 mm (Arial Black, 6 mm) en 4e corps, 3 trous d'aimant sous le carreau gris
+  (Ø 6,1 / 6,2 / 6,3 × 2,2 mm).
+- Appris : esquisse contrainte (tout en noir), cotes par paramètres, extrusion en « Nouveau corps »,
+  texte d'esquisse, extrusion en mode « Couper ».
+
+**Décision**
+- Touches : **icônes plutôt que texte** (ex. maison = Accueil). Un libellé fige la touche à une
+  fonctionnalité, alors que l'usage final n'est pas arrêté. Cadrage passé en v1.2.
+
+**Suite**
+- Exporter en `.f3d` + `.3mf` dans `cad/`, imprimer, noter couleurs / netteté du relief / trou d'aimant retenu.
+- Prochaine pièce test : touche sur switch Kailh, avec une icône en relief.
+
+**Tests d'impression (même jour)**
+- Couleurs : hésitation entre deux styles — **A** module Charcoal Black + molette Army Red,
+  **B** module Muted White + molette Sunrise Orange.
+- Relief positif sur les touches : pas convaincant → essai d'icônes **gravées en creux**
+  (même principe que les logements d'aimant).
+- Constat : une touche imprimée **face visible contre le plateau** a un bien meilleur rendu.
+- Idée de symboles : +, −, entrée, retour (à arbitrer, recoupe les fonctions de la molette).
+- **Décision (ADR 004)** : touches à symboles neutres + maison ; la fonction de chaque touche est
+  affichée à l'écran, en face d'elle. Cadrage passé en v1.4.
+- Symboles des touches 1 à 3 : **1, 2 et 3 barres** gravées en creux.

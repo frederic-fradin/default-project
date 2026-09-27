@@ -145,8 +145,8 @@ en v2, hors budget v1. Les aimants du pupitre sont déjà prévus dans la liste 
 
 | Fonctionnalité | Sur l'objet | Côté PC | Complexité | Version |
 |---|---|---|---|---|
-| **3 raccourcis** | 3 touches physiques, avec libellé | Exécute l'action : raccourci clavier, application, script, URL | 🟢 | **v0.1 (MVP)** |
-| **Navigation** | 4e touche « Accueil / page suivante » + molette (tourner = défiler, appuyer = valider) | Gestion des pages | 🟢 | **v0.1 (MVP)** |
+| **3 raccourcis** | 3 touches physiques à symbole neutre ; **la fonction est affichée à l'écran** en face de chaque touche (ADR 004) | Exécute l'action : raccourci clavier, application, script, URL | 🟢 | **v0.1 (MVP)** |
+| **Navigation** | 4e touche (icône maison) « Accueil / page suivante » + molette (tourner = défiler, appuyer = valider) | Gestion des pages | 🟢 | **v0.1 (MVP)** |
 | **Agenda du jour** (Outlook) | Prochain rendez-vous, compte à rebours, liste du jour | Lecture du calendrier (méthode déjà utilisée dans mes scripts) | 🟢 | **v0.1 (MVP)** |
 | **To-do list** (propre à l'outil) | Liste, défiler avec la molette, cocher d'un appui | Stockage local + interface de saisie | 🟢 | v0.2 |
 | **Alertes email** | Expéditeur + objet du dernier email ; **LED de couleur** sur une touche si l'expéditeur fait partie d'une liste « importants » | Lecture de la boîte Outlook, filtrage par expéditeur. **Aucune IA** | 🟡 | v0.2 |
@@ -221,7 +221,8 @@ météo, qualité de l'air, tableaux de bord perso (ex. F1)…
 | Format | Encombrement max **≈ 5" × 5" (127 × 127 mm)** en façade |
 | Écran | **Noir et blanc (e-paper)**, **plus haut que large** (portrait), typographie forte comme l'image 5 |
 | Commandes | **Colonne à gauche** (utilisateur gaucher) : molette + touches empilées |
-| Couleurs | **Retenues (à confirmer par impression test)**, en PLA mat Panchroma : module et touches **Muted White**, libellés des touches et molette **Sunrise Orange**, pupitre **Fossil Grey** |
+| Couleurs | **Deux styles en balance après les premiers tests** (PLA mat Panchroma) : **A** module **Charcoal Black** + molette **Army Red** ; **B** module **Muted White** + molette **Sunrise Orange**. Pupitre : Fossil Grey pressenti. `[À VALIDER]` en P1 |
+| Touches | **Symboles neutres** : **1, 2 et 3 barres** sur les touches 1 à 3, **maison** sur la touche 4 ; **fonction de chaque touche affichée à l'écran**, en face d'elle (ADR 004). Symboles **gravés en creux**, touche imprimée **face visible contre le plateau** |
 | Lumière | Aucune lumière émise par l'écran ; seules les LED des touches s'allument, **à faible intensité**, pour les alertes |
 | Posture sur le bureau | Pupitre incliné ou vertical avec pied : à décider en P3 |
 
@@ -469,3 +470,6 @@ Jalons                           J1              J2          J3
 | v0.14 | 2026-09-26 | Carte validée (ASIN B0BWDV5W6N, version soudée) ; câble I²C adapté ; affichage portrait : solutions identifiées (risque R16) |
 | **v1.0** | 2026-09-26 | **Cadrage validé** : carte commandée, P0 clôturée, démarrage de P1 avec Fusion en attendant la livraison |
 | v1.1 | 2026-09-26 | Couleurs provisoires : Muted White (module, touches), Sunrise Orange (molette, libellés), Fossil Grey (pupitre) |
+| v1.2 | 2026-09-27 | Touches : **icônes au lieu de libellés texte** (ex. maison = Accueil), pour ne pas figer une touche à une fonctionnalité |
+| v1.3 | 2026-09-27 | Après tests d'impression : icônes **en creux**, touches imprimées face visible côté plateau ; couleurs rouvertes entre deux styles (noir + rouge / blanc + orange) |
+| v1.4 | 2026-09-27 | ADR 004 : touches à symboles neutres, fonctions affichées à l'écran en face de chaque touche |
