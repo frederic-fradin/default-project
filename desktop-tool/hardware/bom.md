@@ -1,4 +1,4 @@
-# Liste des composants (BOM) — v1.0 (tout est commandé)
+# Liste des composants (BOM) — v1.0 (tout est commandé, tout reçu sauf la carte T5)
 
 Contraintes : **zéro soudure**, budget ≤ 150 €, objet ≤ ~127 × 127 mm, écran noir et blanc,
 commandes à gauche. Prix indicatifs relevés le 2026-09-26, **hors frais de port** sauf mention.
@@ -23,16 +23,16 @@ commandes à gauche. Prix indicatifs relevés le 2026-09-26, **hors frais de por
 
 ## Suivi des commandes
 
-| # | Composant | Statut | Date | Livraison prévue |
+| # | Composant | Statut | Commande | Livraison |
 |---|---|---|---|---|
-| 1 | LilyGO T5 4,7" V2.3 ESP32-S3 « Female pin Welded » | ✅ Commandé (Amazon.fr) | 2026-09-26 | mi-octobre 2026 |
-| 2 | Adafruit NeoKey 1x4 QT I2C (4980) | ✅ Commandé (DigiKey) | 2026-09-26 | ≈ 3 jours |
-| 3 | Kailh Tactile Brown × 10 (4954) | ✅ Commandé (DigiKey) | 2026-09-26 | ≈ 3 jours |
-| 4 | Molette Adafruit 5880 | ✅ Commandé (DigiKey) | 2026-09-26 | ≈ 3 jours |
-| 5 | Câble STEMMA QT ↔ broches mâles (4209) | ✅ Commandé (DigiKey) | 2026-09-26 | ≈ 3 jours |
-| 6 | Câble STEMMA QT ↔ QT (4210) | ✅ Commandé (DigiKey) | 2026-09-26 | ≈ 3 jours |
-| 7 | Câble USB-C data | ✅ Commandé (Amazon) | 2026-09-26 | |
-| 8–10 | Vis, aimants 6 × 2 mm N52, patins | ✅ Commandé (Amazon) | 2026-09-26 | |
+| 1 | LilyGO T5 4,7" V2.3 ESP32-S3 « Female pin Welded » | ⏳ Commandé (Amazon.fr) | 2026-09-26 | prévue mi-octobre 2026 |
+| 2 | Adafruit NeoKey 1x4 QT I2C (4980) | 📦 Reçu (DigiKey) | 2026-09-26 | 2026-10-02 |
+| 3 | Kailh Tactile Brown × 10 (4954) | 📦 Reçu (DigiKey) | 2026-09-26 | 2026-10-02 |
+| 4 | Molette Adafruit 5880 | 📦 Reçu (DigiKey) | 2026-09-26 | 2026-10-02 |
+| 5 | Câble STEMMA QT ↔ broches mâles (4209) | 📦 Reçu (DigiKey) | 2026-09-26 | 2026-10-02 |
+| 6 | Câble STEMMA QT ↔ QT (4210) | 📦 Reçu (DigiKey) | 2026-09-26 | 2026-10-02 |
+| 7 | Câble USB-C data | 📦 Reçu (Amazon) | 2026-09-26 | 2026-10-02 |
+| 8–10 | Vis, aimants 6 × 2 mm N52, patins | 📦 Reçu (Amazon) | 2026-09-26 | 2026-10-02 |
 | 11 | Filament PLA | ✅ En stock | | |
 
 Revendeur retenu pour 2 à 6 : **DigiKey**, un seul panier (port gratuit dès 75 €, non atteint).

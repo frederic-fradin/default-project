@@ -118,3 +118,15 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 **Suite**
 - Pièce test : molette et barre de touches dans un coin de module en paysage (accès au pouce).
 - Pièce test des tenons ronds fendus (jeu ≈ 0,2 mm, ergot ≈ 0,4 mm).
+
+## 2026-10-02 — Réception des composants (P1)
+
+- Reçus : NeoKey 1x4 QT, 10 switches Kailh Tactile Brown, molette Adafruit 5880, câbles
+  STEMMA QT (JST SH 4 broches) ↔ QT et ↔ broches mâles, câble USB-C data, vis, aimants, patins.
+- Reste à recevoir : carte LilyGO T5 4,7" (prévue mi-octobre).
+
+**Suite**
+- Mesurer un vrai switch (croix de la tige, hauteur) puis dessiner le capuchon de touche test.
+- Mesurer la NeoKey (empreinte, hauteur avec switches) et la molette (axe, hauteur, bouton)
+  pour la pièce test « coin de module en paysage ».
+- Vérifier que les aimants 6 × 2 mm entrent dans un logement imprimé (jeu à régler).
