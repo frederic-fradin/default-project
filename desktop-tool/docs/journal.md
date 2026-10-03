@@ -170,3 +170,11 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 
 **Résultat du premier capuchon (même jour)**
 - Variante **jeu 0,2 mm** (croix 4,2 × 1,4 mm) : le capuchon s'enclenche bien sur le switch.
+- Vérifications : il tient retourné et résiste légèrement à la traction ; il ne bouge pas et ne
+  bascule pas quand on appuie sur un coin ; aucun frottement sur toute la course.
+
+**Décision**
+- Jeu de croix retenu : **`jeu_croix = 0,2 mm`** (croix 4,2 × 1,4 mm). Les variantes 0,3 et
+  0,4 mm ne sont pas imprimées.
+- Enseignement : pour un emmanchement serré de petites pièces imprimées, prévoir **+0,2 mm** sur
+  la cote mesurée. C'est cohérent avec les logements d'aimant ; à vérifier sur les tenons ronds.
