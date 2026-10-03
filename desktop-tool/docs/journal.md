@@ -155,3 +155,14 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - Boîtier : face plate du dessus 10,1 × 10,0 mm, base 14,0 × 15,5 mm.
 - Hauteurs au-dessus de la carte NeoKey : dessus du boîtier 11,5 mm, haut du carré 15,5 mm.
 - Entraxe des switches : 19,0 mm.
+
+**Impression du capuchon de touche test (même jour)**
+- Profil retenu : **0.20mm Standard @BBL A1**. La face visible est contre le plateau et la
+  croix est un ajustement en XY, donc une couche plus fine n'apporte rien ici. La première
+  couche fait 0,20 mm : la gravure de 0,6 mm fait 3 couches et le plateau de 3 mm 15 couches.
+- Orientation : face gravée sur le plateau (« Poser sur une face » dans Bambu Studio), pied et
+  croix vers le haut, sans support.
+- Les 3 variantes de croix (jeu 0,2 / 0,3 / 0,4 mm) sont imprimées ensemble avec les mêmes
+  réglages, sans compensation de trous en XY.
+- À surveiller : les barres de 0,8 mm sont dans la première couche et peuvent se refermer en
+  partie (patte d'éléphant). Si c'est le cas, élargir les barres à 1,0 mm.
