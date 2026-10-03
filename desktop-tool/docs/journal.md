@@ -257,3 +257,5 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
   suivant `docs/design/coin-module-test.html` et les canevas de `cad/canvas/`.
 - Points expliqués en séance : origine du design (au coin bas gauche, dans le vide à cause du
   congé), cotes depuis l'origine ou les bords, vue de dessous en miroir pour les plots.
+- Bouton de molette, variante **jeu 0,2** (alésage Ø 6,2, méplat 4,7) : **tient bien sur l'axe**.
+  Cohérent avec la croix des touches : la règle des +0,2 sur la cote mesurée se confirme.
