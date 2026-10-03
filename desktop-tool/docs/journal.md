@@ -221,6 +221,5 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - Carte : 76,5 × 21,5 × 1,6 mm ; composants dessous jusqu'à 3 mm (connecteurs STEMMA QT aux deux
   bouts, fiche vers l'extérieur, dans l'axe de la longueur).
 - Centre du switch 1 : 10 mm du bord gauche, 10 mm du bord bas ; pas de 19,05 mm.
-- 4 trous Ø 2, entre les switches 1-2 et 3-4 : **centres à 19 mm des bouts et 1,3 mm des grands
-  côtés** (remesuré au centre). Le trou serait alors à 0,3 mm du bord de la carte : **à vérifier
-  avec un gabarit imprimé** avant la pièce complète.
+- 4 trous Ø 2, entre les switches 1-2 et 3-4 : **centres à 19 mm des bouts et 3 mm des grands
+  côtés** (remesuré au centre). À confirmer avec un gabarit imprimé avant la pièce complète.
