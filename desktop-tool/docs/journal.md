@@ -227,3 +227,12 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 **Molette Adafruit 5880**
 - Carte : 25,5 × 25,5 × 1,6 mm (1 pouce chez Adafruit, 25,4).
 - 4 trous Ø 2 dans les coins, centres à 2,5 mm des deux bords (0,1 pouce, 2,54).
+- Axe au centre de la carte.
+- Corps de l'encodeur : 12 × 12 × 7 mm au-dessus de la carte.
+- Bague filetée Ø 7 (M7 probable), 7 mm au-dessus du corps (haut à 14 mm de la carte), écrou de
+  2 mm d'épaisseur fourni.
+- Axe Ø 6 en D, bout à 22 mm au-dessus de la carte (8 mm au-dessus de la bague) ; « 4 mm sur la
+  partie plate » : longueur du méplat ou épaisseur sur le méplat, à préciser.
+- Clic : l'axe s'enfonce de 0,5 mm.
+- Dessous : composants jusqu'à 3 mm, 2 connecteurs QT sur deux bords opposés, fiche vers
+  l'extérieur.
