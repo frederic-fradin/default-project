@@ -1,0 +1,461 @@
+<meta charset="utf-8">
+<title>Chevilles de station test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;500;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Planche technique « blueprint » graphite, même charte que capuchon-test.html : un seul thème, volontairement sombre. */
+  :root {
+    color-scheme: dark;
+    --page: #15191c;
+    --sheet: #1d2327;
+    --frame: #3a444b;
+    --text: #dfe4e7;
+    --muted: #8f9aa1;
+    --chip: #2a3237;
+    --font-ui: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", Consolas, monospace;
+    --font-display: "Archivo", "Arial Narrow", sans-serif;
+  }
+  body {
+    background: var(--page);
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+    padding-inline: 16px;
+    padding-block: 32px 64px;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; }
+  header { display: flex; flex-direction: column; gap: 8px; max-width: 72ch; }
+  .eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(28px, 4vw, 40px); line-height: 1.1; margin: 0; text-wrap: balance; }
+  h2 { font-family: var(--font-display); font-weight: 500; font-size: 22px; margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+  .lede { color: var(--muted); }
+  .variant { display: flex; flex-direction: column; gap: 14px; }
+  .variant-head { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+  .tag { font-family: var(--font-mono); font-size: 12px; background: var(--chip); padding: 2px 8px; border-radius: 3px; font-variant-numeric: tabular-nums; color: var(--text); }
+  .sheet { background: var(--sheet); border: 1px solid var(--frame); border-radius: 4px; overflow-x: auto; }
+  .sheet svg { display: block; width: 100%; min-width: 680px; height: auto; }
+  .notes { display: flex; flex-direction: column; gap: 8px; max-width: 74ch; font-size: 14px; color: var(--muted); }
+  .notes b { color: var(--text); font-weight: 600; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; align-items: start; }
+  .card { display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
+  .card h3 { font-family: var(--font-mono); font-weight: 500; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0; }
+  .card h4 { font-size: 14px; font-weight: 600; margin: 4px 0 0; }
+  .card ol, .card ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+  .card code, td code { font-family: var(--font-mono); font-size: 13px; color: var(--text); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 6px 12px 6px 0; border-bottom: 1px solid var(--frame); vertical-align: top; }
+  th { font-family: var(--font-mono); font-weight: 500; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  td.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td.why { color: var(--muted); min-width: 16ch; }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">desktop-tool · pièce test P1 · cotes en mm</span>
+    <h1>Chevilles de station test</h1>
+    <p class="lede">Fixation des éléments sur le socle percé (ADR 005, option B) : une cheville fendue, imprimée couchée, traverse la semelle de l'élément et se clipse dans un trou du socle. La pièce test comprend un bout de socle à 3 trous, un bout de semelle à 2 trous et 6 chevilles (2 par taille d'ergot).</p>
+  </header>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Montage en coupe</h2><span class="tag">coupe 5:1</span><span class="tag">détail 15:1</span><span class="tag">ergot 0,4</span></div>
+    <div class="sheet" id="sheet-montage"></div>
+    <div class="notes">
+      <p><b>Principe.</b> La tête de la cheville est logée dans un lamage de la semelle, 0,2 mm sous la surface : en soulevant l'élément, la semelle emmène ses chevilles. Au bout, l'ergot passe le trou Ø 10 en rapprochant les deux bras, puis se détend dans la gorge Ø 10,8 creusée au fond du trou : c'est le clic.</p>
+      <p><b>Serrage.</b> La tige (Ø 9,6) a 0,2 mm de jeu au rayon dans le trou. L'ergot dépasse le trou de <code>e_ergot − 0,2</code> au rayon, soit 0 / 0,1 / 0,2 mm selon la variante, plus le resserrement habituel des trous imprimés (≈ 0,05 à 0,1 mm au rayon).</p>
+    </div>
+  </section>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Bout de socle et bout de semelle</h2><span class="tag">échelle 2:1</span></div>
+    <div class="sheet" id="sheet-pieces"></div>
+    <div class="notes">
+      <p><b>Fidèles à la station.</b> Pas de 20 mm, marge de 15 mm, socle de 10 mm, semelle de 3 mm : les bouts de test reprennent les cotes réelles, seule leur longueur est réduite.</p>
+    </div>
+  </section>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Cheville</h2><span class="tag">échelle 5:1</span><span class="tag">dessinée telle qu'imprimée</span></div>
+    <div class="sheet" id="sheet-cheville"></div>
+    <div class="notes">
+      <p><b>Pourquoi couchée.</b> Les bras plient alors dans le plan des couches, là où le PLA est solide ; debout, ils plieraient entre deux couches et casseraient à la base. Les deux méplats de 0,5 mm donnent une face d'appui sur le plateau, et la fente est verticale, ouverte vers le haut : aucun support.</p>
+      <p><b>Conséquence.</b> Dans l'axe des méplats, la cheville a ≈ 0,7 mm de jeu au rayon. C'est à observer pendant le test (voir « À noter »).</p>
+    </div>
+  </section>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Les trois variantes à imprimer</h2><span class="tag">échelle 4:1</span><span class="tag">vues côté tête</span></div>
+    <div class="sheet" id="sheet-variantes"></div>
+  </section>
+
+  <section class="cols">
+    <div class="card">
+      <h3>Paramètres utilisateur Fusion</h3>
+      <table>
+        <thead><tr><th>Nom</th><th>Valeur</th><th>Rôle</th></tr></thead>
+        <tbody>
+          <tr><td><code>pas_grille</code></td><td class="num">20 mm</td><td class="why">Entraxe des trous du socle · S</td></tr>
+          <tr><td><code>marge</code></td><td class="num">15 mm</td><td class="why">Du bord au premier axe de trou · S</td></tr>
+          <tr><td><code>ep_socle</code></td><td class="num">10 mm</td><td class="why">Épaisseur du socle · S</td></tr>
+          <tr><td><code>ep_semelle</code></td><td class="num">3 mm</td><td class="why">Épaisseur de la semelle · S C</td></tr>
+          <tr><td><code>d_trou</code></td><td class="num">10 mm</td><td class="why">Trou du socle et de la semelle · S C</td></tr>
+          <tr><td><code>p_trou</code></td><td class="num">6 mm</td><td class="why">Profondeur du trou du socle · S C</td></tr>
+          <tr><td><code>e_gorge</code></td><td class="num">0,4 mm</td><td class="why">Débord de la gorge au rayon · S</td></tr>
+          <tr><td><code>d_gorge</code></td><td class="num">10,8 mm</td><td class="why">Formule <code>d_trou + 2 * e_gorge</code> · S</td></tr>
+          <tr><td><code>h_gorge</code></td><td class="num">2 mm</td><td class="why">Hauteur de la gorge, au fond du trou · S</td></tr>
+          <tr><td><code>d_tete</code></td><td class="num">13 mm</td><td class="why">Diamètre de la tête · S C</td></tr>
+          <tr><td><code>h_tete</code></td><td class="num">1 mm</td><td class="why">Épaisseur de la tête · S C</td></tr>
+          <tr><td><code>jeu_lamage</code></td><td class="num">0,2 mm</td><td class="why">Jeu autour et au-dessus de la tête · S C</td></tr>
+          <tr><td><code>d_lamage</code></td><td class="num">13,4 mm</td><td class="why">Formule <code>d_tete + 2 * jeu_lamage</code> · S</td></tr>
+          <tr><td><code>p_lamage</code></td><td class="num">1,2 mm</td><td class="why">Formule <code>h_tete + jeu_lamage</code> · S C</td></tr>
+          <tr><td><code>jeu_tenon</code></td><td class="num">0,2 mm</td><td class="why">Jeu de la tige au rayon, règle des +0,2 · C</td></tr>
+          <tr><td><code>d_tige</code></td><td class="num">9,6 mm</td><td class="why">Formule <code>d_trou - 2 * jeu_tenon</code> · C</td></tr>
+          <tr><td><code>jeu_fond</code></td><td class="num">0,3 mm</td><td class="why">Écart entre le bout et le fond du trou · C</td></tr>
+          <tr><td><code>l_tige</code></td><td class="num">7,5 mm</td><td class="why">Formule <code>ep_semelle - p_lamage + p_trou - jeu_fond</code> · C</td></tr>
+          <tr><td><code>l_fente</code></td><td class="num">7 mm</td><td class="why">Longueur des bras, depuis le bout · C</td></tr>
+          <tr><td><code>e_fente</code></td><td class="num">2 mm</td><td class="why">Largeur de la fente · C</td></tr>
+          <tr><td><code>meplat</code></td><td class="num">0,5 mm</td><td class="why">Méplat de chaque côté, pour l'impression · C</td></tr>
+          <tr><td><code>l_ergot</code></td><td class="num">1,5 mm</td><td class="why">0,5 de rampe arrière + 0,4 de plat + 0,6 d'entrée · C</td></tr>
+          <tr><td><code>e_ergot</code></td><td class="num">0,2 / 0,3 / 0,4 mm</td><td class="why">Saillie de l'ergot au rayon, une valeur par variante · C</td></tr>
+        </tbody>
+      </table>
+      <p class="lede" style="font-size:13px">S : fichier <code>tenons-test</code> (socle et semelle) · C : fichier <code>cheville</code>. Les paramètres « S C » prennent la même valeur dans les deux fichiers.</p>
+    </div>
+
+    <div class="card">
+      <h3>Étapes dans Fusion · fichier tenons-test</h3>
+      <ol>
+        <li><b>Modifier › Modifier les paramètres</b> : créer les paramètres marqués S.</li>
+        <li><b>Socle</b> : esquisse sur le plan XY, rectangle à partir du centre, sur l'origine, de <code>2 * marge + 2 * pas_grille</code> × <code>2 * marge</code> (70 × 30). Extruder de <code>ep_socle</code> vers le haut. Congé de 3 sur les 4 arêtes verticales.</li>
+        <li><b>Trous</b> : esquisse sur le dessus, 3 cercles de <code>d_trou</code> sur l'axe X, celui du milieu sur l'origine, les autres à <code>pas_grille</code>. Extruder en « Couper » de <code>p_trou</code>.</li>
+        <li><b>Gorges</b> : esquisse sur le fond d'un trou, 3 cercles de <code>d_gorge</code> concentriques aux trous (le plan de l'esquisse sert aux trois). Extruder en « Couper » de <code>h_gorge</code>, flèche <b>vers le haut</b>, vers l'ouverture du trou.</li>
+        <li><b>Semelle</b> : esquisse sur le plan XY, rectangle à partir du centre de <code>2 * marge + pas_grille</code> × <code>2 * marge</code> (50 × 30), son centre à 45 de l'origine sur l'axe Y. Extruder de <code>ep_semelle</code>, opération <b>Nouveau corps</b>. Congé de 3.</li>
+        <li><b>Trous de la semelle</b> : esquisse sur son dessus, 2 cercles de <code>d_trou</code> à <code>pas_grille</code> l'un de l'autre, centrés sur la pièce. Extruder en « Couper », étendue <b>Tout</b>.</li>
+        <li><b>Lamages</b> : nouvelle esquisse sur le dessus, 2 cercles de <code>d_lamage</code> concentriques. Extruder en « Couper » de <code>p_lamage</code>.</li>
+        <li>Renommer les corps <code>socle</code> et <code>semelle</code>, enregistrer, exporter en <code>.3mf</code>.</li>
+      </ol>
+
+      <h3>Étapes dans Fusion · fichier cheville</h3>
+      <ol>
+        <li><b>Modifier › Modifier les paramètres</b> : créer les paramètres marqués C, avec <code>e_ergot = 0,2 mm</code>.</li>
+        <li><b>Profil</b> : esquisse sur le plan <b>XZ</b>. Avec l'outil Ligne, tracer d'un seul trait le demi-profil au-dessus de l'axe X (tableau ci-dessous), puis le coter avec les paramètres.</li>
+        <li><b>Créer › Révolution</b> : ce profil, axe = <b>axe X</b>, 360°.</li>
+        <li><b>Méplats</b> : esquisse sur le plan XZ, deux rectangles qui débordent la pièce, l'un au-dessus de <code>z = d_tige / 2 - meplat</code>, l'autre au-dessous de <code>z = -(d_tige / 2 - meplat)</code>. Extruder en « Couper », étendue <b>Symétrique</b>, 20 mm.</li>
+        <li><b>Fente</b> : esquisse sur le plan XY, rectangle de <code>e_fente</code> de large centré sur l'axe X, depuis <code>x = h_tete + l_tige - l_fente</code> jusqu'au-delà du bout. Extruder en « Couper », Symétrique, 20 mm.</li>
+        <li><b>Repère</b> : esquisse sur la face extérieure de la tête, un cercle Ø 1 au centre. Extruder en « Couper » de 0,4.</li>
+        <li>Enregistrer, exporter en <code>.3mf</code> sous <code>cheville-ergot-02</code>. Puis passer <code>e_ergot</code> à 0,3 avec 2 points de repère, puis à 0,4 avec 3 points, et exporter chaque variante.</li>
+      </ol>
+      <table>
+        <thead><tr><th>Point</th><th>x</th><th>Rayon</th></tr></thead>
+        <tbody>
+          <tr><td>A · axe, face de la tête</td><td class="num">0</td><td class="num">0</td></tr>
+          <tr><td>B · bord de la tête</td><td class="num">0</td><td class="num"><code>d_tete / 2</code> = 6,5</td></tr>
+          <tr><td>C</td><td class="num"><code>h_tete</code> = 1</td><td class="num">6,5</td></tr>
+          <tr><td>D · début de la tige</td><td class="num">1</td><td class="num"><code>d_tige / 2</code> = 4,8</td></tr>
+          <tr><td>E · pied de l'ergot</td><td class="num"><code>h_tete + l_tige - l_ergot</code> = 7</td><td class="num">4,8</td></tr>
+          <tr><td>F · sommet de l'ergot</td><td class="num">E + 0,5 = 7,5</td><td class="num"><code>d_tige / 2 + e_ergot</code></td></tr>
+          <tr><td>G</td><td class="num">F + 0,4 = 7,9</td><td class="num">idem</td></tr>
+          <tr><td>H · bout</td><td class="num"><code>h_tete + l_tige</code> = 8,5</td><td class="num">4,8</td></tr>
+          <tr><td>I · axe, bout</td><td class="num">8,5</td><td class="num">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Impression</h3>
+      <ul>
+        <li>Profil <b>0.20mm Standard</b>, plaque texturée, comme pour les touches.</li>
+        <li><b>Socle et semelle</b> : posés à plat, trous vers le haut, sans support. Le plafond de la gorge ne déborde que de 0,4 mm.</li>
+        <li><b>Chevilles</b> : modélisées couchées, elles arrivent déjà dans le bon sens. Vérifier qu'elles reposent sur un méplat et que la fente est verticale. Imprimer <b>2 exemplaires de chaque variante</b> (touche <b>+</b> dans Bambu Studio pour ajouter une instance).</li>
+        <li>Dans les réglages propres aux chevilles (clic droit sur l'objet), monter le nombre de <b>parois à 4</b> : les bras sont alors pleins.</li>
+      </ul>
+      <h3>À noter après le test</h3>
+      <h4>Chaque variante, seule dans le socle</h4>
+      <ul>
+        <li>S'enfonce-t-elle à la main ? Sent-on un clic ?</li>
+        <li>Tient-elle socle retourné ? Se retire-t-elle à la main ?</li>
+        <li>Après 10 poses et retraits : bras blanchis, fissurés ou cassés ?</li>
+      </ul>
+      <h4>Semelle avec 2 chevilles de la meilleure variante</h4>
+      <ul>
+        <li>Se pose-t-elle sur 2 trous sans forcer ? Tient-elle si on soulève le socle par la semelle ?</li>
+        <li>Jeu ressenti dans l'axe des méplats ? Si oui, refaire l'essai avec une cheville tournée à 90°.</li>
+        <li>Hors du socle, les chevilles tombent-elles de la semelle ?</li>
+      </ul>
+      <h4>Mesures</h4>
+      <ul>
+        <li>Diamètre réel d'un trou du socle, au pied à coulisse, pour confirmer la règle des +0,2.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<script>
+  // Toutes les cotes sont en mm ; chaque vue est dessinée à son échelle, en unités SVG.
+  const LINE = "#e6eaed";
+  const DIM = "#9fb0bb";
+  const PART = "#262e33";
+  const HOLE = "#15191c";
+  const TXT = 'font-family="IBM Plex Mono, Consolas, monospace"';
+
+  function defs(id) {
+    return "<defs>" +
+      '<pattern id="grid-' + id + '" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M5 0H0V5" fill="none" stroke="#252c31" stroke-width=".25"/></pattern>' +
+      '<pattern id="gridM-' + id + '" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#2e373d" stroke-width=".35"/></pattern>' +
+      '<pattern id="hatch-' + id + '" width="1.8" height="1.8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="1.8" stroke="#eef1f3" stroke-width=".4" opacity=".6"/></pattern>' +
+      '<pattern id="hatch2-' + id + '" width="1.4" height="1.4" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="1.4" stroke="#eef1f3" stroke-width=".35" opacity=".75"/></pattern>' +
+      "</defs>";
+  }
+  function frame(id, w, h) {
+    return '<rect width="' + w + '" height="' + h + '" fill="#1d2327"/>' +
+      '<rect width="' + w + '" height="' + h + '" fill="url(#grid-' + id + ')"/>' +
+      '<rect width="' + w + '" height="' + h + '" fill="url(#gridM-' + id + ')"/>' +
+      '<rect x="4" y="4" width="' + (w - 8) + '" height="' + (h - 8) + '" fill="none" stroke="#56636c" stroke-width=".4"/>';
+  }
+  function cartouche(w, h, title, scale) {
+    const cells = [["PROJET", "DESKTOP-TOOL"], ["PLANCHE", title], ["ÉCHELLE", scale], ["UNITÉ", "mm"], ["DATE", "03.10.2026"]];
+    const y = h - 18, x0 = 4, x1 = w - 4, step = (x1 - x0) / cells.length;
+    let s = '<rect x="' + x0 + '" y="' + y + '" width="' + (x1 - x0) + '" height="14" fill="#1a1f23" stroke="#56636c" stroke-width=".4"/>';
+    cells.forEach((c, i) => {
+      const cx = x0 + i * step;
+      if (i) s += '<line x1="' + cx + '" y1="' + y + '" x2="' + cx + '" y2="' + (y + 14) + '" stroke="#56636c" stroke-width=".4"/>';
+      s += '<text x="' + (cx + 3) + '" y="' + (y + 5.2) + '" ' + TXT + ' font-size="2.4" fill="' + DIM + '" letter-spacing=".3">' + c[0] + "</text>";
+      s += '<text x="' + (cx + 3) + '" y="' + (y + 10.8) + '" ' + TXT + ' font-size="3.6" fill="' + LINE + '">' + c[1] + "</text>";
+    });
+    return s;
+  }
+
+  // Cotes : trait, petits traits d'extrémité et valeur au-dessus (ou à droite, tournée).
+  function dimH(x1, x2, y, label) {
+    return '<g stroke="' + DIM + '" stroke-width=".25"><line x1="' + x1 + '" y1="' + y + '" x2="' + x2 + '" y2="' + y + '"/>' +
+      '<line x1="' + x1 + '" y1="' + (y - 2) + '" x2="' + x1 + '" y2="' + (y + 2) + '"/><line x1="' + x2 + '" y1="' + (y - 2) + '" x2="' + x2 + '" y2="' + (y + 2) + '"/></g>' +
+      '<text x="' + ((x1 + x2) / 2) + '" y="' + (y - 1.4) + '" text-anchor="middle" ' + TXT + ' font-size="3.4" fill="' + DIM + '">' + label + "</text>";
+  }
+  function dimV(x, y1, y2, label) {
+    const cy = (y1 + y2) / 2;
+    return '<g stroke="' + DIM + '" stroke-width=".25"><line x1="' + x + '" y1="' + y1 + '" x2="' + x + '" y2="' + y2 + '"/>' +
+      '<line x1="' + (x - 2) + '" y1="' + y1 + '" x2="' + (x + 2) + '" y2="' + y1 + '"/><line x1="' + (x - 2) + '" y1="' + y2 + '" x2="' + (x + 2) + '" y2="' + y2 + '"/></g>' +
+      '<text x="' + (x + 1.6) + '" y="' + cy + '" text-anchor="middle" ' + TXT + ' font-size="3.4" fill="' + DIM + '" transform="rotate(90 ' + (x + 1.6) + " " + cy + ')">' + label + "</text>";
+  }
+  // Ligne de rappel : point sur la pièce, trait, texte.
+  function leader(x1, y1, x2, y2, label, anchor) {
+    const a = anchor || "start", tx = a === "end" ? x2 - 1 : x2 + 1;
+    return '<circle cx="' + x1 + '" cy="' + y1 + '" r=".6" fill="' + DIM + '"/>' +
+      '<polyline points="' + x1 + "," + y1 + " " + x2 + "," + y2 + '" fill="none" stroke="' + DIM + '" stroke-width=".25"/>' +
+      '<text x="' + tx + '" y="' + (y2 + 1.2) + '" text-anchor="' + a + '" ' + TXT + ' font-size="3" fill="' + DIM + '">' + label + "</text>";
+  }
+  const viewLabel = (x, y, t) => '<text x="' + x + '" y="' + y + '" text-anchor="middle" ' + TXT + ' font-size="4" letter-spacing=".4" fill="' + LINE + '">' + t + "</text>";
+  const small = (x, y, t, a) => '<text x="' + x + '" y="' + y + '" text-anchor="' + (a || "middle") + '" ' + TXT + ' font-size="2.8" fill="' + DIM + '">' + t + "</text>";
+  const axis = (x1, y1, x2, y2) => '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" stroke="' + DIM + '" stroke-width=".3" stroke-dasharray="4 1.2 1 1.2"/>';
+  const poly = (pts, fill, close) => '<path d="M' + pts.map(p => p[0] + " " + p[1]).join(" L") + (close === false ? "" : "Z") + '" fill="' + fill + '" stroke="' + LINE + '" stroke-width=".42" stroke-linejoin="miter"/>';
+
+  const svg = (id, w, h, title, body) => '<svg viewBox="0 0 ' + w + " " + h + '" role="img" aria-label="' + title + '">' + defs(id) + frame(id, w, h) + body + "</svg>";
+
+  // Demi-profil de la cheville en (r, z), axe vertical, tête en haut ; ergot de saillie e.
+  // z = 0 au dessus du socle ; tête de 1,8 à 2,8 ; bout à -5,7.
+  function pinSection(e) {
+    const t = 4.8, g = t + e;
+    return [[-6.5, 2.8], [6.5, 2.8], [6.5, 1.8], [t, 1.8], [t, -4.2], [g, -4.7], [g, -5.1], [t, -5.7], [1, -5.7], [1, 1.3],
+      [-1, 1.3], [-1, -5.7], [-t, -5.7], [-g, -5.1], [-g, -4.7], [-t, -4.2], [-t, 1.8], [-6.5, 1.8]];
+  }
+
+  // ----- Planche 1 : montage en coupe (5:1) et détail de l'ergot (15:1) -----
+  (function () {
+    const W = 360, H = 166, k = 5, cx = 100, y0 = 72;
+    const X = (r) => +(cx + r * k).toFixed(2), Y = (z) => +(y0 - z * k).toFixed(2);
+    const P = (pts) => pts.map(([r, z]) => [X(r), Y(z)]);
+    let s = "";
+
+    // Socle : coupe partielle, trou Ø 10 × 6 avec gorge Ø 10,8 × 2 au fond.
+    s += poly(P([[-14, 0], [-5, 0], [-5, -4], [-5.4, -4], [-5.4, -6], [5.4, -6], [5.4, -4], [5, -4], [5, 0], [14, 0], [14, -10], [-14, -10]]), "url(#hatch-a)");
+    // Semelle : trou Ø 10 et lamage Ø 13,4 × 1,2.
+    s += poly(P([[-14, 3], [-6.7, 3], [-6.7, 1.8], [-5, 1.8], [-5, 0], [-14, 0]]), "url(#hatch-a)");
+    s += poly(P([[5, 0], [5, 1.8], [6.7, 1.8], [6.7, 3], [14, 3], [14, 0]]), "url(#hatch-a)");
+    // Cheville, hachurée dans l'autre sens.
+    s += poly(P(pinSection(0.4)), "url(#hatch2-a)");
+    s += axis(cx, Y(4.4), cx, Y(-11));
+
+    s += small(X(-14), Y(3) - 2.5, "semelle", "start");
+    s += small(X(-14), Y(-10) + 6, "socle (coupe partielle)", "start");
+    s += dimV(22, Y(3), Y(0), "3");
+    s += dimV(22, Y(0), Y(-6), "6");
+    s += dimV(12, Y(0), Y(-10), "10");
+    s += dimH(X(-5), X(5), Y(-10) + 7, "Ø 10");
+
+    s += leader(120, 60.5, 176, 50, "tête Ø 13 × 1");
+    s += leader(133, 58.5, 176, 60, "lamage Ø 13,4 × 1,2");
+    s += leader(100, 80, 176, 72, "fente 2 × 7");
+    s += leader(124.5, 82, 176, 84, "jeu 0,2 au rayon");
+    s += leader(126, 101.2, 176, 100, "gorge Ø 10,8 × 2");
+    s += '<circle cx="125" cy="97" r="9" fill="none" stroke="' + DIM + '" stroke-width=".3" stroke-dasharray="1.5 1"/>' + small(136, 110, "B");
+    s += viewLabel(cx, 142, "COUPE · CHEVILLE EN PLACE");
+
+    // Détail B : fenêtre r ∈ [3 ; 6,5], z ∈ [-6,8 ; -3,4].
+    const kd = 15, ox = 238, oy = 24;
+    const Xd = (r) => +(ox + (r - 3) * kd).toFixed(2), Yd = (z) => +(oy + (-3.4 - z) * kd).toFixed(2);
+    const Pd = (pts) => pts.map(([r, z]) => [Xd(r), Yd(z)]);
+    s += '<clipPath id="clip-b"><rect x="' + ox + '" y="' + oy + '" width="' + 3.5 * kd + '" height="' + 3.4 * kd + '"/></clipPath>';
+    s += '<g clip-path="url(#clip-b)">';
+    s += poly(Pd([[5, -3.4], [5, -4], [5.4, -4], [5.4, -6], [3, -6], [3, -6.8], [6.5, -6.8], [6.5, -3.4]]), "url(#hatch-a)");
+    s += poly(Pd([[3, -3.4], [4.8, -3.4], [4.8, -4.2], [5.2, -4.7], [5.2, -5.1], [4.8, -5.7], [3, -5.7]]), "url(#hatch2-a)");
+    s += "</g>";
+    s += '<rect x="' + ox + '" y="' + oy + '" width="' + 3.5 * kd + '" height="' + 3.4 * kd + '" fill="none" stroke="' + DIM + '" stroke-width=".3" stroke-dasharray="1.5 1"/>';
+    s += dimH(Xd(4.8), Xd(5.2), Yd(-6.8) + 6, "0,4");
+    s += small(Xd(5) , Yd(-6.8) + 11, "e_ergot");
+    s += dimH(Xd(5), Xd(5.4), oy - 5, "0,4");
+    s += small(Xd(5.2) + 6, oy - 9, "e_gorge", "start");
+    s += dimV(Xd(6.5) + 7, Yd(-4), Yd(-6), "2");
+    s += dimV(ox - 6, Yd(-4.2), Yd(-5.7), "1,5");
+    s += viewLabel(ox + 26, 100, "DÉTAIL B · 15:1");
+    s += small(ox + 26, 106, "ergot au repos dans la gorge");
+
+    s += cartouche(W, H, "CHEVILLES · MONTAGE", "5:1 · 15:1");
+    document.getElementById("sheet-montage").innerHTML = svg("a", W, H, "Coupe de la cheville en place dans la semelle et le socle, avec détail de l'ergot", s);
+  })();
+
+  // ----- Planche 2 : bout de socle et bout de semelle (2:1) -----
+  (function () {
+    const W = 360, H = 186;
+    let s = "";
+
+    // Socle, vue de dessus : 70 × 30, 3 trous Ø 10, gorges Ø 10,8 cachées.
+    const x0 = 26, y0 = 26, cy = 56, holes = [56, 96, 136];
+    s += '<rect x="' + x0 + '" y="' + y0 + '" width="140" height="60" rx="6" fill="' + PART + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    holes.forEach(hx => {
+      s += '<circle cx="' + hx + '" cy="' + cy + '" r="10.8" fill="none" stroke="' + DIM + '" stroke-width=".3" stroke-dasharray="1.2 .8"/>';
+      s += '<circle cx="' + hx + '" cy="' + cy + '" r="10" fill="' + HOLE + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    });
+    s += axis(x0 - 8, cy, x0 + 148, cy) + small(x0 - 8, cy - 2, "B") + small(x0 + 148, cy - 2, "B");
+    s += dimH(x0, x0 + 30, 18, "15");
+    s += dimH(56, 96, 18, "20");
+    s += dimH(x0, x0 + 140, 98, "70");
+    s += dimV(174, y0, y0 + 60, "30");
+    s += leader(143, 49, 180, 38, "3 × Ø 10");
+    s += viewLabel(96, 108, "SOCLE · DESSUS");
+
+    // Socle, coupe B-B : épaisseur 10 (20 u), trou 6 (12 u), gorge sur les 2 derniers mm.
+    const ys = 120;
+    let d = "M" + x0 + " " + ys;
+    holes.forEach(hx => { d += " H" + (hx - 10) + " V" + (ys + 8) + " H" + (hx - 10.8) + " V" + (ys + 12) + " H" + (hx + 10.8) + " V" + (ys + 8) + " H" + (hx + 10) + " V" + ys; });
+    d += " H" + (x0 + 140) + " V" + (ys + 20) + " H" + x0 + "Z";
+    s += '<path d="' + d + '" fill="url(#hatch-p)" stroke="' + LINE + '" stroke-width=".42" stroke-linejoin="miter"/>';
+    s += dimV(18, ys, ys + 20, "10");
+    s += dimV(174, ys, ys + 12, "6");
+    s += dimV(182, ys + 8, ys + 12, "2");
+    s += dimH(136 - 10.8, 136 + 10.8, ys + 27, "Ø 10,8");
+    s += viewLabel(96, 160, "COUPE B-B");
+
+    // Semelle, vue de dessus : 50 × 30, 2 trous Ø 10 et lamages Ø 13,4.
+    const x1 = 212, sh = [242, 282];
+    s += '<rect x="' + x1 + '" y="' + y0 + '" width="100" height="60" rx="6" fill="' + PART + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    sh.forEach(hx => {
+      s += '<circle cx="' + hx + '" cy="' + cy + '" r="13.4" fill="#20272b" stroke="' + LINE + '" stroke-width=".42"/>';
+      s += '<circle cx="' + hx + '" cy="' + cy + '" r="10" fill="' + HOLE + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    });
+    s += axis(x1 - 8, cy, x1 + 108, cy) + small(x1 - 8, cy - 2, "C") + small(x1 + 108, cy - 2, "C");
+    s += dimH(x1, x1 + 30, 18, "15");
+    s += dimH(242, 282, 18, "20");
+    s += dimH(x1, x1 + 100, 98, "50");
+    s += dimV(320, y0, y0 + 60, "30");
+    s += viewLabel(262, 108, "SEMELLE · DESSUS");
+
+    // Semelle, coupe C-C : épaisseur 3 (6 u), lamage 1,2 (2,4 u), trou traversant.
+    const p = (pts) => '<path d="M' + pts.map(q => q[0] + " " + q[1]).join(" L") + 'Z" fill="url(#hatch-p)" stroke="' + LINE + '" stroke-width=".42" stroke-linejoin="miter"/>';
+    s += p([[212, 120], [228.6, 120], [228.6, 122.4], [232, 122.4], [232, 126], [212, 126]]);
+    s += p([[252, 126], [252, 122.4], [255.4, 122.4], [255.4, 120], [268.6, 120], [268.6, 122.4], [272, 122.4], [272, 126]]);
+    s += p([[292, 126], [292, 122.4], [295.4, 122.4], [295.4, 120], [312, 120], [312, 126]]);
+    s += dimV(204, 120, 126, "3");
+    s += dimV(320, 120, 122.4, "1,2");
+    s += dimH(228.6, 255.4, 114, "Ø 13,4");
+    s += dimH(232, 252, 134, "Ø 10");
+    s += viewLabel(262, 160, "COUPE C-C");
+
+    s += cartouche(W, H, "SOCLE · SEMELLE", "2:1");
+    document.getElementById("sheet-pieces").innerHTML = svg("p", W, H, "Bout de socle à 3 trous et bout de semelle à 2 trous, vues de dessus et coupes", s);
+  })();
+
+  // ----- Planche 3 : la cheville telle qu'imprimée (5:1) -----
+  (function () {
+    const W = 360, H = 150, k = 5;
+    let s = "";
+
+    // Vue de dessus, à plat : x le long de l'axe (tête à gauche), y en travers.
+    const ox = 40, oy = 66;
+    const P = (pts) => pts.map(([x, y]) => [+(ox + x * k).toFixed(2), +(oy - y * k).toFixed(2)]);
+    s += poly(P([[0, 6.5], [1, 6.5], [1, 4.8], [7, 4.8], [7.5, 5.2], [7.9, 5.2], [8.5, 4.8], [8.5, 1], [1.5, 1], [1.5, -1], [8.5, -1],
+      [8.5, -4.8], [7.9, -5.2], [7.5, -5.2], [7, -4.8], [1, -4.8], [1, -6.5], [0, -6.5]]), PART);
+    s += axis(ox - 6, oy, ox + 48, oy);
+    s += dimH(ox, ox + 5, 27, "1");
+    s += dimH(ox + 5, ox + 42.5, 27, "7,5");
+    s += dimH(ox + 7.5, ox + 42.5, 68.2, "7");
+    s += dimH(ox, ox + 42.5, 108, "8,5");
+    s += dimV(32, 33.5, 98.5, "Ø 13");
+    s += dimV(90, 42, 90, "Ø 9,6");
+    s += dimV(98, 40, 92, "Ø 10,4");
+    s += leader(79.5, 40, 104, 30, "ergot");
+    s += leader(70, 63.5, 104, 54, "fente 2");
+    s += viewLabel(61, 120, "DESSUS · À PLAT");
+    s += small(61, 126, "repose sur un méplat, fente verticale");
+
+    // Vue de bout, côté pointe : méplats à ± 4,3, fente de 2.
+    const ex = 190, ey = 66, fl = 21.5;
+    s += '<clipPath id="clip-end"><rect x="' + (ex - 40) + '" y="' + (ey - fl) + '" width="80" height="' + 2 * fl + '"/></clipPath>';
+    s += '<g clip-path="url(#clip-end)">';
+    s += '<circle cx="' + ex + '" cy="' + ey + '" r="32.5" fill="' + PART + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    s += '<circle cx="' + ex + '" cy="' + ey + '" r="26" fill="#2a3338" stroke="' + LINE + '" stroke-width=".42"/>';
+    s += '<circle cx="' + ex + '" cy="' + ey + '" r="24" fill="none" stroke="' + LINE + '" stroke-width=".35"/>';
+    s += '<rect x="' + (ex - 5) + '" y="' + (ey - fl) + '" width="10" height="' + 2 * fl + '" fill="' + HOLE + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    s += "</g>";
+    s += '<line x1="' + (ex - 24.37) + '" y1="' + (ey - fl) + '" x2="' + (ex + 24.37) + '" y2="' + (ey - fl) + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    s += '<line x1="' + (ex - 24.37) + '" y1="' + (ey + fl) + '" x2="' + (ex + 24.37) + '" y2="' + (ey + fl) + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    s += '<line x1="' + (ex - 38) + '" y1="' + (ey + fl + .6) + '" x2="' + (ex + 38) + '" y2="' + (ey + fl + .6) + '" stroke="' + DIM + '" stroke-width=".8"/>';
+    s += small(ex + 40, ey + fl + 1.6, "plateau", "start");
+    s += dimH(ex - 32.5, ex + 32.5, 30, "Ø 13");
+    s += dimV(ex + 42, ey - fl, ey + fl, "8,6");
+    s += dimH(ex - 5, ex + 5, 98, "2");
+    s += dimH(ex - 26, ex + 26, 106, "Ø 10,4");
+    s += viewLabel(ex, 120, "BOUT · CÔTÉ POINTE");
+    s += small(ex, 126, "méplats de 0,5 de chaque côté");
+
+    // Vue de face, à plat : silhouette 8,5 × 8,6, fond de fente caché.
+    const fx = 270;
+    s += '<rect x="' + fx + '" y="' + (ey - fl) + '" width="42.5" height="' + 2 * fl + '" fill="' + PART + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    s += '<line x1="' + (fx + 5) + '" y1="' + (ey - fl) + '" x2="' + (fx + 5) + '" y2="' + (ey + fl) + '" stroke="' + LINE + '" stroke-width=".35"/>';
+    s += '<line x1="' + (fx + 7.5) + '" y1="' + (ey - fl) + '" x2="' + (fx + 7.5) + '" y2="' + (ey + fl) + '" stroke="' + DIM + '" stroke-width=".3" stroke-dasharray="1.2 .8"/>';
+    s += '<line x1="' + (fx - 8) + '" y1="' + (ey + fl + .6) + '" x2="' + (fx + 50) + '" y2="' + (ey + fl + .6) + '" stroke="' + DIM + '" stroke-width=".8"/>';
+    s += dimH(fx, fx + 42.5, 30, "8,5");
+    s += dimV(fx + 52, ey - fl, ey + fl, "8,6");
+    s += leader(fx + 7.5, ey - 8, fx + 22, 36.5, "fond de fente");
+    s += viewLabel(fx + 21, 120, "FACE · À PLAT");
+    s += small(fx + 21, 126, "tête à gauche");
+
+    s += cartouche(W, H, "CHEVILLE", "5:1");
+    document.getElementById("sheet-cheville").innerHTML = svg("c", W, H, "Cheville vue de dessus, de bout et de face, dans sa position d'impression", s);
+  })();
+
+  // ----- Planche 4 : les trois variantes, vues côté tête (4:1) -----
+  (function () {
+    const W = 360, H = 104, k = 4, cy = 40, fl = 4.3 * k, chord = 19.5;
+    const V = [[1, "0,2", "10,0"], [2, "0,3", "10,2"], [3, "0,4", "10,4"]];
+    let s = "";
+    V.forEach(([n, e, d], i) => {
+      const cx = 70 + i * 110;
+      s += '<clipPath id="clip-h' + i + '"><rect x="' + (cx - 30) + '" y="' + (cy - fl) + '" width="60" height="' + 2 * fl + '"/></clipPath>';
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="26" fill="' + PART + '" stroke="' + LINE + '" stroke-width=".42" clip-path="url(#clip-h' + i + ')"/>';
+      s += '<line x1="' + (cx - chord) + '" y1="' + (cy - fl) + '" x2="' + (cx + chord) + '" y2="' + (cy - fl) + '" stroke="' + LINE + '" stroke-width=".42"/>';
+      s += '<line x1="' + (cx - chord) + '" y1="' + (cy + fl) + '" x2="' + (cx + chord) + '" y2="' + (cy + fl) + '" stroke="' + LINE + '" stroke-width=".42"/>';
+      for (let j = 0; j < n; j++) s += '<circle cx="' + (cx + (j - (n - 1) / 2) * 2.5 * k) + '" cy="' + cy + '" r="2" fill="' + HOLE + '" stroke="' + LINE + '" stroke-width=".3"/>';
+      s += viewLabel(cx, 70, n + (n > 1 ? " POINTS" : " POINT") + " · ERGOT " + e);
+      s += small(cx, 76, "Ø au sommet de l'ergot " + d);
+    });
+    s += dimH(44, 96, 16, "13");
+    s += leader(70, 38, 100, 26, "point Ø 1 · creux 0,4");
+    s += dimH(280, 290, 30, "2,5");
+    s += cartouche(W, H, "CHEVILLES · VARIANTES", "4:1");
+    document.getElementById("sheet-variantes").innerHTML = svg("v", W, H, "Les trois variantes de cheville, repérées par 1, 2 ou 3 points sur la tête", s);
+  })();
+</script>

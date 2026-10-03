@@ -191,3 +191,21 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
   gravure par corps : 1, 2, 3 barres et maison.
 - Impression : 4 touches avec les réglages validés (0.20mm Standard, plaque texturée, face
   gravée sur le plateau). **Résultat : tout est OK**, les 4 touches sont prêtes pour la NeoKey.
+
+## 2026-10-03 — Fixation des éléments de la station (P1)
+
+**Problème**
+- Les 4 tenons intégrés sous la semelle (ADR 005) pendaient sous l'élément : aucune face ne
+  permettait d'imprimer un pupitre sans support. Imprimés debout, les bras fendus pliaient
+  entre deux couches et risquaient de casser à la base.
+
+**Décision** (option B parmi A : tenons avec supports, B : chevilles séparées, C : picots sur le socle)
+- **Chevilles séparées**, imprimées couchées : tige Ø 9,6 fendue (fente 2 × 7) avec ergot au
+  bout, tête Ø 13 × 1 dans un lamage Ø 13,4 × 1,2 de la semelle ; trou du socle Ø 10 × 6 avec
+  gorge Ø 10,8 × 2 au fond pour le clic. ADR 005 révisée, cadrage v1.9.
+- Planche cotée de la pièce test : `docs/design/tenons-test.html` (bout de socle à 3 trous,
+  bout de semelle à 2 trous, 3 variantes d'ergot 0,2 / 0,3 / 0,4 mm, 2 chevilles par variante).
+
+**Suite**
+- Modéliser et imprimer la pièce test, puis noter clic, tenue, retrait, jeu dans l'axe des
+  méplats et tenue après 10 cycles.
