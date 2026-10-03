@@ -236,8 +236,10 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - Clic : l'axe s'enfonce de 0,5 mm.
 - Dessous : composants jusqu'à 3 mm, 2 connecteurs QT sur deux bords opposés, fiche vers
   l'extérieur.
-- Axe : épaisseur sur le méplat **4,5 mm** ; le « 4 mm » mesuré d'abord est retenu comme longueur
-  du méplat depuis le bout (à vérifier).
+- Axe : épaisseur sur le méplat **4,5 mm**, méplat **7 mm** de long depuis le bout : l'alésage du
+  bouton est en D sur toute sa profondeur.
+- NeoKey : centre du switch 1 à 10,75 mm du bord haut, les switches sont centrés dans la largeur
+  de la carte.
 
 **Choix de conception (même jour)**
 - Dessus de la façade à **11 mm au-dessus de la carte NeoKey**, une fenêtre 13 × 13 par switch :

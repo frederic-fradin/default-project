@@ -82,7 +82,7 @@
     <div class="variant-head"><h2>Bouton de molette</h2><span class="tag">échelle 3,5:1</span><span class="tag">variante jeu 0,2</span></div>
     <div class="sheet" id="sheet-bouton"></div>
     <div class="notes">
-      <p><b>Alésage.</b> L'axe Ø 6 n'a son méplat que sur les 4 derniers millimètres : l'alésage est rond à l'entrée, puis en D au fond. Le jeu s'ajoute au diamètre et à l'épaisseur sur le méplat, comme pour la croix des touches.</p>
+      <p><b>Alésage.</b> Le méplat de l'axe Ø 6 court sur 7 mm, toute la longueur engagée dans le bouton : l'alésage est en D sur toute sa profondeur. Le jeu s'ajoute au diamètre et à l'épaisseur sur le méplat, comme pour la croix des touches.</p>
     </div>
   </section>
 
@@ -106,7 +106,7 @@
           <tr><td><code>w_neokey</code></td><td class="num">21,5 mm</td><td class="why">Largeur de la carte NeoKey</td></tr>
           <tr><td><code>marge_switch</code></td><td class="num">9,675 mm</td><td class="why">Formule <code>(l_neokey - 3 * pas_touche) / 2</code></td></tr>
           <tr><td><code>x_neokey</code></td><td class="num">40,825 mm</td><td class="why">Formule <code>x_touche1 - marge_switch</code></td></tr>
-          <tr><td><code>y_neokey</code></td><td class="num">10,25 mm</td><td class="why">Formule <code>y_commandes - w_neokey / 2</code> (switches centrés sur la carte, à vérifier)</td></tr>
+          <tr><td><code>y_neokey</code></td><td class="num">10,25 mm</td><td class="why">Formule <code>y_commandes - w_neokey / 2</code> (switches centrés sur la carte, mesuré : 10,75 au bord haut)</td></tr>
           <tr><td><code>trou_nk_x</code></td><td class="num">19 mm</td><td class="why">Centre des trous NeoKey, depuis chaque bout</td></tr>
           <tr><td><code>trou_nk_y</code></td><td class="num">3 mm</td><td class="why">Centre des trous NeoKey, depuis chaque grand côté</td></tr>
           <tr><td><code>prof_neokey</code></td><td class="num">11 mm</td><td class="why">Dessus de la carte sous le dessus de la façade</td></tr>
@@ -129,7 +129,7 @@
           <tr><td><code>r_conge</code></td><td class="num">1 mm</td><td class="why">Congé de l'arête du dessus</td></tr>
           <tr><td><code>d_axe</code></td><td class="num">6 mm</td><td class="why">Axe mesuré</td></tr>
           <tr><td><code>e_meplat</code></td><td class="num">4,5 mm</td><td class="why">Épaisseur de l'axe sur le méplat</td></tr>
-          <tr><td><code>l_meplat</code></td><td class="num">4 mm</td><td class="why">Longueur du méplat depuis le bout (à vérifier)</td></tr>
+          <tr><td><code>l_meplat</code></td><td class="num">7 mm</td><td class="why">Longueur du méplat depuis le bout, mesurée : au moins <code>p_alesage</code>, d'où un alésage en D sur toute sa profondeur</td></tr>
           <tr><td><code>p_alesage</code></td><td class="num">7 mm</td><td class="why">Profondeur de l'alésage : le bouton flotte 1 mm au-dessus de la façade</td></tr>
           <tr><td><code>jeu_axe</code></td><td class="num">0,1 / 0,2 / 0,3 mm</td><td class="why">Une valeur par variante</td></tr>
         </tbody>
@@ -156,7 +156,6 @@
         <li><b>Modifier › Modifier les paramètres</b> : créer les paramètres du second tableau, avec <code>jeu_axe = 0,2 mm</code>.</li>
         <li>Esquisse sur le plan XY : cercle de <code>d_bouton</code> centré sur l'origine. Extruder de <code>h_bouton</code> vers le haut. Congé de <code>r_conge</code> sur l'arête du dessus.</li>
         <li><b>Alésage en D</b> : esquisse sur la face du dessous, cercle de <code>d_axe + jeu_axe</code> centré, et une ligne verticale qui le coupe à <code>(e_meplat + jeu_axe) - (d_axe + jeu_axe) / 2</code> du centre (1,6). Couper le grand morceau du cercle de <code>p_alesage</code>.</li>
-        <li><b>Entrée ronde</b> : nouvelle esquisse sur le dessous, cercle de <code>d_axe + jeu_axe</code> centré. Couper de <code>p_alesage - l_meplat</code> (3).</li>
         <li><b>Repère</b> : esquisse sur le dessus, rectangle de 0,8 de large, de 5 à 10 mm du centre. Couper de 0,6.</li>
         <li><b>Points de variante</b> : esquisse sur le dessous, cercles Ø 1 à 9 mm du centre (1, 2 ou 3, espacés de 2,5). Couper de 0,4.</li>
         <li>Exporter <code>bouton-jeu-02</code>, puis passer <code>jeu_axe</code> à 0,1 avec 1 point, et à 0,3 avec 3 points, et exporter chaque variante.</li>
@@ -166,8 +165,8 @@
     <div class="card">
       <h3>Avant d'imprimer</h3>
       <ul>
-        <li>Mesurer du centre du switch 1 au <b>bord haut</b> de la carte NeoKey. Si ce n'est pas ≈ 10,75 (switches centrés), corriger <code>y_neokey</code> : sinon les plots tomberont à côté des trous.</li>
-        <li>Vérifier sur l'axe de l'encodeur que le méplat fait bien 4 mm de long (<code>l_meplat</code>).</li>
+        <li>✅ Switches centrés dans la largeur de la carte NeoKey (10,75 au bord haut) : <code>y_neokey</code> est juste.</li>
+        <li>✅ Méplat de 7 mm : l'alésage est en D sur toute sa profondeur.</li>
       </ul>
       <h3>Impression</h3>
       <ul>
@@ -387,24 +386,23 @@
     const d = "M" + L + " " + zb + " V" + (zt + k) + " Q" + L + " " + zt + " " + (L + k) + " " + zt +
       " H" + r2(cx + 5 * k) + " V" + r2(zt + 0.6 * k) + " H" + r2(cx + 10 * k) + " V" + zt +
       " H" + (Rr - k) + " Q" + Rr + " " + zt + " " + Rr + " " + (zt + k) + " V" + zb +
-      " H" + r2(cx + bR) + " V" + r2(zb - 3 * k) + " H" + r2(cx + fl) + " V" + r2(zb - 7 * k) + " H" + r2(cx - bR) + " V" + zb + "Z";
+      " H" + r2(cx + fl) + " V" + r2(zb - 7 * k) + " H" + r2(cx - bR) + " V" + zb + "Z";
     s += '<path d="' + d + '" fill="url(#hatch-b)" stroke="' + LINE + '" stroke-width=".42" stroke-linejoin="miter"/>';
     s += axis(cx, zt - 4, cx, zb + 4);
     s += dimV(Rr + 8, zt, zb, "9");
     s += dimV(L - 8, r2(zb - 7 * k), zb, "7");
-    s += dimV(Rr + 18, r2(zb - 7 * k), r2(zb - 3 * k), "4 en D");
     s += dimH(r2(cx - bR), r2(cx + bR), zb + 8, "Ø 6,2");
     s += dimH(r2(cx - bR), r2(cx + fl), zt - 5, "4,7");
     s += viewLabel(cx, 126, "COUPE · JEU 0,2");
 
-    // Dessous : entrée ronde Ø 6,2, méplat au fond, 2 points de variante.
+    // Dessous : alésage en D sur toute la profondeur, 2 points de variante.
     const ux = 298, uy = 60;
     s += '<circle cx="' + ux + '" cy="' + uy + '" r="' + R + '" fill="' + PART + '" stroke="' + LINE + '" stroke-width=".42"/>';
     s += '<circle cx="' + ux + '" cy="' + uy + '" r="' + bR + '" fill="' + HOLE + '" stroke="' + LINE + '" stroke-width=".42"/>';
     const hc = r2(Math.sqrt(bR * bR - fl * fl));
-    s += '<path d="M' + r2(ux + fl) + " " + r2(uy - hc) + " A" + bR + " " + bR + " 0 0 1 " + r2(ux + fl) + " " + r2(uy + hc) + 'Z" fill="#2a3338" stroke="' + LINE + '" stroke-width=".35"/>';
+    s += '<path d="M' + r2(ux + fl) + " " + r2(uy - hc) + " A" + bR + " " + bR + " 0 0 1 " + r2(ux + fl) + " " + r2(uy + hc) + 'Z" fill="' + PART + '" stroke="' + LINE + '" stroke-width=".42"/>';
     [-1, 1].forEach(j => { s += '<circle cx="' + r2(ux - 9 * k) + '" cy="' + r2(uy + j * 1.25 * k) + '" r="' + 0.5 * k + '" fill="' + HOLE + '" stroke="' + LINE + '" stroke-width=".3"/>'; });
-    s += leader(r2(ux + fl + 1.5), uy, ux + 22, 14, "méplat, au fond");
+    s += leader(r2(ux + fl + 1.5), uy, ux + 22, 14, "méplat 4,7");
     s += leader(r2(ux - 9 * k), r2(uy + 1.25 * k), ux - 34, 106, "2 points = jeu 0,2", "start");
     s += viewLabel(ux, 126, "DESSOUS");
 
