@@ -209,3 +209,8 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 **Suite**
 - Modéliser et imprimer la pièce test, puis noter clic, tenue, retrait, jeu dans l'axe des
   méplats et tenue après 10 cycles.
+
+**Mise en attente (même jour)**
+- Pas encore certain de garder le principe du socle à éléments clipsés pour le pupitre du
+  module : **pièce test des chevilles en attente**, rien n'est modélisé ni imprimé. La planche
+  `tenons-test.html` et la révision de l'ADR 005 restent valables si le principe est conservé.
