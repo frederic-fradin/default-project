@@ -1,0 +1,414 @@
+<meta charset="utf-8">
+<title>Coin de module test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;500;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Planche technique « blueprint » graphite, même charte que capuchon-test.html : un seul thème, volontairement sombre. */
+  :root {
+    color-scheme: dark;
+    --page: #15191c;
+    --sheet: #1d2327;
+    --frame: #3a444b;
+    --text: #dfe4e7;
+    --muted: #8f9aa1;
+    --chip: #2a3237;
+    --font-ui: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", Consolas, monospace;
+    --font-display: "Archivo", "Arial Narrow", sans-serif;
+  }
+  body {
+    background: var(--page);
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+    padding-inline: 16px;
+    padding-block: 32px 64px;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; }
+  header { display: flex; flex-direction: column; gap: 8px; max-width: 72ch; }
+  .eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(28px, 4vw, 40px); line-height: 1.1; margin: 0; text-wrap: balance; }
+  h2 { font-family: var(--font-display); font-weight: 500; font-size: 22px; margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+  .lede { color: var(--muted); }
+  .variant { display: flex; flex-direction: column; gap: 14px; }
+  .variant-head { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+  .tag { font-family: var(--font-mono); font-size: 12px; background: var(--chip); padding: 2px 8px; border-radius: 3px; font-variant-numeric: tabular-nums; color: var(--text); }
+  .sheet { background: var(--sheet); border: 1px solid var(--frame); border-radius: 4px; overflow-x: auto; }
+  .sheet svg { display: block; width: 100%; min-width: 680px; height: auto; }
+  .notes { display: flex; flex-direction: column; gap: 8px; max-width: 74ch; font-size: 14px; color: var(--muted); }
+  .notes b { color: var(--text); font-weight: 600; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; align-items: start; }
+  .card { display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
+  .card h3 { font-family: var(--font-mono); font-weight: 500; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0; }
+  .card h4 { font-size: 14px; font-weight: 600; margin: 4px 0 0; }
+  .card ol, .card ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+  .card code, td code { font-family: var(--font-mono); font-size: 13px; color: var(--text); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 6px 12px 6px 0; border-bottom: 1px solid var(--frame); vertical-align: top; }
+  th { font-family: var(--font-mono); font-weight: 500; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  td.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td.why { color: var(--muted); min-width: 16ch; }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">desktop-tool · pièce test P1 · cotes en mm</span>
+    <h1>Coin de module test</h1>
+    <p class="lede">Le bas du module en paysage (ADR 006) à l'échelle réelle : 125 mm de large, 40 mm de haut, 26 mm d'épaisseur, dos ouvert. On y visse la vraie NeoKey avec ses 4 touches et la vraie molette, pour valider l'accès au pouce gauche, la hauteur des commandes et leur fixation. Un bouton de molette est imprimé à part, en 3 variantes de jeu. Cotes tirées des mesures du 2026-10-03.</p>
+  </header>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Façade, vue de face</h2><span class="tag">échelle 2,5:1</span><span class="tag">origine : coin bas gauche</span></div>
+    <div class="sheet" id="sheet-face"></div>
+    <div class="notes">
+      <p><b>Repère.</b> Toutes les positions partent du coin bas gauche du module, vu de face. La molette et la rangée de touches sont alignées à 21 mm du bord bas, comme sur la maquette. En pointillés : les cartes et les plots cachés derrière la façade, le capuchon et le bouton.</p>
+    </div>
+  </section>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Coupe A-A, dans l'axe des commandes</h2><span class="tag">échelle 2,4:1</span><span class="tag">touches au repos</span></div>
+    <div class="sheet" id="sheet-coupe"></div>
+    <div class="notes">
+      <p><b>Touches.</b> La carte NeoKey est à 11 mm sous le dessus de la façade. Le haut du boîtier des switches dépasse de 0,5 mm dans sa fenêtre, et un capuchon enfoncé s'arrête juste au-dessus : rien ne touche la façade. Les touches dépassent de 7,5 mm au repos.</p>
+      <p><b>Molette.</b> La carte de l'encodeur est à 14 mm sous le dessus de la façade : la bague filetée affleure, l'écrou reste dans le sachet. Le bouton laisse 1 mm sous lui pour la course du clic (0,5 mm).</p>
+    </div>
+  </section>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Bouton de molette</h2><span class="tag">échelle 3,5:1</span><span class="tag">variante jeu 0,2</span></div>
+    <div class="sheet" id="sheet-bouton"></div>
+    <div class="notes">
+      <p><b>Alésage.</b> L'axe Ø 6 n'a son méplat que sur les 4 derniers millimètres : l'alésage est rond à l'entrée, puis en D au fond. Le jeu s'ajoute au diamètre et à l'épaisseur sur le méplat, comme pour la croix des touches.</p>
+    </div>
+  </section>
+
+  <section class="cols">
+    <div class="card">
+      <h3>Paramètres · fichier coin-module</h3>
+      <table>
+        <thead><tr><th>Nom</th><th>Valeur</th><th>Rôle</th></tr></thead>
+        <tbody>
+          <tr><td><code>l_module</code></td><td class="num">125 mm</td><td class="why">Largeur du module</td></tr>
+          <tr><td><code>h_test</code></td><td class="num">40 mm</td><td class="why">Hauteur de la tranche imprimée</td></tr>
+          <tr><td><code>ep_module</code></td><td class="num">26 mm</td><td class="why">Épaisseur du module, façade comprise</td></tr>
+          <tr><td><code>r_module</code></td><td class="num">7 mm</td><td class="why">Arrondi des coins</td></tr>
+          <tr><td><code>ep_paroi</code></td><td class="num">2,5 mm</td><td class="why">Façade et parois</td></tr>
+          <tr><td><code>y_commandes</code></td><td class="num">21 mm</td><td class="why">Axe de la molette et des touches, depuis le bord bas</td></tr>
+          <tr><td><code>x_molette</code></td><td class="num">21 mm</td><td class="why">Axe de la molette, depuis le bord gauche</td></tr>
+          <tr><td><code>x_touche1</code></td><td class="num">50,5 mm</td><td class="why">Axe du switch 1, depuis le bord gauche</td></tr>
+          <tr><td><code>pas_touche</code></td><td class="num">19,05 mm</td><td class="why">Entraxe des switches</td></tr>
+          <tr><td><code>fen_switch</code></td><td class="num">13 mm</td><td class="why">Fenêtre carrée autour de chaque switch</td></tr>
+          <tr><td><code>l_neokey</code></td><td class="num">76,5 mm</td><td class="why">Longueur de la carte NeoKey</td></tr>
+          <tr><td><code>w_neokey</code></td><td class="num">21,5 mm</td><td class="why">Largeur de la carte NeoKey</td></tr>
+          <tr><td><code>marge_switch</code></td><td class="num">9,675 mm</td><td class="why">Formule <code>(l_neokey - 3 * pas_touche) / 2</code></td></tr>
+          <tr><td><code>x_neokey</code></td><td class="num">40,825 mm</td><td class="why">Formule <code>x_touche1 - marge_switch</code></td></tr>
+          <tr><td><code>y_neokey</code></td><td class="num">10,25 mm</td><td class="why">Formule <code>y_commandes - w_neokey / 2</code> (switches centrés sur la carte, à vérifier)</td></tr>
+          <tr><td><code>trou_nk_x</code></td><td class="num">19 mm</td><td class="why">Centre des trous NeoKey, depuis chaque bout</td></tr>
+          <tr><td><code>trou_nk_y</code></td><td class="num">3 mm</td><td class="why">Centre des trous NeoKey, depuis chaque grand côté</td></tr>
+          <tr><td><code>prof_neokey</code></td><td class="num">11 mm</td><td class="why">Dessus de la carte sous le dessus de la façade</td></tr>
+          <tr><td><code>c_encodeur</code></td><td class="num">25,5 mm</td><td class="why">Côté de la carte de l'encodeur</td></tr>
+          <tr><td><code>trou_enc</code></td><td class="num">2,5 mm</td><td class="why">Centre des trous de l'encodeur, depuis les bords</td></tr>
+          <tr><td><code>prof_encodeur</code></td><td class="num">14 mm</td><td class="why">Dessus de la carte sous le dessus de la façade (bague affleurante)</td></tr>
+          <tr><td><code>d_bague</code></td><td class="num">7 mm</td><td class="why">Bague filetée de l'encodeur</td></tr>
+          <tr><td><code>jeu_bague</code></td><td class="num">0,2 mm</td><td class="why">Jeu au rayon autour de la bague</td></tr>
+          <tr><td><code>d_plot</code></td><td class="num">3,6 mm</td><td class="why">Plots de fixation, fins pour passer entre les switches</td></tr>
+          <tr><td><code>d_pilote</code></td><td class="num">1,6 mm</td><td class="why">Avant-trou pour vis M2 auto-taraudeuse</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Paramètres · fichier bouton-molette</h3>
+      <table>
+        <thead><tr><th>Nom</th><th>Valeur</th><th>Rôle</th></tr></thead>
+        <tbody>
+          <tr><td><code>d_bouton</code></td><td class="num">25 mm</td><td class="why">Diamètre du bouton</td></tr>
+          <tr><td><code>h_bouton</code></td><td class="num">9 mm</td><td class="why">Hauteur du bouton</td></tr>
+          <tr><td><code>r_conge</code></td><td class="num">1 mm</td><td class="why">Congé de l'arête du dessus</td></tr>
+          <tr><td><code>d_axe</code></td><td class="num">6 mm</td><td class="why">Axe mesuré</td></tr>
+          <tr><td><code>e_meplat</code></td><td class="num">4,5 mm</td><td class="why">Épaisseur de l'axe sur le méplat</td></tr>
+          <tr><td><code>l_meplat</code></td><td class="num">4 mm</td><td class="why">Longueur du méplat depuis le bout (à vérifier)</td></tr>
+          <tr><td><code>p_alesage</code></td><td class="num">7 mm</td><td class="why">Profondeur de l'alésage : le bouton flotte 1 mm au-dessus de la façade</td></tr>
+          <tr><td><code>jeu_axe</code></td><td class="num">0,1 / 0,2 / 0,3 mm</td><td class="why">Une valeur par variante</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Étapes dans Fusion · fichier coin-module</h3>
+      <ol>
+        <li><b>Modifier › Modifier les paramètres</b> : créer les paramètres du premier tableau.</li>
+        <li><b>Bloc</b> : esquisse sur le plan XY, <b>Rectangle 2 points</b>, premier coin sur l'origine, de <code>l_module</code> × <code>h_test</code>. Extruder de <code>ep_module</code> vers le haut : le dessus du bloc est la façade.</li>
+        <li><b>Congé</b> de <code>r_module</code> sur les 2 arêtes verticales du bord bas (y = 0).</li>
+        <li><b>Modifier › Coque</b> : cliquer la face du dessous (le dos) et la face du haut (y = <code>h_test</code>), épaisseur <code>ep_paroi</code>, vers l'intérieur. Il reste la façade et 3 parois.</li>
+        <li><b>Fenêtres</b> : esquisse sur la façade, rectangle à partir du centre de <code>fen_switch</code> × <code>fen_switch</code>, centré en (<code>x_touche1</code>, <code>y_commandes</code>). Extruder en « Couper » de <code>ep_paroi</code>. Puis <b>Créer › Réseau › Réseau rectangulaire</b>, type d'objet <b>Fonctions</b>, cette découpe, quantité 4, espacement <code>pas_touche</code> sur l'axe X.</li>
+        <li><b>Trou de la bague</b> : esquisse sur la façade, cercle de <code>d_bague + 2 * jeu_bague</code> centré en (<code>x_molette</code>, <code>y_commandes</code>). Couper de <code>ep_paroi</code>.</li>
+        <li><b>Plots NeoKey</b> : retourner la vue, esquisse sur la face intérieure de la façade. 4 cercles de <code>d_plot</code> en x = <code>x_neokey + trou_nk_x</code> et <code>x_neokey + l_neokey - trou_nk_x</code>, y = <code>y_neokey + trou_nk_y</code> et <code>y_neokey + w_neokey - trou_nk_y</code>. Extruder en « Joindre » vers le dos de <code>prof_neokey - ep_paroi</code> (8,5).</li>
+        <li><b>Plots encodeur</b> : même principe, 4 cercles en <code>x_molette ± (c_encodeur / 2 - trou_enc)</code>, <code>y_commandes ± (c_encodeur / 2 - trou_enc)</code>. Extruder de <code>prof_encodeur - ep_paroi</code> (11,5).</li>
+        <li><b>Avant-trous</b> : esquisse sur le bout des plots NeoKey, 4 cercles de <code>d_pilote</code> concentriques, Couper de 6. Idem sur les plots de l'encodeur.</li>
+        <li>Enregistrer sous <code>cad/coin-module</code>, exporter en <code>.3mf</code>.</li>
+      </ol>
+
+      <h3>Étapes dans Fusion · fichier bouton-molette</h3>
+      <ol>
+        <li><b>Modifier › Modifier les paramètres</b> : créer les paramètres du second tableau, avec <code>jeu_axe = 0,2 mm</code>.</li>
+        <li>Esquisse sur le plan XY : cercle de <code>d_bouton</code> centré sur l'origine. Extruder de <code>h_bouton</code> vers le haut. Congé de <code>r_conge</code> sur l'arête du dessus.</li>
+        <li><b>Alésage en D</b> : esquisse sur la face du dessous, cercle de <code>d_axe + jeu_axe</code> centré, et une ligne verticale qui le coupe à <code>(e_meplat + jeu_axe) - (d_axe + jeu_axe) / 2</code> du centre (1,6). Couper le grand morceau du cercle de <code>p_alesage</code>.</li>
+        <li><b>Entrée ronde</b> : nouvelle esquisse sur le dessous, cercle de <code>d_axe + jeu_axe</code> centré. Couper de <code>p_alesage - l_meplat</code> (3).</li>
+        <li><b>Repère</b> : esquisse sur le dessus, rectangle de 0,8 de large, de 5 à 10 mm du centre. Couper de 0,6.</li>
+        <li><b>Points de variante</b> : esquisse sur le dessous, cercles Ø 1 à 9 mm du centre (1, 2 ou 3, espacés de 2,5). Couper de 0,4.</li>
+        <li>Exporter <code>bouton-jeu-02</code>, puis passer <code>jeu_axe</code> à 0,1 avec 1 point, et à 0,3 avec 3 points, et exporter chaque variante.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>Avant d'imprimer</h3>
+      <ul>
+        <li>Mesurer du centre du switch 1 au <b>bord haut</b> de la carte NeoKey. Si ce n'est pas ≈ 10,75 (switches centrés), corriger <code>y_neokey</code> : sinon les plots tomberont à côté des trous.</li>
+        <li>Vérifier sur l'axe de l'encodeur que le méplat fait bien 4 mm de long (<code>l_meplat</code>).</li>
+      </ul>
+      <h3>Impression</h3>
+      <ul>
+        <li>Profil <b>0.20mm Standard</b>, plaque texturée.</li>
+        <li><b>Coin de module</b>, couleur du corps : <b>façade contre le plateau</b> (touche F, comme les capuchons), parois et plots vers le haut, sans support.</li>
+        <li><b>Boutons</b>, couleur d'accent : <b>dessus contre le plateau</b>, alésage vers le haut. Les 3 variantes ensemble.</li>
+        <li>Montage : 8 vis M2 auto-taraudeuses de 6 mm, posées par le dos à travers les cartes.</li>
+      </ul>
+      <h3>À noter après le test</h3>
+      <ul>
+        <li><b>Pouce gauche</b>, module tenu en main puis posé : la molette tombe-t-elle sous le pouce ? Les touches sont-elles faciles d'accès ?</li>
+        <li><b>Hauteurs</b> : touches à 7,5 mm, bouton à 10 mm au-dessus de la façade. Trop, pas assez ?</li>
+        <li><b>Fenêtres</b> : aucun frottement des switches ni des capuchons, touches enfoncées comprises.</li>
+        <li><b>Fixation</b> : les vis prennent-elles bien dans les avant-trous ? Les cartes sont-elles fermes ?</li>
+        <li><b>Bague</b> : affleure-t-elle la façade ? <b>Bouton</b> : quelle variante tient sans jeu et s'enlève à la main ? Frotte-t-il la façade au clic ?</li>
+        <li><b>Câbles QT</b> : il reste ≈ 5 mm entre le bout droit de la NeoKey et la paroi, et ≈ 6 mm autour de l'encodeur. Les fiches passent-elles, et par où sortent les câbles ?</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<script>
+
+  // Toutes les cotes sont en mm ; chaque vue est dessinée à son échelle, en unités SVG.
+  const LINE = "#e6eaed";
+  const DIM = "#9fb0bb";
+  const PART = "#262e33";
+  const HOLE = "#15191c";
+  const TXT = 'font-family="IBM Plex Mono, Consolas, monospace"';
+
+  function defs(id) {
+    return "<defs>" +
+      '<pattern id="grid-' + id + '" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M5 0H0V5" fill="none" stroke="#252c31" stroke-width=".25"/></pattern>' +
+      '<pattern id="gridM-' + id + '" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#2e373d" stroke-width=".35"/></pattern>' +
+      '<pattern id="hatch-' + id + '" width="1.8" height="1.8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="1.8" stroke="#eef1f3" stroke-width=".4" opacity=".6"/></pattern>' +
+      '<pattern id="hatch2-' + id + '" width="1.4" height="1.4" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="1.4" stroke="#eef1f3" stroke-width=".35" opacity=".75"/></pattern>' +
+      "</defs>";
+  }
+  function frame(id, w, h) {
+    return '<rect width="' + w + '" height="' + h + '" fill="#1d2327"/>' +
+      '<rect width="' + w + '" height="' + h + '" fill="url(#grid-' + id + ')"/>' +
+      '<rect width="' + w + '" height="' + h + '" fill="url(#gridM-' + id + ')"/>' +
+      '<rect x="4" y="4" width="' + (w - 8) + '" height="' + (h - 8) + '" fill="none" stroke="#56636c" stroke-width=".4"/>';
+  }
+  function cartouche(w, h, title, scale) {
+    const cells = [["PROJET", "DESKTOP-TOOL"], ["PLANCHE", title], ["ÉCHELLE", scale], ["UNITÉ", "mm"], ["DATE", "03.10.2026"]];
+    const y = h - 18, x0 = 4, x1 = w - 4, step = (x1 - x0) / cells.length;
+    let s = '<rect x="' + x0 + '" y="' + y + '" width="' + (x1 - x0) + '" height="14" fill="#1a1f23" stroke="#56636c" stroke-width=".4"/>';
+    cells.forEach((c, i) => {
+      const cx = x0 + i * step;
+      if (i) s += '<line x1="' + cx + '" y1="' + y + '" x2="' + cx + '" y2="' + (y + 14) + '" stroke="#56636c" stroke-width=".4"/>';
+      s += '<text x="' + (cx + 3) + '" y="' + (y + 5.2) + '" ' + TXT + ' font-size="2.4" fill="' + DIM + '" letter-spacing=".3">' + c[0] + "</text>";
+      s += '<text x="' + (cx + 3) + '" y="' + (y + 10.8) + '" ' + TXT + ' font-size="3.6" fill="' + LINE + '">' + c[1] + "</text>";
+    });
+    return s;
+  }
+
+  // Cotes : trait, petits traits d'extrémité et valeur au-dessus (ou à droite, tournée).
+  function dimH(x1, x2, y, label) {
+    return '<g stroke="' + DIM + '" stroke-width=".25"><line x1="' + x1 + '" y1="' + y + '" x2="' + x2 + '" y2="' + y + '"/>' +
+      '<line x1="' + x1 + '" y1="' + (y - 2) + '" x2="' + x1 + '" y2="' + (y + 2) + '"/><line x1="' + x2 + '" y1="' + (y - 2) + '" x2="' + x2 + '" y2="' + (y + 2) + '"/></g>' +
+      '<text x="' + ((x1 + x2) / 2) + '" y="' + (y - 1.4) + '" text-anchor="middle" ' + TXT + ' font-size="3.4" fill="' + DIM + '">' + label + "</text>";
+  }
+  function dimV(x, y1, y2, label) {
+    const cy = (y1 + y2) / 2;
+    return '<g stroke="' + DIM + '" stroke-width=".25"><line x1="' + x + '" y1="' + y1 + '" x2="' + x + '" y2="' + y2 + '"/>' +
+      '<line x1="' + (x - 2) + '" y1="' + y1 + '" x2="' + (x + 2) + '" y2="' + y1 + '"/><line x1="' + (x - 2) + '" y1="' + y2 + '" x2="' + (x + 2) + '" y2="' + y2 + '"/></g>' +
+      '<text x="' + (x + 1.6) + '" y="' + cy + '" text-anchor="middle" ' + TXT + ' font-size="3.4" fill="' + DIM + '" transform="rotate(90 ' + (x + 1.6) + " " + cy + ')">' + label + "</text>";
+  }
+  // Ligne de rappel : point sur la pièce, trait, texte.
+  function leader(x1, y1, x2, y2, label, anchor) {
+    const a = anchor || "start", tx = a === "end" ? x2 - 1 : x2 + 1;
+    return '<circle cx="' + x1 + '" cy="' + y1 + '" r=".6" fill="' + DIM + '"/>' +
+      '<polyline points="' + x1 + "," + y1 + " " + x2 + "," + y2 + '" fill="none" stroke="' + DIM + '" stroke-width=".25"/>' +
+      '<text x="' + tx + '" y="' + (y2 + 1.2) + '" text-anchor="' + a + '" ' + TXT + ' font-size="3" fill="' + DIM + '">' + label + "</text>";
+  }
+  const viewLabel = (x, y, t) => '<text x="' + x + '" y="' + y + '" text-anchor="middle" ' + TXT + ' font-size="4" letter-spacing=".4" fill="' + LINE + '">' + t + "</text>";
+  const small = (x, y, t, a) => '<text x="' + x + '" y="' + y + '" text-anchor="' + (a || "middle") + '" ' + TXT + ' font-size="2.8" fill="' + DIM + '">' + t + "</text>";
+  const axis = (x1, y1, x2, y2) => '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" stroke="' + DIM + '" stroke-width=".3" stroke-dasharray="4 1.2 1 1.2"/>';
+  const poly = (pts, fill, close) => '<path d="M' + pts.map(p => p[0] + " " + p[1]).join(" L") + (close === false ? "" : "Z") + '" fill="' + fill + '" stroke="' + LINE + '" stroke-width=".42" stroke-linejoin="miter"/>';
+
+  const svg = (id, w, h, title, body) => '<svg viewBox="0 0 ' + w + " " + h + '" role="img" aria-label="' + title + '">' + defs(id) + frame(id, w, h) + body + "</svg>";
+
+  const r2 = (v) => +v.toFixed(2);
+  const hid = (s) => s.replace("/>", ' stroke-dasharray="1.2 .8"/>');
+  // Cotes du test (mm), communes aux vues.
+  const KX = [0, 1, 2, 3].map(i => 50.5 + i * 19.05);   // axes des switches
+  const YC = 21, XM = 21;                                 // axe des commandes, axe de la molette
+  const NK = { x: 40.825, y: 10.25, l: 76.5, w: 21.5 };   // carte NeoKey
+  const NK_HOLES = [[NK.x + 19, NK.y + 3], [NK.x + 57.5, NK.y + 3], [NK.x + 19, NK.y + 18.5], [NK.x + 57.5, NK.y + 18.5]];
+  const EN_HOLES = [[10.75, 10.75], [31.25, 10.75], [10.75, 31.25], [31.25, 31.25]];
+
+  // ----- Planche 1 : façade, vue de face (2,5:1) -----
+  (function () {
+    const W = 360, H = 170, k = 2.5, ox = 22, oy = 118;
+    const X = (x) => r2(ox + x * k), Y = (y) => r2(oy - y * k);
+    let s = "";
+    const R = 7 * k;
+    // Contour : bords gauche, bas, droit ; le haut est le bord de coupe de la tranche.
+    s += '<path d="M' + X(0) + " " + Y(40) + " V" + (Y(0) - R) + " A" + R + " " + R + " 0 0 0 " + (X(0) + R) + " " + Y(0) +
+      " H" + (X(125) - R) + " A" + R + " " + R + " 0 0 0 " + X(125) + " " + (Y(0) - R) + " V" + Y(40) + 'Z" fill="' + PART + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    s += '<line x1="' + X(0) + '" y1="' + Y(40) + '" x2="' + X(125) + '" y2="' + Y(40) + '" stroke="' + PART + '" stroke-width=".6"/>';
+    s += '<line x1="' + X(0) + '" y1="' + Y(40) + '" x2="' + X(125) + '" y2="' + Y(40) + '" stroke="' + DIM + '" stroke-width=".35" stroke-dasharray="3 1.5"/>';
+    s += small(X(62.5), Y(40) + 5, "bord de coupe : le reste du module continue au-dessus");
+
+    // Cartes et plots cachés.
+    s += hid('<rect x="' + X(NK.x) + '" y="' + Y(NK.y + NK.w) + '" width="' + NK.l * k + '" height="' + NK.w * k + '" fill="none" stroke="' + DIM + '" stroke-width=".3"/>');
+    s += hid('<rect x="' + X(8.25) + '" y="' + Y(33.75) + '" width="' + 25.5 * k + '" height="' + 25.5 * k + '" fill="none" stroke="' + DIM + '" stroke-width=".3"/>');
+    NK_HOLES.concat(EN_HOLES).forEach(([x, y]) => { s += hid('<circle cx="' + X(x) + '" cy="' + Y(y) + '" r="' + 1.8 * k + '" fill="none" stroke="' + DIM + '" stroke-width=".3"/>'); });
+
+    // Fenêtres, capuchons et bouton en fantôme.
+    KX.forEach(cx => {
+      s += '<rect x="' + X(cx - 6.5) + '" y="' + Y(YC + 6.5) + '" width="' + 13 * k + '" height="' + 13 * k + '" fill="' + HOLE + '" stroke="' + LINE + '" stroke-width=".42"/>';
+      s += '<rect x="' + X(cx - 9) + '" y="' + Y(YC + 9) + '" width="' + 18 * k + '" height="' + 18 * k + '" rx="' + 1.5 * k + '" fill="none" stroke="' + DIM + '" stroke-width=".3" stroke-dasharray=".6 1"/>';
+    });
+    s += '<circle cx="' + X(XM) + '" cy="' + Y(YC) + '" r="' + 3.7 * k + '" fill="' + HOLE + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    s += '<circle cx="' + X(XM) + '" cy="' + Y(YC) + '" r="' + 12.5 * k + '" fill="none" stroke="' + DIM + '" stroke-width=".3" stroke-dasharray=".6 1"/>';
+
+    // Ligne de coupe A-A.
+    s += axis(X(0) - 7, Y(YC), X(125) + 5, Y(YC)) + small(X(0) - 7, Y(YC) - 2, "A") + small(X(125) + 5, Y(YC) - 2, "A");
+
+    // Cotes.
+    s += dimH(X(0), X(21), 12, "21");
+    s += dimH(X(21), X(50.5), 12, "29,5");
+    s += dimH(X(50.5), X(69.55), 12, "19,05");
+    s += dimH(X(69.55), X(88.6), 12, "19,05");
+    s += dimH(X(88.6), X(107.65), 12, "19,05");
+    s += dimH(X(107.65), X(125), 12, "17,35");
+    s += dimV(X(0) - 9, Y(YC), Y(0), "21");
+    s += dimV(X(125) + 9, Y(40), Y(0), "40");
+    s += dimH(X(0), X(125), 130, "125");
+    s += leader(X(KX[1] + 4), Y(YC + 4), X(76), Y(36.5), "fenêtre 13 × 13 (× 4)");
+    s += leader(X(XM + 2.6), Y(YC + 2.6), X(36), Y(38), "Ø 7,4 bague");
+    s += leader(X(NK_HOLES[1][0]), Y(NK_HOLES[1][1]), X(100), Y(4.5), "plot Ø 3,6 · avant-trou Ø 1,6", "end");
+    s += leader(X(9.5), Y(31), X(5), Y(37.5), "encodeur 25,5");
+    s += small(X(NK.x + 2), Y(NK.y) + 4, "NeoKey 76,5 × 21,5", "start");
+    s += small(X(XM), Y(YC - 12.5) + 4.5, "bouton Ø 25");
+    s += leader(X(KX[3] + 9), Y(YC - 9), X(118), Y(4.5), "capuchon 18", "start");
+    s += viewLabel(X(62.5), 143, "FAÇADE · VUE DE FACE");
+
+    s += cartouche(W, H, "COIN · FAÇADE", "2,5:1");
+    document.getElementById("sheet-face").innerHTML = svg("f", W, H, "Façade du coin de module : fenêtres des switches, trou de la molette, cartes et plots cachés", s);
+  })();
+
+  // ----- Planche 2 : coupe A-A (2,4:1) -----
+  (function () {
+    const W = 360, H = 160, k = 2.4, ox = 24, oz = 116;
+    const X = (x) => r2(ox + x * k), Z = (z) => r2(oz - z * k);
+    const P = (pts) => pts.map(([x, z]) => [X(x), Z(z)]);
+    const box = (x1, x2, z1, z2, fill, extra) => '<rect x="' + X(x1) + '" y="' + Z(z2) + '" width="' + r2((x2 - x1) * k) + '" height="' + r2((z2 - z1) * k) + '" fill="' + fill + '" stroke="' + LINE + '" stroke-width=".35"' + (extra || "") + "/>";
+    let s = "";
+
+    // Pièce imprimée, hachurée : parois et façade avec ses ouvertures.
+    s += poly(P([[0, 0], [0, 26], [17.3, 26], [17.3, 23.5], [2.5, 23.5], [2.5, 0]]), "url(#hatch-s)");
+    [[24.7, 44], [57, 63.05], [76.05, 82.1], [95.1, 101.15]].forEach(([a, b]) => { s += poly(P([[a, 23.5], [a, 26], [b, 26], [b, 23.5]]), "url(#hatch-s)"); });
+    s += poly(P([[114.15, 26], [125, 26], [125, 0], [122.5, 0], [122.5, 23.5], [114.15, 23.5]]), "url(#hatch-s)");
+
+    // Plots, hors du plan de coupe.
+    [NK.x + 19, NK.x + 57.5].forEach(x => { s += box(x - 1.8, x + 1.8, 15, 23.5, "none", ' stroke-dasharray="1.2 .8"'); });
+    [10.75, 31.25].forEach(x => { s += box(x - 1.8, x + 1.8, 12, 23.5, "none", ' stroke-dasharray="1.2 .8"'); });
+
+    // NeoKey : carte, switches (boîtier simplifié), carré de tige, capuchons au repos.
+    s += box(NK.x, NK.x + NK.l, 13.4, 15, "#2a3237");
+    s += '<line x1="' + X(NK.x) + '" y1="' + Z(10.4) + '" x2="' + X(NK.x + NK.l) + '" y2="' + Z(10.4) + '" stroke="' + DIM + '" stroke-width=".3" stroke-dasharray="1.2 .8"/>';
+    KX.forEach(cx => {
+      s += '<polygon points="' + X(cx - 7) + "," + Z(15) + " " + X(cx + 7) + "," + Z(15) + " " + X(cx + 5.05) + "," + Z(26.5) + " " + X(cx - 5.05) + "," + Z(26.5) + '" fill="none" stroke="' + DIM + '" stroke-width=".35"/>';
+      s += box(cx - 3.25, cx + 3.25, 26.5, 30.5, "none");
+      s += box(cx - 9, cx + 9, 30.5, 33.5, PART);
+    });
+
+    // Encodeur : carte, corps, bague, axe, et bouton hachuré dans l'autre sens.
+    s += box(8.25, 33.75, 10.4, 12, "#2a3237");
+    s += box(15, 27, 12, 19, "none");
+    s += box(17.5, 24.5, 19, 26, "none");
+    s += poly(P([[8.5, 27], [17.9, 27], [17.9, 34], [24.1, 34], [24.1, 27], [33.5, 27], [33.5, 36], [8.5, 36]]), "url(#hatch2-s)");
+    s += box(18, 24, 26, 34, PART);
+    s += axis(X(XM), Z(38), X(XM), Z(8));
+
+    // Cotes.
+    s += dimV(X(125) + 8, Z(26), Z(0), "26");
+    s += dimV(X(125) + 16, Z(33.5), Z(26), "7,5");
+    s += dimV(X(5.4), Z(26), Z(12), "14");
+    s += dimV(X(37.2), Z(26), Z(15), "11");
+    s += dimV(X(0) - 8, Z(36), Z(26), "10");
+    s += dimH(X(8.5), X(33.5), Z(36) - 5, "Ø 25");
+    s += leader(X(60), Z(24.75), X(66), Z(42), "façade 2,5");
+    s += leader(X(NK.x + 50), Z(14.2), X(92), Z(6), "carte NeoKey");
+    s += leader(X(NK.x + 2), Z(10.4), X(60), Z(3), "composants dessous 3", "end");
+    s += leader(X(16), Z(15.5), X(4), Z(3), "corps de l'encodeur");
+    s += leader(X(24.5), Z(24), X(44), Z(6), "bague affleurante");
+    s += leader(X(NK.x + 57.5), Z(19), X(108), Z(3), "plot (hors coupe)", "end");
+    s += small(X(62.5), Z(0) + 5, "dos ouvert");
+    s += viewLabel(X(62.5), 140, "COUPE A-A · AXE DES COMMANDES");
+
+    s += cartouche(W, H, "COIN · COUPE A-A", "2,4:1");
+    document.getElementById("sheet-coupe").innerHTML = svg("s", W, H, "Coupe dans l'axe de la molette et des touches : hauteurs des cartes, des switches, des capuchons et du bouton", s);
+  })();
+
+  // ----- Planche 3 : bouton de molette (3,5:1) -----
+  (function () {
+    const W = 360, H = 150, k = 3.5;
+    let s = "";
+
+    // Dessus : Ø 25, congé, repère gravé.
+    const ax = 62, ay = 60, R = 12.5 * k;
+    s += '<circle cx="' + ax + '" cy="' + ay + '" r="' + R + '" fill="' + PART + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    s += '<circle cx="' + ax + '" cy="' + ay + '" r="' + 11.5 * k + '" fill="none" stroke="' + DIM + '" stroke-width=".25"/>';
+    s += '<rect x="' + (ax - 0.4 * k) + '" y="' + (ay - 10 * k) + '" width="' + 0.8 * k + '" height="' + 5 * k + '" fill="' + HOLE + '" stroke="' + LINE + '" stroke-width=".3"/>';
+    s += dimH(ax - R, ax + R, 112, "Ø 25");
+    s += leader(ax + 1.4, ay - 8 * k, ax + 34, 14, "repère 0,8 × 5 · creux 0,6");
+    s += leader(ax - 11.5 * k * 0.71, ay + 11.5 * k * 0.71, ax - 34, 106, "congé 1", "start");
+    s += viewLabel(ax, 126, "DESSUS");
+
+    // Coupe dans l'axe, perpendiculaire au méplat, passant par le repère.
+    const cx = 180, zb = 92, zt = zb - 9 * k, L = cx - R, Rr = cx + R;
+    const bR = 3.1 * k, fl = 1.6 * k;
+    const d = "M" + L + " " + zb + " V" + (zt + k) + " Q" + L + " " + zt + " " + (L + k) + " " + zt +
+      " H" + r2(cx + 5 * k) + " V" + r2(zt + 0.6 * k) + " H" + r2(cx + 10 * k) + " V" + zt +
+      " H" + (Rr - k) + " Q" + Rr + " " + zt + " " + Rr + " " + (zt + k) + " V" + zb +
+      " H" + r2(cx + bR) + " V" + r2(zb - 3 * k) + " H" + r2(cx + fl) + " V" + r2(zb - 7 * k) + " H" + r2(cx - bR) + " V" + zb + "Z";
+    s += '<path d="' + d + '" fill="url(#hatch-b)" stroke="' + LINE + '" stroke-width=".42" stroke-linejoin="miter"/>';
+    s += axis(cx, zt - 4, cx, zb + 4);
+    s += dimV(Rr + 8, zt, zb, "9");
+    s += dimV(L - 8, r2(zb - 7 * k), zb, "7");
+    s += dimV(Rr + 18, r2(zb - 7 * k), r2(zb - 3 * k), "4 en D");
+    s += dimH(r2(cx - bR), r2(cx + bR), zb + 8, "Ø 6,2");
+    s += dimH(r2(cx - bR), r2(cx + fl), zt - 5, "4,7");
+    s += viewLabel(cx, 126, "COUPE · JEU 0,2");
+
+    // Dessous : entrée ronde Ø 6,2, méplat au fond, 2 points de variante.
+    const ux = 298, uy = 60;
+    s += '<circle cx="' + ux + '" cy="' + uy + '" r="' + R + '" fill="' + PART + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    s += '<circle cx="' + ux + '" cy="' + uy + '" r="' + bR + '" fill="' + HOLE + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    const hc = r2(Math.sqrt(bR * bR - fl * fl));
+    s += '<path d="M' + r2(ux + fl) + " " + r2(uy - hc) + " A" + bR + " " + bR + " 0 0 1 " + r2(ux + fl) + " " + r2(uy + hc) + 'Z" fill="#2a3338" stroke="' + LINE + '" stroke-width=".35"/>';
+    [-1, 1].forEach(j => { s += '<circle cx="' + r2(ux - 9 * k) + '" cy="' + r2(uy + j * 1.25 * k) + '" r="' + 0.5 * k + '" fill="' + HOLE + '" stroke="' + LINE + '" stroke-width=".3"/>'; });
+    s += leader(r2(ux + fl + 1.5), uy, ux + 22, 14, "méplat, au fond");
+    s += leader(r2(ux - 9 * k), r2(uy + 1.25 * k), ux - 34, 106, "2 points = jeu 0,2", "start");
+    s += viewLabel(ux, 126, "DESSOUS");
+
+    s += cartouche(W, H, "BOUTON DE MOLETTE", "3,5:1");
+    document.getElementById("sheet-bouton").innerHTML = svg("b", W, H, "Bouton de molette : dessus avec repère, coupe de l'alésage en D, dessous avec points de variante", s);
+  })();
+</script>

@@ -236,3 +236,12 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - Clic : l'axe s'enfonce de 0,5 mm.
 - Dessous : composants jusqu'à 3 mm, 2 connecteurs QT sur deux bords opposés, fiche vers
   l'extérieur.
+- Axe : épaisseur sur le méplat **4,5 mm** ; le « 4 mm » mesuré d'abord est retenu comme longueur
+  du méplat depuis le bout (à vérifier).
+
+**Choix de conception (même jour)**
+- Dessus de la façade à **11 mm au-dessus de la carte NeoKey**, une fenêtre 13 × 13 par switch :
+  les touches dépassent de 7,5 mm au repos.
+- Encodeur vissé sur 4 plots, carte à **14 mm sous le dessus de la façade** : la bague filetée
+  affleure, l'écrou n'est pas utilisé, l'axe dépasse de 8 mm, bouton de molette ≈ 9 mm.
+- Planche cotée : `docs/design/coin-module-test.html`.
