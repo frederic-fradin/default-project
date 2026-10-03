@@ -223,3 +223,7 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - Centre du switch 1 : 10 mm du bord gauche, 10 mm du bord bas ; pas de 19,05 mm.
 - 4 trous Ø 2, entre les switches 1-2 et 3-4 : **centres à 19 mm des bouts et 3 mm des grands
   côtés** (remesuré au centre). À confirmer avec un gabarit imprimé avant la pièce complète.
+
+**Molette Adafruit 5880**
+- Carte : 25,5 × 25,5 × 1,6 mm (1 pouce chez Adafruit, 25,4).
+- 4 trous Ø 2 dans les coins, centres à 2,5 mm des deux bords (0,1 pouce, 2,54).
