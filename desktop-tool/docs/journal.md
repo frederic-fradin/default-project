@@ -166,3 +166,7 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
   réglages, sans compensation de trous en XY.
 - À surveiller : les barres de 0,8 mm sont dans la première couche et peuvent se refermer en
   partie (patte d'éléphant). Si c'est le cas, élargir les barres à 1,0 mm.
+- Plaque : plaque par défaut de l'A1 (PEI texturée).
+
+**Résultat du premier capuchon (même jour)**
+- Variante **jeu 0,2 mm** (croix 4,2 × 1,4 mm) : le capuchon s'enclenche bien sur le switch.
