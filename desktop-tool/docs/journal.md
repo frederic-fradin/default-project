@@ -247,3 +247,7 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - Encodeur vissé sur 4 plots, carte à **14 mm sous le dessus de la façade** : la bague filetée
   affleure, l'écrou n'est pas utilisé, l'axe dépasse de 8 mm, bouton de molette ≈ 9 mm.
 - Planche cotée : `docs/design/coin-module-test.html`.
+
+**Bouton de molette (même jour)**
+- Modélisé dans Fusion (alésage en D sur toute la profondeur, 3 variantes de jeu repérées par
+  1, 2 ou 3 points gravés sous le bouton) ; **impression en cours**.
