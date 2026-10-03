@@ -1,0 +1,319 @@
+<meta charset="utf-8">
+<title>Capuchon de touche test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;500;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Planche technique « blueprint » graphite, même charte que maquettes.html : un seul thème, volontairement sombre. */
+  :root {
+    color-scheme: dark;
+    --page: #15191c;
+    --sheet: #1d2327;
+    --frame: #3a444b;
+    --text: #dfe4e7;
+    --muted: #8f9aa1;
+    --chip: #2a3237;
+    --font-ui: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", Consolas, monospace;
+    --font-display: "Archivo", "Arial Narrow", sans-serif;
+  }
+  body {
+    background: var(--page);
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+    padding-inline: 16px;
+    padding-block: 32px 64px;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; }
+  header { display: flex; flex-direction: column; gap: 8px; max-width: 72ch; }
+  .eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(28px, 4vw, 40px); line-height: 1.1; margin: 0; text-wrap: balance; }
+  h2 { font-family: var(--font-display); font-weight: 500; font-size: 22px; margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+  .lede { color: var(--muted); }
+  .variant { display: flex; flex-direction: column; gap: 14px; }
+  .variant-head { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+  .tag { font-family: var(--font-mono); font-size: 12px; background: var(--chip); padding: 2px 8px; border-radius: 3px; font-variant-numeric: tabular-nums; color: var(--text); }
+  .sheet { background: var(--sheet); border: 1px solid var(--frame); border-radius: 4px; overflow-x: auto; }
+  .sheet svg { display: block; width: 100%; min-width: 680px; height: auto; }
+  .notes { display: flex; flex-direction: column; gap: 8px; max-width: 74ch; font-size: 14px; color: var(--muted); }
+  .notes b { color: var(--text); font-weight: 600; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; align-items: start; }
+  .card { display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
+  .card h3 { font-family: var(--font-mono); font-weight: 500; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0; }
+  .card ol, .card ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+  .card code, td code { font-family: var(--font-mono); font-size: 13px; color: var(--text); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 6px 12px 6px 0; border-bottom: 1px solid var(--frame); vertical-align: top; }
+  th { font-family: var(--font-mono); font-weight: 500; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  td.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td.why { color: var(--muted); min-width: 16ch; }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">desktop-tool · pièce test P1 · cotes en mm</span>
+    <h1>Capuchon de touche test</h1>
+    <p class="lede">Capuchon plat sans jupe pour switch Kailh BOX Brown, sur la NeoKey 1x4 (pas de 19 mm). Trois exemplaires à imprimer, un par jeu de croix ; le nombre de barres gravées sert de repère. Cotes tirées des mesures du 2026-10-03.</p>
+  </header>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Vues et coupe</h2><span class="tag">échelle 4:1</span><span class="tag">jeu de croix 0,2</span></div>
+    <div class="sheet" id="sheet-views"></div>
+  </section>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Détail de la croix et montage sur le switch</h2><span class="tag">croix 10:1</span><span class="tag">montage 4:1</span></div>
+    <div class="sheet" id="sheet-detail"></div>
+    <div class="notes">
+      <p><b>Course.</b> Au repos, le dessous du capuchon repose sur le haut du carré (box), à 15,5 mm au-dessus de la carte. Touche enfoncée, le carré affleure le boîtier : le dessous du capuchon arrive à 11,5 mm, au niveau du dessus du boîtier. Le capuchon n'ayant pas de jupe, rien ne peut toucher le boîtier avant la fin de la course.</p>
+      <p><b>Boîtier.</b> Sa pente réelle n'est pas mesurée : il est dessiné simplifié, de 15,5 mm à la base à 10,1 mm en haut.</p>
+    </div>
+  </section>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Les trois variantes à imprimer</h2><span class="tag">échelle 3:1</span></div>
+    <div class="sheet" id="sheet-variants"></div>
+  </section>
+
+  <section class="cols">
+    <div class="card">
+      <h3>Paramètres utilisateur Fusion</h3>
+      <table>
+        <thead><tr><th>Nom</th><th>Valeur</th><th>Rôle</th></tr></thead>
+        <tbody>
+          <tr><td><code>pas_touche</code></td><td class="num">19 mm</td><td class="why">Entraxe des switches mesuré</td></tr>
+          <tr><td><code>jeu_touches</code></td><td class="num">1 mm</td><td class="why">Écart entre deux touches voisines</td></tr>
+          <tr><td><code>cote_touche</code></td><td class="num">18 mm</td><td class="why">Côté du dessus, formule <code>pas_touche - jeu_touches</code></td></tr>
+          <tr><td><code>r_coin</code></td><td class="num">1,5 mm</td><td class="why">Arrondi des 4 coins</td></tr>
+          <tr><td><code>ep_touche</code></td><td class="num">3 mm</td><td class="why">Épaisseur du plateau</td></tr>
+          <tr><td><code>d_pied</code></td><td class="num">5,5 mm</td><td class="why">Pied rond, dans le carré de 6 mm</td></tr>
+          <tr><td><code>h_pied</code></td><td class="num">3,5 mm</td><td class="why">Profondeur de croix 3,6 − 0,1</td></tr>
+          <tr><td><code>croix_l</code></td><td class="num">4 mm</td><td class="why">Longueur d'une branche mesurée</td></tr>
+          <tr><td><code>croix_e</code></td><td class="num">1,2 mm</td><td class="why">Largeur d'une branche mesurée</td></tr>
+          <tr><td><code>jeu_croix</code></td><td class="num">0,2 / 0,3 / 0,4 mm</td><td class="why">Une valeur par variante</td></tr>
+          <tr><td><code>grav_prof</code></td><td class="num">0,6 mm</td><td class="why">Profondeur des barres gravées</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Étapes dans Fusion</h3>
+      <ol>
+        <li><b>Modifier › Modifier les paramètres</b> : créer les paramètres du tableau.</li>
+        <li>Esquisse sur le plan XY : rectangle centré <code>cote_touche</code> × <code>cote_touche</code>. Extruder de <code>ep_touche</code> vers le haut.</li>
+        <li><b>Congé</b> de <code>r_coin</code> sur les 4 arêtes verticales.</li>
+        <li>Esquisse sur la face du dessous : cercle centré de <code>d_pied</code>. Extruder de <code>h_pied</code> vers le bas, en mode « Joindre ».</li>
+        <li>Esquisse sur le bout du pied : deux rectangles centrés en croix, <code>croix_l + jeu_croix</code> × <code>croix_e + jeu_croix</code>. Extruder en mode « Couper » de <code>h_pied</code>.</li>
+        <li>Esquisse sur le dessus : barre(s) verticale(s) de 0,8 × 5, écart 1,5, centrées. Extruder en mode « Couper » de <code>grav_prof</code>.</li>
+        <li>Enregistrer, exporter en <code>.3mf</code>. Puis passer <code>jeu_croix</code> à 0,3 avec 2 barres, puis à 0,4 avec 3 barres, et exporter chaque variante.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>Impression</h3>
+      <ul>
+        <li>Les trois capuchons sur le même plateau, <b>face visible contre le plateau</b> : le pied pointe vers le haut et la croix est imprimée à plat.</li>
+        <li>Point de vigilance : les parois du pied ne font que <b>0,65 mm</b> au bout des branches. Vérifier dans l'aperçu du trancheur qu'elles sont bien imprimées.</li>
+      </ul>
+      <h3>À noter après le test</h3>
+      <ul>
+        <li>Le jeu de croix retenu : le capuchon s'enfonce en forçant un peu, ne bouge pas et se retire à la main.</li>
+        <li>La netteté des barres gravées.</li>
+        <li>La sensation sous le doigt : taille 18 × 18, épaisseur de 3 mm.</li>
+        <li>La LED de la NeoKey : se voit-elle à travers ou autour du capuchon ?</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<script>
+  // Toutes les cotes sont en mm ; chaque vue est dessinée à son échelle, en unités SVG.
+  const LINE = "#e6eaed";
+  const DIM = "#9fb0bb";
+  const PART = "#262e33";
+  const HOLE = "#15191c";
+  const TXT = 'font-family="IBM Plex Mono, Consolas, monospace"';
+
+  function defs(id) {
+    return "<defs>" +
+      '<pattern id="grid-' + id + '" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M5 0H0V5" fill="none" stroke="#252c31" stroke-width=".25"/></pattern>' +
+      '<pattern id="gridM-' + id + '" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#2e373d" stroke-width=".35"/></pattern>' +
+      '<pattern id="hatch-' + id + '" width="1.8" height="1.8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="1.8" stroke="#eef1f3" stroke-width=".4" opacity=".6"/></pattern>' +
+      "</defs>";
+  }
+  function frame(id, w, h) {
+    return '<rect width="' + w + '" height="' + h + '" fill="#1d2327"/>' +
+      '<rect width="' + w + '" height="' + h + '" fill="url(#grid-' + id + ')"/>' +
+      '<rect width="' + w + '" height="' + h + '" fill="url(#gridM-' + id + ')"/>' +
+      '<rect x="4" y="4" width="' + (w - 8) + '" height="' + (h - 8) + '" fill="none" stroke="#56636c" stroke-width=".4"/>';
+  }
+  function cartouche(w, h, title, scale) {
+    const cells = [["PROJET", "DESKTOP-TOOL"], ["PLANCHE", title], ["ÉCHELLE", scale], ["UNITÉ", "mm"], ["DATE", "03.10.2026"]];
+    const y = h - 18, x0 = 4, x1 = w - 4, step = (x1 - x0) / cells.length;
+    let s = '<rect x="' + x0 + '" y="' + y + '" width="' + (x1 - x0) + '" height="14" fill="#1a1f23" stroke="#56636c" stroke-width=".4"/>';
+    cells.forEach((c, i) => {
+      const cx = x0 + i * step;
+      if (i) s += '<line x1="' + cx + '" y1="' + y + '" x2="' + cx + '" y2="' + (y + 14) + '" stroke="#56636c" stroke-width=".4"/>';
+      s += '<text x="' + (cx + 3) + '" y="' + (y + 5.2) + '" ' + TXT + ' font-size="2.4" fill="' + DIM + '" letter-spacing=".3">' + c[0] + "</text>";
+      s += '<text x="' + (cx + 3) + '" y="' + (y + 10.8) + '" ' + TXT + ' font-size="3.6" fill="' + LINE + '">' + c[1] + "</text>";
+    });
+    return s;
+  }
+
+  // Cotes : trait, petits traits d'extrémité et valeur au-dessus (ou à droite, tournée).
+  function dimH(x1, x2, y, label) {
+    return '<g stroke="' + DIM + '" stroke-width=".25"><line x1="' + x1 + '" y1="' + y + '" x2="' + x2 + '" y2="' + y + '"/>' +
+      '<line x1="' + x1 + '" y1="' + (y - 2) + '" x2="' + x1 + '" y2="' + (y + 2) + '"/><line x1="' + x2 + '" y1="' + (y - 2) + '" x2="' + x2 + '" y2="' + (y + 2) + '"/></g>' +
+      '<text x="' + ((x1 + x2) / 2) + '" y="' + (y - 1.4) + '" text-anchor="middle" ' + TXT + ' font-size="3.4" fill="' + DIM + '">' + label + "</text>";
+  }
+  function dimV(x, y1, y2, label) {
+    const cy = (y1 + y2) / 2;
+    return '<g stroke="' + DIM + '" stroke-width=".25"><line x1="' + x + '" y1="' + y1 + '" x2="' + x + '" y2="' + y2 + '"/>' +
+      '<line x1="' + (x - 2) + '" y1="' + y1 + '" x2="' + (x + 2) + '" y2="' + y1 + '"/><line x1="' + (x - 2) + '" y1="' + y2 + '" x2="' + (x + 2) + '" y2="' + y2 + '"/></g>' +
+      '<text x="' + (x + 1.6) + '" y="' + cy + '" text-anchor="middle" ' + TXT + ' font-size="3.4" fill="' + DIM + '" transform="rotate(90 ' + (x + 1.6) + " " + cy + ')">' + label + "</text>";
+  }
+  // Ligne de rappel : point sur la pièce, coude, texte.
+  function leader(x1, y1, x2, y2, label, anchor) {
+    const a = anchor || "start", tx = a === "end" ? x2 - 1 : x2 + 1;
+    return '<circle cx="' + x1 + '" cy="' + y1 + '" r=".6" fill="' + DIM + '"/>' +
+      '<polyline points="' + x1 + "," + y1 + " " + x2 + "," + y2 + '" fill="none" stroke="' + DIM + '" stroke-width=".25"/>' +
+      '<text x="' + tx + '" y="' + (y2 + 1.2) + '" text-anchor="' + a + '" ' + TXT + ' font-size="3" fill="' + DIM + '">' + label + "</text>";
+  }
+  const viewLabel = (x, y, t) => '<text x="' + x + '" y="' + y + '" text-anchor="middle" ' + TXT + ' font-size="4" letter-spacing=".4" fill="' + LINE + '">' + t + "</text>";
+  const small = (x, y, t, a) => '<text x="' + x + '" y="' + y + '" text-anchor="' + (a || "middle") + '" ' + TXT + ' font-size="2.8" fill="' + DIM + '">' + t + "</text>";
+
+  // Dessus du capuchon : carré arrondi + n barres verticales 0,8 × 5, écart 1,5, centrées.
+  function capTop(x, y, k, n) {
+    const c = 18 * k;
+    let s = '<rect x="' + x + '" y="' + y + '" width="' + c + '" height="' + c + '" rx="' + 1.5 * k + '" fill="' + PART + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    const span = n * 0.8 + (n - 1) * 1.5, x0 = x + (c - span * k) / 2, by = y + (c - 5 * k) / 2;
+    for (let i = 0; i < n; i++) s += '<rect x="' + (x0 + i * 2.3 * k) + '" y="' + by + '" width="' + 0.8 * k + '" height="' + 5 * k + '" fill="' + HOLE + '" stroke="' + LINE + '" stroke-width=".3"/>';
+    return s;
+  }
+  // Croix en creux centrée en (cx, cy) : branches L × e, échelle k.
+  function cross(cx, cy, k, L, e) {
+    return '<path d="M' + (cx - L * k / 2) + " " + (cy - e * k / 2) + "h" + L * k + "v" + e * k + "h" + (-L * k) + "z" +
+      "M" + (cx - e * k / 2) + " " + (cy - L * k / 2) + "h" + e * k + "v" + L * k + "h" + (-e * k) + 'z" fill="' + HOLE + '" stroke="' + LINE + '" stroke-width=".35" stroke-linejoin="miter"/>';
+  }
+
+  const svg = (id, w, h, title, body) => '<svg viewBox="0 0 ' + w + " " + h + '" role="img" aria-label="' + title + '">' + defs(id) + frame(id, w, h) + body + "</svg>";
+
+  // ----- Planche 1 : dessus, dessous, coupe A-A (4:1) -----
+  (function () {
+    const k = 4, W = 360, H = 150;
+    let s = "";
+
+    // Vue de dessus.
+    s += capTop(24, 30, k, 1);
+    s += dimH(24, 96, 112, "18");
+    s += dimV(104, 30, 102, "18");
+    s += leader(25.5, 31.5, 14, 20, "R 1,5", "start");
+    s += leader(60, 58, 84, 20, "barre 0,8 × 5 · creux 0,6");
+    s += viewLabel(60, 126, "VUE DE DESSUS");
+
+    // Vue de dessous : pied Ø 5,5 et croix 4,2 × 1,4 (jeu 0,2).
+    const bx = 134, cx = bx + 36, cy = 66;
+    s += '<rect x="' + bx + '" y="30" width="72" height="72" rx="6" fill="' + PART + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    s += '<circle cx="' + cx + '" cy="' + cy + '" r="' + 2.75 * k + '" fill="' + PART + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    s += cross(cx, cy, k, 4.2, 1.4);
+    s += '<line x1="' + (bx - 6) + '" y1="' + cy + '" x2="' + (bx + 78) + '" y2="' + cy + '" stroke="' + DIM + '" stroke-width=".3" stroke-dasharray="4 1.2 1 1.2"/>';
+    s += small(bx - 6, cy - 2, "A") + small(bx + 78, cy - 2, "A");
+    s += dimH(bx, bx + 72, 112, "18");
+    s += leader(cx + 8, cy - 8, cx + 24, 20, "pied Ø 5,5");
+    s += viewLabel(cx, 126, "VUE DE DESSOUS");
+
+    // Coupe A-A : plateau 3, pied 3,5, croix traversant tout le pied, gravure 0,6.
+    const ax = 248, top = 40, c = ax + 36;
+    const p = (v) => +(v).toFixed(2);
+    const d = "M" + ax + " " + top + "H" + p(c - 1.6) + "V" + p(top + 2.4) + "H" + p(c + 1.6) + "V" + top + "H" + (ax + 72) +
+      "V" + (top + 12) + "H" + p(c + 11) + "V" + (top + 26) + "H" + p(c + 8.4) + "V" + (top + 12) + "H" + p(c - 8.4) +
+      "V" + (top + 26) + "H" + p(c - 11) + "V" + (top + 12) + "H" + ax + "Z";
+    s += '<path d="' + d + '" fill="url(#hatch-v)" stroke="' + LINE + '" stroke-width=".42" stroke-linejoin="miter"/>';
+    s += dimV(326, top, top + 12, "3");
+    s += dimV(326, top + 12, top + 26, "3,5");
+    s += dimV(338, top, top + 26, "6,5");
+    s += dimH(p(c - 8.4), p(c + 8.4), top + 32, "4,2");
+    s += dimH(c - 11, c + 11, top + 42, "Ø 5,5");
+    s += dimH(ax, ax + 72, 112, "18");
+    s += leader(c, top + 1.2, c + 14, 26, "gravure 0,6");
+    s += leader(p(c - 9.7), top + 20, ax - 2, top + 34, "paroi 0,65", "end");
+    s += viewLabel(c, 126, "COUPE A-A");
+
+    s += cartouche(W, H, "CAPUCHON · VUES", "4:1");
+    document.getElementById("sheet-views").innerHTML = svg("v", W, H, "Capuchon test : vue de dessus, vue de dessous et coupe A-A", s);
+  })();
+
+  // ----- Planche 2 : détail de la croix (10:1) et montage sur le switch (4:1) -----
+  (function () {
+    const W = 360, H = 172;
+    let s = "";
+
+    // Détail croix.
+    const k = 10, cx = 64, cy = 80;
+    s += '<circle cx="' + cx + '" cy="' + cy + '" r="' + 2.75 * k + '" fill="' + PART + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    s += cross(cx, cy, k, 4.2, 1.4);
+    s += dimH(cx - 21, cx + 21, 42, "4,2 = croix_l + jeu");
+    s += dimV(cx + 33, cy - 7, cy + 7, "1,4");
+    s += small(cx + 39, cy + 1, "= croix_e + jeu", "start");
+    s += dimH(cx - 27.5, cx + 27.5, 120, "Ø 5,5 = d_pied");
+    s += leader(cx - 24.25, cy, 20, 100, "paroi 0,65", "start");
+    s += small(cx, 128, "branches identiques · jeu_croix 0,2");
+    s += viewLabel(cx, 142, "DÉTAIL CROIX · 10:1");
+
+    // Montage, au repos : carte (y = 118), boîtier simplifié, carré, capuchon.
+    const base = 118, m = 4;
+    const pcb = (c) => '<rect x="' + (c - 46) + '" y="' + base + '" width="92" height="6.4" fill="#2a3237" stroke="#56636c" stroke-width=".35"/>';
+    const housing = (c) => '<polygon points="' + (c - 31) + "," + base + " " + (c + 31) + "," + base + " " + (c + 20.2) + "," + (base - 46) + " " + (c - 20.2) + "," + (base - 46) +
+      '" fill="none" stroke="' + DIM + '" stroke-width=".35"/>';
+    const plate = (c, yb) => '<rect x="' + (c - 36) + '" y="' + (yb - 12) + '" width="72" height="12" fill="' + PART + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    const hidden = (x, y, w, h) => '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="none" stroke="' + DIM + '" stroke-width=".3" stroke-dasharray="1.2 .8"/>';
+
+    const r = 200;
+    s += pcb(r) + housing(r);
+    s += '<rect x="' + (r - 13) + '" y="' + (base - 62) + '" width="26" height="16" fill="#1d2327" stroke="' + DIM + '" stroke-width=".35"/>';
+    s += plate(r, base - 62);
+    s += hidden(r - 11, base - 62, 22, 14);
+    s += dimV(r - 50, base - 46, base, "11,5");
+    s += dimV(r - 58, base - 62, base, "15,5");
+    s += dimV(r - 66, base - 74, base, "18,5");
+    s += leader(r + 24, base - 20, r + 44, base - 30, "boîtier (simplifié)");
+    s += leader(r + 13, base - 54, r + 44, base - 50, "carré 6,5 · course 4");
+    s += small(r, base + 11, "carte NeoKey");
+    s += viewLabel(r, 142, "MONTAGE · AU REPOS");
+
+    // Montage, touche enfoncée : le carré affleure le boîtier.
+    const b = 300;
+    s += pcb(b) + housing(b);
+    s += hidden(b - 13, base - 46, 26, 16);
+    s += plate(b, base - 46);
+    s += hidden(b - 11, base - 46, 22, 14);
+    s += dimV(b + 44, base - 58, base, "14,5");
+    s += small(b, base - 64, "dessous du capuchon au ras du boîtier");
+    s += viewLabel(b, 142, "MONTAGE · ENFONCÉE");
+
+    s += cartouche(W, H, "CAPUCHON · DÉTAILS", "10:1 · 4:1");
+    document.getElementById("sheet-detail").innerHTML = svg("d", W, H, "Détail de la croix et montage du capuchon sur le switch", s);
+  })();
+
+  // ----- Planche 3 : les trois variantes (3:1) -----
+  (function () {
+    const k = 3, W = 360, H = 116;
+    const V = [[1, "0,2", "4,2 × 1,4"], [2, "0,3", "4,3 × 1,5"], [3, "0,4", "4,4 × 1,6"]];
+    let s = "";
+    V.forEach(([n, jeu, croix], i) => {
+      const x = 42 + i * 110, y = 16;
+      s += capTop(x, y, k, n);
+      s += viewLabel(x + 27, y + 66, n + (n > 1 ? " BARRES" : " BARRE") + " · JEU " + jeu);
+      s += small(x + 27, y + 72, "croix en creux " + croix);
+    });
+    // Écart entre barres, sur la variante à 3 barres.
+    const x3 = 42 + 2 * 110, span = (3 * 0.8 + 2 * 1.5) * k, x0 = x3 + (54 - span) / 2;
+    s += dimH(+(x0 + 0.8 * k).toFixed(2), +(x0 + 2.3 * k).toFixed(2), 12, "1,5");
+    s += cartouche(W, H, "CAPUCHON · VARIANTES", "3:1");
+    document.getElementById("sheet-variants").innerHTML = svg("x", W, H, "Les trois variantes du capuchon test", s);
+  })();
+</script>

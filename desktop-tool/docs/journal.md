@@ -147,3 +147,11 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - Enseignement : les trous imprimés sortent **≈ 0,1 à 0,2 mm plus petits** que la cote. Pour un
   ajustement serré, prévoir au moins **+0,2 mm au diamètre** ; à confirmer sur les tenons ronds et
   la croix des touches.
+
+**Mesures d'un switch Kailh BOX Brown** (enfiché sur la NeoKey, au repos)
+- Croix de la tige : branches 4,0 × ≈ 1,2 mm, profondeur 3,6 mm sous le haut du carré.
+- Carré (box) autour de la croix : intérieur 6,0 mm (angles légèrement arrondis), extérieur 6,5 mm ;
+  dépasse de 4,0 mm du boîtier au repos, affleure le boîtier touche enfoncée.
+- Boîtier : face plate du dessus 10,1 × 10,0 mm, base 14,0 × 15,5 mm.
+- Hauteurs au-dessus de la carte NeoKey : dessus du boîtier 11,5 mm, haut du carré 15,5 mm.
+- Entraxe des switches : 19,0 mm.
