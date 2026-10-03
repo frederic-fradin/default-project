@@ -267,3 +267,4 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
   abandonnées. Bouton de molette **validé**.
 - Règle confirmée sur 3 pièces (logements d'aimant, croix des touches, axe de l'encodeur) :
   **+0,2 mm sur la cote mesurée** pour un emmanchement serré.
+- Coin de module remodélisé de zéro : **impression en cours** (façade contre le plateau).
