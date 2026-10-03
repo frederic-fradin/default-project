@@ -259,3 +259,11 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
   congé), cotes depuis l'origine ou les bords, vue de dessous en miroir pour les plots.
 - Bouton de molette, variante **jeu 0,2** (alésage Ø 6,2, méplat 4,7) : **tient bien sur l'axe**.
   Cohérent avec la croix des touches : la règle des +0,2 sur la cote mesurée se confirme.
+- Vérifications : aucun jeu en rotation, retrait facile à la main, clic de l'encodeur bien
+  transmis.
+
+**Décision**
+- Jeu d'alésage du bouton retenu : **`jeu_axe = 0,2 mm`**. Les variantes 0,1 et 0,3 sont
+  abandonnées. Bouton de molette **validé**.
+- Règle confirmée sur 3 pièces (logements d'aimant, croix des touches, axe de l'encodeur) :
+  **+0,2 mm sur la cote mesurée** pour un emmanchement serré.
