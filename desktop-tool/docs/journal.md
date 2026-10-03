@@ -214,3 +214,13 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - Pas encore certain de garder le principe du socle à éléments clipsés pour le pupitre du
   module : **pièce test des chevilles en attente**, rien n'est modélisé ni imprimé. La planche
   `tenons-test.html` et la révision de l'ADR 005 restent valables si le principe est conservé.
+
+## 2026-10-03 — Mesures pour la pièce test « coin de module » (P1)
+
+**NeoKey 1x4** (carte vue de dessus, switches vers soi)
+- Carte : 76,5 × 21,5 × 1,6 mm ; composants dessous jusqu'à 3 mm (connecteurs STEMMA QT aux deux
+  bouts, fiche vers l'extérieur, dans l'axe de la longueur).
+- Centre du switch 1 : 10 mm du bord gauche, 10 mm du bord bas ; pas de 19,05 mm.
+- 4 trous Ø 2 : à 1,2 mm des grands côtés et à 18 mm des bouts. Lecture retenue (mesures au bord
+  du trou) : centres à ≈ 2,2 mm des grands côtés et ≈ 19 mm des bouts, soit entre les switches
+  1-2 et 3-4. **À vérifier avec un gabarit imprimé** avant la pièce complète.
