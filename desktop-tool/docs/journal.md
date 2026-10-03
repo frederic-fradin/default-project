@@ -178,3 +178,9 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
   0,4 mm ne sont pas imprimées.
 - Enseignement : pour un emmanchement serré de petites pièces imprimées, prévoir **+0,2 mm** sur
   la cote mesurée. C'est cohérent avec les logements d'aimant ; à vérifier sur les tenons ronds.
+- Face gravée : les barres de 0,8 mm sortent **nettes**, la première couche ne les referme pas.
+  Largeur 0,8 mm conservée.
+- Finition : le grain mat de la plaque PEI texturée plaît sur le dessus de la touche. **Plaque
+  texturée retenue** pour les faces visibles imprimées côté plateau.
+- Capuchon de touche test **validé** (profil 0.20mm Standard, jeu de croix 0,2 mm, gravure
+  0,8 × 0,6 mm, plaque texturée).
