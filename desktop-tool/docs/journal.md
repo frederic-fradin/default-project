@@ -251,3 +251,9 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 **Bouton de molette (même jour)**
 - Modélisé dans Fusion (alésage en D sur toute la profondeur, 3 variantes de jeu repérées par
   1, 2 ou 3 points gravés sous le bouton) ; **impression en cours**.
+
+**Coin de module (même jour)**
+- Modélisation commencée puis arrêtée aux plots NeoKey ; **reprise de zéro le 2026-10-04**, en
+  suivant `docs/design/coin-module-test.html` et les canevas de `cad/canvas/`.
+- Points expliqués en séance : origine du design (au coin bas gauche, dans le vide à cause du
+  congé), cotes depuis l'origine ou les bords, vue de dessous en miroir pour les plots.
