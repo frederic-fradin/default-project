@@ -184,3 +184,10 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
   texturée retenue** pour les faces visibles imprimées côté plateau.
 - Capuchon de touche test **validé** (profil 0.20mm Standard, jeu de croix 0,2 mm, gravure
   0,8 × 0,6 mm, plaque texturée).
+
+**Jeu de 4 touches (même jour)**
+- Modélisation : un seul fichier, capuchon de base copié en **réseau rectangulaire de corps**
+  (4 corps, espacement `pas_touche` = 19 mm, placé dans la timeline avant les gravures), puis une
+  gravure par corps : 1, 2, 3 barres et maison.
+- Impression : 4 touches avec les réglages validés (0.20mm Standard, plaque texturée, face
+  gravée sur le plateau). **Résultat : tout est OK**, les 4 touches sont prêtes pour la NeoKey.
