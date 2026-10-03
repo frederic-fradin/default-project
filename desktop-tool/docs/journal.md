@@ -129,4 +129,21 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - Mesurer un vrai switch (croix de la tige, hauteur) puis dessiner le capuchon de touche test.
 - Mesurer la NeoKey (empreinte, hauteur avec switches) et la molette (axe, hauteur, bouton)
   pour la pièce test « coin de module en paysage ».
-- Vérifier que les aimants 6 × 2 mm entrent dans un logement imprimé (jeu à régler).
+- ✅ Vérifier que les aimants 6 × 2 mm entrent dans un logement imprimé (jeu à régler) → fait le 2026-10-03.
+
+## 2026-10-03 — Logements d'aimant (P1)
+
+**Test** (plaquette test, trous Ø 6,1 / 6,2 / 6,3 × 2,2 mm sous le carreau gris)
+- Ø 6,1 mm : l'aimant ne rentre pas.
+- **Ø 6,2 mm** : l'aimant tient parfaitement.
+- Ø 6,3 mm : il entre un peu plus facilement.
+
+**Décision**
+- Logement d'aimant retenu : **Ø 6,2 × 2,2 mm** pour les aimants 6 × 2 mm N52 (jeu de 0,1 mm
+  au rayon). À créer comme paramètre utilisateur Fusion (`d_aimant = 6,2 mm`, `p_aimant = 2,2 mm`)
+  dans les pièces du module et de la station.
+- Ø 6,3 mm en secours, avec un point de colle, si une autre bobine ou un autre réglage
+  d'impression resserre les trous.
+- Enseignement : les trous imprimés sortent **≈ 0,1 à 0,2 mm plus petits** que la cote. Pour un
+  ajustement serré, prévoir au moins **+0,2 mm au diamètre** ; à confirmer sur les tenons ronds et
+  la croix des touches.
