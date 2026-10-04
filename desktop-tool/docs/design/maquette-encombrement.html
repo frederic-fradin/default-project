@@ -1,0 +1,407 @@
+<meta charset="utf-8">
+<title>Maquette d'encombrement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;500;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Planche technique « blueprint » graphite, même charte que capuchon-test.html : un seul thème, volontairement sombre. */
+  :root {
+    color-scheme: dark;
+    --page: #15191c;
+    --sheet: #1d2327;
+    --frame: #3a444b;
+    --text: #dfe4e7;
+    --muted: #8f9aa1;
+    --chip: #2a3237;
+    --font-ui: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", Consolas, monospace;
+    --font-display: "Archivo", "Arial Narrow", sans-serif;
+  }
+  body {
+    background: var(--page);
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+    padding-inline: 16px;
+    padding-block: 32px 64px;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; }
+  header { display: flex; flex-direction: column; gap: 8px; max-width: 72ch; }
+  .eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(28px, 4vw, 40px); line-height: 1.1; margin: 0; text-wrap: balance; }
+  h2 { font-family: var(--font-display); font-weight: 500; font-size: 22px; margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+  .lede { color: var(--muted); }
+  .variant { display: flex; flex-direction: column; gap: 14px; }
+  .variant-head { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+  .tag { font-family: var(--font-mono); font-size: 12px; background: var(--chip); padding: 2px 8px; border-radius: 3px; font-variant-numeric: tabular-nums; color: var(--text); }
+  .sheet { background: var(--sheet); border: 1px solid var(--frame); border-radius: 4px; overflow-x: auto; }
+  .sheet svg { display: block; width: 100%; min-width: 680px; height: auto; }
+  .notes { display: flex; flex-direction: column; gap: 8px; max-width: 74ch; font-size: 14px; color: var(--muted); }
+  .notes b { color: var(--text); font-weight: 600; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; align-items: start; }
+  .card { display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
+  .card h3 { font-family: var(--font-mono); font-weight: 500; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0; }
+  .card h4 { font-size: 14px; font-weight: 600; margin: 4px 0 0; }
+  .card ol, .card ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+  .card code, td code { font-family: var(--font-mono); font-size: 13px; color: var(--text); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 6px 12px 6px 0; border-bottom: 1px solid var(--frame); vertical-align: top; }
+  th { font-family: var(--font-mono); font-weight: 500; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  td.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td.why { color: var(--muted); min-width: 16ch; }
+</style>
+
+<div class="wrap">
+<div class="wrap">
+  <header>
+    <span class="eyebrow">desktop-tool · maquette P1 · cotes en mm</span>
+    <h1>Maquette d'encombrement du module</h1>
+    <p class="lede">Le module complet en paysage (ADR 006) à l'échelle réelle : 125 × 115 × 26 mm, dos ouvert. On y monte toutes les vraies pièces (carte T5 avec son écran, NeoKey et ses 4 touches, molette, câbles QT, câble USB-C) pour vérifier que tout tient (risque R10), par où passent les câbles et où reste la place de la batterie v2. Le bas reprend le coin de module validé. Les cotes de la carte T5 viennent du plan officiel LilyGO (<code>shell/EPD47-S3.dxf</code>) et celles de l'écran de la fiche E Ink ED047TC1 : elles sont <b>provisoires jusqu'à la réception de la carte</b>.</p>
+  </header>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Façade, vue de face</h2><span class="tag">échelle 2,2:1</span><span class="tag">origine : coin bas gauche</span><span class="tag">carte T5 : USB-C à droite</span></div>
+    <div class="sheet" id="sheet-face"></div>
+    <div class="notes">
+      <p><b>Carte T5.</b> 118,07 × 63,07 mm pour 120 mm de place entre les parois : <b>moins de 1 mm de jeu de chaque côté</b>. Elle est centrée en largeur et posée à <code>y_t5</code> = 44 du bord bas, ce qui met l'écran à 10 mm du bord haut, comme sur la maquette validée. Ses coins restent sous les arrondis du haut (107 &lt; 108) : pas de conflit avec les congés intérieurs.</p>
+      <p><b>Écran.</b> La zone active (103,68 × 58,32) n'est pas centrée sur la dalle : 8,1 mm de bord côté nappe (à gauche) contre 2,1 de l'autre. Avec la carte centrée, la fenêtre a donc un bord gauche de ≈ 13 mm et un bord droit de ≈ 7,5 mm : elle s'aligne à droite sur les capuchons des touches.</p>
+      <p><b>Composants au dos de la carte</b> (pointillés) : tous sont côté dos, l'avant ne porte que l'écran. Le connecteur 2×20 longe le bas de la carte, juste au-dessus de la rangée de touches ; l'échancrure du bas est sous l'antenne de l'ESP32.</p>
+    </div>
+  </section>
+
+  <section class="variant">
+    <div class="variant-head"><h2>Coupe B-B, dans l'axe des broches I²C</h2><span class="tag">échelle 2,4:1</span><span class="tag">x = 74, vue de droite</span></div>
+    <div class="sheet" id="sheet-coupe"></div>
+    <div class="notes">
+      <p><b>Épaisseur.</b> Sous la façade, l'écran et la carte occupent ≈ 2,5 mm. Il reste ≈ 21 mm jusqu'au dos, dos compris : assez pour les composants de la carte (ESP32 3,1 mm), une batterie v2 de 5 mm et les câbles.</p>
+      <p><b>Le point dur : le câble I²C.</b> Le câble 4209 se branche sur le connecteur femelle 2×20, qui dépasse déjà de ≈ 8,5 mm au dos de la carte. Le boîtier noir de ses broches mâles ajoute ≈ 14 mm, plus le rayon du fil : il <b>sortirait de ≈ 6 mm sous le dos</b>. Valeurs standard, à confirmer en mesurant le câble dès maintenant et le connecteur à réception.</p>
+    </div>
+  </section>
+
+  <section class="cols">
+    <div class="card">
+      <h3>Carte T5 · ce que dit le plan officiel</h3>
+      <table>
+        <thead><tr><th>Élément</th><th>Cote</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>Carte</td><td class="num">118,07 × 63,07 × 1,6</td><td class="why">Plan LilyGO. Le site annonce 121 × 67 × 12 : à mesurer</td></tr>
+          <tr><td>Échancrure sous l'antenne</td><td class="num">20 × 7,25</td><td class="why">Plan LilyGO, bord bas, à 89,7 du bord gauche</td></tr>
+          <tr><td>Dalle de l'écran</td><td class="num">113,9 × 62,5 × 0,87</td><td class="why">Fiche E Ink ED047TC1</td></tr>
+          <tr><td>Zone active</td><td class="num">103,68 × 58,32</td><td class="why">Fiche E Ink ; bords 8,1 côté nappe, 2,1 à l'opposé, ≈ 2,1 en haut et en bas</td></tr>
+          <tr><td>Position de la dalle sur la carte</td><td class="num">?</td><td class="why">Supposée centrée : <b>à mesurer</b></td></tr>
+          <tr><td>USB-C</td><td class="num">centre à 39,3 du bas</td><td class="why">Sur le <b>petit côté droit</b>, il dépasse la carte de ≈ 1 mm</td></tr>
+          <tr><td>Connecteur 2×20 (SDA 18, SCL 17)</td><td class="num">x 26 → 76, y 1,4 → 5,8</td><td class="why">Au dos, le long du bord bas ; broches 17/18 vers x ≈ 70</td></tr>
+          <tr><td>Prise P5, PH 2,0 4 broches</td><td class="num">x 27,6 → 36,6, en haut</td><td class="why">Schéma V2.3 : 3,3 V, <b>IO15, IO16</b>, GND</td></tr>
+          <tr><td>Prise P4, PH 2,0 4 broches</td><td class="num">x 38,4 → 47,3, en haut</td><td class="why">Schéma : 3,3 V, MISO, SCLK, GND (bus SPI)</td></tr>
+          <tr><td>Boutons RST, BOOT, IO</td><td class="num">bord haut</td><td class="why">Au dos : inaccessibles une fois le dos fermé</td></tr>
+          <tr><td>Trous de fixation</td><td class="num">aucun</td><td class="why">Aucun trou sur le plan : la carte sera tenue par des pattes</td></tr>
+        </tbody>
+      </table>
+      <p class="lede">Positions données depuis le coin bas gauche de la carte, vue de face, USB-C à droite.</p>
+    </div>
+
+    <div class="card">
+      <h3>Choix (2026-10-04)</h3>
+      <h4>1 · Sens de la carte ✅</h4>
+      <p><b>Retenu : USB-C à droite</b>, connecteur 2×20 en bas. Le câble sort du côté opposé à la main gauche, et le connecteur I²C est près des touches. L'autre sens (USB-C à gauche) inverserait aussi les bords de l'écran (≈ 7,5 à gauche, ≈ 13 à droite).</p>
+      <h4>2 · Branchement I²C ⏳</h4>
+      <p><b>En attente des mesures</b> (câble 4209 maintenant, connecteur 2×20 à réception). Piste : <b>prise P5</b> (IO15/IO16), avec un câble PH 2,0 4 broches ↔ STEMMA QT (≈ 3 €, <b>hors budget</b> : il reste 0,36 €). Elle est basse, en haut de la carte, et l'ESP32-S3 accepte l'I²C sur n'importe quelles broches (<code>Wire.begin(15, 16)</code>). Autre solution : garder le câble 4209 sur le connecteur 2×20 et ouvrir une fente dans le dos.</p>
+      <h4>3 · Hauteur de l'écran ✅</h4>
+      <p><b>Retenu : <code>y_t5</code> = 44</b>, l'écran à 10 mm du bord haut, comme la maquette validée, avec ≈ 16 mm entre les capuchons et le bas de l'écran. Plus bas (<code>y_t5</code> = 34, le minimum à cause des plots de la molette), l'écran se rapproche des touches mais le bord haut passe à ≈ 20 mm.</p>
+      <h4>4 · Constat : USB-C sur le côté</h4>
+      <p>L'USB-C de la carte sort par le côté droit, <b>pas au dos</b> comme prévu par les ADR 005 et 006 (branchement par la lame de la station). Rien à décider tant que la station est en attente, mais il faudra mettre ces ADR à jour.</p>
+    </div>
+  </section>
+
+  <section class="cols">
+    <div class="card">
+      <h3>Paramètres à ajouter · fichier module-maquette</h3>
+      <table>
+        <thead><tr><th>Nom</th><th>Valeur</th><th>Rôle</th></tr></thead>
+        <tbody>
+          <tr><td><code>h_module</code></td><td class="num">115 mm</td><td class="why">Remplace <code>h_test</code> (40) : hauteur du module</td></tr>
+          <tr><td><code>l_t5</code></td><td class="num">118,07 mm</td><td class="why">Longueur de la carte T5 (à mesurer)</td></tr>
+          <tr><td><code>w_t5</code></td><td class="num">63,07 mm</td><td class="why">Largeur de la carte T5 (à mesurer)</td></tr>
+          <tr><td><code>x_t5</code></td><td class="num">3,465 mm</td><td class="why">Formule <code>(l_module - l_t5) / 2</code> : carte centrée</td></tr>
+          <tr><td><code>y_t5</code></td><td class="num">44 mm</td><td class="why">Bas de la carte depuis le bord bas (écran à 10 mm du bord haut)</td></tr>
+          <tr><td><code>ep_t5_avant</code></td><td class="num">2,5 mm</td><td class="why">Écran 0,87 + carte 1,6 (à mesurer) : hauteur des plots de la carte</td></tr>
+          <tr><td><code>aa_l</code> / <code>aa_h</code></td><td class="num">103,68 / 58,32 mm</td><td class="why">Zone active de l'écran (fiche E Ink)</td></tr>
+          <tr><td><code>aa_x</code></td><td class="num">10,2 mm</td><td class="why">Bord gauche de la zone active depuis le bord gauche de la carte (provisoire, à mesurer)</td></tr>
+          <tr><td><code>aa_y</code></td><td class="num">2,4 mm</td><td class="why">Bas de la zone active depuis le bas de la carte (provisoire, à mesurer)</td></tr>
+          <tr><td><code>marge_fen</code></td><td class="num">0,5 mm</td><td class="why">Fenêtre un peu plus grande que la zone active, de chaque côté</td></tr>
+          <tr><td><code>usb_y</code></td><td class="num">39,3 mm</td><td class="why">Centre de l'USB-C depuis le bas de la carte (plan LilyGO)</td></tr>
+          <tr><td><code>usb_z</code></td><td class="num">19,4 mm</td><td class="why">Axe de l'USB-C depuis le dos (provisoire, à mesurer)</td></tr>
+          <tr><td><code>usb_l</code> / <code>usb_h</code></td><td class="num">13 / 7,5 mm</td><td class="why">Trou pour la fiche surmoulée du câble, jeu compris (à mesurer sur ton câble)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Mesures à prendre</h3>
+      <h4>Dès maintenant</h4>
+      <ul>
+        <li><b>Câble 4209</b> : longueur du boîtier noir d'une broche mâle, broche non comprise.</li>
+        <li><b>Câble USB-C</b> : largeur × épaisseur de la fiche surmoulée, et longueur avant le coude s'il est coudé.</li>
+      </ul>
+      <h4>À réception de la carte T5</h4>
+      <ul>
+        <li>Longueur, largeur et épaisseur totale écran + carte, sans les composants.</li>
+        <li>Position de la zone active (la partie qui change d'aspect) : distance aux 4 bords de la carte.</li>
+        <li>Hauteur au dos : connecteur 2×20, ESP32, condensateur rond près de l'USB-C, prises P4/P5.</li>
+        <li>USB-C : centre depuis le bas de la carte, hauteur de son axe depuis l'avant de l'écran, dépassement du bord.</li>
+        <li>P5 : prise droite ou coudée, et ordre des fils (3,3 V, IO15, IO16, GND).</li>
+        <li>Les bords haut et bas de la carte sont-ils libres de composants aux endroits des pattes ?</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cols">
+    <div class="card">
+      <h3>Étapes dans Fusion · fichier module-maquette</h3>
+      <ol>
+        <li>Ouvrir <code>coin-module</code>, <b>Fichier › Enregistrer sous</b> <code>module-maquette</code> : le coin reste intact.</li>
+        <li><b>Modifier les paramètres</b> : renommer <code>h_test</code> en <code>h_module</code> et le passer à 115, puis créer les paramètres ci-dessus.</li>
+        <li><b>Congé</b> : double-clic sur le congé dans la timeline, ajouter les 2 arêtes verticales du haut. Les 4 coins sont arrondis à <code>r_module</code>.</li>
+        <li><b>Coque</b> : double-clic sur la coque dans la timeline, désélectionner la face du haut et ne garder que le dos. Il reste la façade et 4 parois.</li>
+        <li><b>Fenêtre de l'écran</b> : esquisse sur la façade, Rectangle 2 points, premier coin en x = <code>x_t5 + aa_x - marge_fen</code>, y = <code>y_t5 + aa_y - marge_fen</code>, de <code>aa_l + 2 * marge_fen</code> × <code>aa_h + 2 * marge_fen</code>. Couper de <code>ep_paroi</code>.</li>
+        <li><b>Plots de la carte</b> : retourner la vue, esquisse sur la face intérieure de la façade, 4 cercles de <code>d_plot</code> : en bas à y = <code>y_t5 - 3</code>, x = 12 et 86,5 ; en haut à y = <code>y_t5 + w_t5 + 2,7</code>, x = 12 et 113. Extruder en « Joindre » de <code>ep_t5_avant</code>.</li>
+        <li><b>Avant-trous</b> : <code>d_pilote</code> concentriques, Couper de 4. Il reste 1 mm de façade sous la vis.</li>
+        <li><b>Trou de l'USB-C</b> : esquisse sur la face extérieure de la paroi droite, rectangle centré de <code>usb_l</code> × <code>usb_h</code>, à <code>y_t5 + usb_y</code> du bord bas et <code>usb_z</code> du dos. Couper de <code>ep_paroi</code>.</li>
+        <li>Enregistrer. <b>Pas d'export avant la réception de la carte</b> et la mise à jour des cotes provisoires.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>Tenue de la carte · pattes</h3>
+      <p>La carte n'a pas de trou : 4 pattes imprimées à part la plaquent contre la façade par le dos. Chaque patte (8 × 10 × 2, trou Ø 2,4) se visse sur un plot de la carte et recouvre son bord de 2 mm. Les plots se placent hors de la carte, aux endroits libres de ses bords haut et bas (pas sur les côtés : moins de 1 mm de jeu). <b>Serrer sans forcer</b> : la dalle est en verre et ses coins sont fragiles.</p>
+      <h3>Impression</h3>
+      <ul>
+        <li>À réception de la carte et après les mesures. <b>0.20mm Standard</b>, plaque texturée, <b>façade contre le plateau</b>, 4 boucles de paroi, sans support. 125 × 115 tient sur le plateau de l'A1 (256 × 256).</li>
+      </ul>
+      <h3>À noter après le test</h3>
+      <ul>
+        <li><b>Carte</b> : entre-t-elle entre les parois ? La fenêtre tombe-t-elle sur la zone active, sans bord blanc ni pixel caché ?</li>
+        <li><b>Câbles</b> : par où passent les câbles QT (carte → touches → molette) ? Rien ne force ?</li>
+        <li><b>USB-C</b> : la fiche entre-t-elle à fond par le trou de la paroi ?</li>
+        <li><b>Place restante</b> : une batterie 5 × 40 × 60 tient-elle derrière la carte, sous les câbles ?</li>
+        <li><b>Prise en main</b> : poids, équilibre, aspect de la façade avec l'écran.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<script>
+
+  // Toutes les cotes sont en mm ; chaque vue est dessinée à son échelle, en unités SVG.
+  const LINE = "#e6eaed";
+  const DIM = "#9fb0bb";
+  const PART = "#262e33";
+  const HOLE = "#15191c";
+  const TXT = 'font-family="IBM Plex Mono, Consolas, monospace"';
+
+  function defs(id) {
+    return "<defs>" +
+      '<pattern id="grid-' + id + '" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M5 0H0V5" fill="none" stroke="#252c31" stroke-width=".25"/></pattern>' +
+      '<pattern id="gridM-' + id + '" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#2e373d" stroke-width=".35"/></pattern>' +
+      '<pattern id="hatch-' + id + '" width="1.8" height="1.8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="1.8" stroke="#eef1f3" stroke-width=".4" opacity=".6"/></pattern>' +
+      '<pattern id="hatch2-' + id + '" width="1.4" height="1.4" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="1.4" stroke="#eef1f3" stroke-width=".35" opacity=".75"/></pattern>' +
+      "</defs>";
+  }
+  function frame(id, w, h) {
+    return '<rect width="' + w + '" height="' + h + '" fill="#1d2327"/>' +
+      '<rect width="' + w + '" height="' + h + '" fill="url(#grid-' + id + ')"/>' +
+      '<rect width="' + w + '" height="' + h + '" fill="url(#gridM-' + id + ')"/>' +
+      '<rect x="4" y="4" width="' + (w - 8) + '" height="' + (h - 8) + '" fill="none" stroke="#56636c" stroke-width=".4"/>';
+  }
+  function cartouche(w, h, title, scale) {
+    const cells = [["PROJET", "DESKTOP-TOOL"], ["PLANCHE", title], ["ÉCHELLE", scale], ["UNITÉ", "mm"], ["DATE", "04.10.2026"]];
+    const y = h - 18, x0 = 4, x1 = w - 4, step = (x1 - x0) / cells.length;
+    let s = '<rect x="' + x0 + '" y="' + y + '" width="' + (x1 - x0) + '" height="14" fill="#1a1f23" stroke="#56636c" stroke-width=".4"/>';
+    cells.forEach((c, i) => {
+      const cx = x0 + i * step;
+      if (i) s += '<line x1="' + cx + '" y1="' + y + '" x2="' + cx + '" y2="' + (y + 14) + '" stroke="#56636c" stroke-width=".4"/>';
+      s += '<text x="' + (cx + 3) + '" y="' + (y + 5.2) + '" ' + TXT + ' font-size="2.4" fill="' + DIM + '" letter-spacing=".3">' + c[0] + "</text>";
+      s += '<text x="' + (cx + 3) + '" y="' + (y + 10.8) + '" ' + TXT + ' font-size="3.6" fill="' + LINE + '">' + c[1] + "</text>";
+    });
+    return s;
+  }
+
+  // Cotes : trait, petits traits d'extrémité et valeur au-dessus (ou à droite, tournée).
+  function dimH(x1, x2, y, label) {
+    return '<g stroke="' + DIM + '" stroke-width=".25"><line x1="' + x1 + '" y1="' + y + '" x2="' + x2 + '" y2="' + y + '"/>' +
+      '<line x1="' + x1 + '" y1="' + (y - 2) + '" x2="' + x1 + '" y2="' + (y + 2) + '"/><line x1="' + x2 + '" y1="' + (y - 2) + '" x2="' + x2 + '" y2="' + (y + 2) + '"/></g>' +
+      '<text x="' + ((x1 + x2) / 2) + '" y="' + (y - 1.4) + '" text-anchor="middle" ' + TXT + ' font-size="3.4" fill="' + DIM + '">' + label + "</text>";
+  }
+  function dimV(x, y1, y2, label) {
+    const cy = (y1 + y2) / 2;
+    return '<g stroke="' + DIM + '" stroke-width=".25"><line x1="' + x + '" y1="' + y1 + '" x2="' + x + '" y2="' + y2 + '"/>' +
+      '<line x1="' + (x - 2) + '" y1="' + y1 + '" x2="' + (x + 2) + '" y2="' + y1 + '"/><line x1="' + (x - 2) + '" y1="' + y2 + '" x2="' + (x + 2) + '" y2="' + y2 + '"/></g>' +
+      '<text x="' + (x + 1.6) + '" y="' + cy + '" text-anchor="middle" ' + TXT + ' font-size="3.4" fill="' + DIM + '" transform="rotate(90 ' + (x + 1.6) + " " + cy + ')">' + label + "</text>";
+  }
+  // Ligne de rappel : point sur la pièce, trait, texte.
+  function leader(x1, y1, x2, y2, label, anchor) {
+    const a = anchor || "start", tx = a === "end" ? x2 - 1 : x2 + 1;
+    return '<circle cx="' + x1 + '" cy="' + y1 + '" r=".6" fill="' + DIM + '"/>' +
+      '<polyline points="' + x1 + "," + y1 + " " + x2 + "," + y2 + '" fill="none" stroke="' + DIM + '" stroke-width=".25"/>' +
+      '<text x="' + tx + '" y="' + (y2 + 1.2) + '" text-anchor="' + a + '" ' + TXT + ' font-size="3" fill="' + DIM + '">' + label + "</text>";
+  }
+  const viewLabel = (x, y, t) => '<text x="' + x + '" y="' + y + '" text-anchor="middle" ' + TXT + ' font-size="4" letter-spacing=".4" fill="' + LINE + '">' + t + "</text>";
+  const small = (x, y, t, a) => '<text x="' + x + '" y="' + y + '" text-anchor="' + (a || "middle") + '" ' + TXT + ' font-size="2.8" fill="' + DIM + '">' + t + "</text>";
+  const axis = (x1, y1, x2, y2) => '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" stroke="' + DIM + '" stroke-width=".3" stroke-dasharray="4 1.2 1 1.2"/>';
+  const poly = (pts, fill, close) => '<path d="M' + pts.map(p => p[0] + " " + p[1]).join(" L") + (close === false ? "" : "Z") + '" fill="' + fill + '" stroke="' + LINE + '" stroke-width=".42" stroke-linejoin="miter"/>';
+
+  const svg = (id, w, h, title, body) => '<svg viewBox="0 0 ' + w + " " + h + '" role="img" aria-label="' + title + '">' + defs(id) + frame(id, w, h) + body + "</svg>";
+
+  const r2 = (v) => +v.toFixed(2);
+  const hid = (s) => s.replace("/>", ' stroke-dasharray="1.2 .8"/>');
+
+  const WARN = "#e8a24a";
+  // Cotes communes (mm). Origine : coin bas gauche du module vu de face, z depuis le dos.
+  const LM = 125, HM = 115, EM = 26, RM = 7, EP = 2.5;
+  const KX = [0, 1, 2, 3].map(i => 50.5 + i * 19.05);   // axes des switches
+  const YC = 21, XM = 21;                                 // axe des commandes, axe de la molette
+  const NK = { x: 40.825, y: 10.25, l: 76.5, w: 21.5 };   // carte NeoKey
+  const NK_HOLES = [[NK.x + 19, NK.y + 3], [NK.x + 57.5, NK.y + 3], [NK.x + 19, NK.y + 19.5], [NK.x + 57.5, NK.y + 19.5]];
+  const EN_HOLES = [[10.75, 10.75], [31.25, 10.75], [10.75, 31.25], [31.25, 31.25]];
+  // Carte T5, vue de face, USB-C à droite (plan LilyGO EPD47-S3.dxf, provisoire).
+  const T5 = { x: 3.465, y: 44, l: 118.07, w: 63.07 };
+  const AA = { x: 10.2, y: 2.4, l: 103.68, h: 58.32 }, MF = 0.5;
+  const WIN = { x1: T5.x + AA.x - MF, y1: T5.y + AA.y - MF, x2: T5.x + AA.x + AA.l + MF, y2: T5.y + AA.y + AA.h + MF };
+  const COMPS = [   // [x1, x2, y1, y2, libellé] depuis le coin bas gauche de la carte
+    [26.0, 76.1, 1.4, 5.8, "connecteur 2×20"],
+    [90.1, 109.8, 1.7, 27.5, "ESP32-S3"],
+    [111.7, 119.2, 34.5, 44.2, "USB-C"],
+    [49.7, 64.6, 47.3, 62.5, "SD"],
+    [38.4, 47.3, 56.9, 62.2, "P4"],
+    [27.6, 36.6, 56.9, 62.2, "P5"],
+    [79.3, 87.6, 31.1, 40.4, "batt."],
+    [7.2, 19.7, 44.4, 55.2, "nappe"]
+  ];
+  const T5_PLOTS = [[12, T5.y - 3], [86.5, T5.y - 3], [12, T5.y + T5.w + 2.7], [113, T5.y + T5.w + 2.7]];
+  const USB_Y = T5.y + 39.3;
+  const BATT = { x1: 32.5, x2: 92.5, y1: 52, y2: 92 };
+
+  // ----- Planche 1 : façade, vue de face (2,2:1) -----
+  (function () {
+    const W = 360, H = 345, k = 2.2, ox = 42, oy = 290;
+    const X = (x) => r2(ox + x * k), Y = (y) => r2(oy - y * k);
+    const rect = (x1, y1, x2, y2, fill, stroke, sw, extra) => '<rect x="' + X(x1) + '" y="' + Y(y2) + '" width="' + r2((x2 - x1) * k) + '" height="' + r2((y2 - y1) * k) + '" fill="' + fill + '" stroke="' + stroke + '" stroke-width="' + sw + '"' + (extra || "") + "/>";
+    const DASH = ' stroke-dasharray="1.2 .8"';
+    let s = "";
+    // Contour, 4 coins arrondis, et parois intérieures cachées.
+    const R = RM * k, Ri = (RM - EP) * k;
+    s += '<rect x="' + X(0) + '" y="' + Y(HM) + '" width="' + LM * k + '" height="' + HM * k + '" rx="' + R + '" fill="' + PART + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    s += '<rect x="' + X(EP) + '" y="' + Y(HM - EP) + '" width="' + (LM - 2 * EP) * k + '" height="' + (HM - 2 * EP) * k + '" rx="' + Ri + '" fill="none" stroke="' + DIM + '" stroke-width=".25"' + DASH + "/>";
+
+    // Fenêtre de l'écran.
+    s += rect(WIN.x1, WIN.y1, WIN.x2, WIN.y2, HOLE, LINE, ".42");
+    s += '<text x="' + X((WIN.x1 + WIN.x2) / 2) + '" y="' + Y(76) + '" text-anchor="middle" ' + TXT + ' font-size="3.4" fill="' + DIM + '">ZONE ACTIVE 103,68 × 58,32</text>';
+    s += '<text x="' + X((WIN.x1 + WIN.x2) / 2) + '" y="' + Y(71) + '" text-anchor="middle" ' + TXT + ' font-size="2.6" fill="' + DIM + '">fenêtre = zone active + 0,5 par côté · position provisoire</text>';
+
+    // Batterie v2 (derrière la carte, contre le dos).
+    s += rect(BATT.x1, BATT.y1, BATT.x2, BATT.y2, "none", DIM, ".25", ' stroke-dasharray="3 1.5"');
+    s += small(X((BATT.x1 + BATT.x2) / 2), Y(BATT.y2) + 5, "batterie v2 · 60 × 40 × 5 · contre le dos");
+
+    // Carte T5 cachée, avec l'échancrure sous l'antenne.
+    const pcb = [[0, 0], [89.72, 0], [89.72, 7.25], [109.76, 7.25], [109.76, 0], [T5.l, 0], [T5.l, T5.w], [0, T5.w]];
+    s += '<path d="M' + pcb.map(([x, y]) => X(T5.x + x) + " " + Y(T5.y + y)).join(" L") + 'Z" fill="none" stroke="' + LINE + '" stroke-width=".3"' + DASH + "/>";
+    COMPS.forEach(([x1, x2, y1, y2, t]) => {
+      s += rect(T5.x + x1, T5.y + y1, T5.x + x2, T5.y + y2, "none", DIM, ".22", DASH);
+      s += '<text x="' + X(T5.x + (x1 + x2) / 2) + '" y="' + r2(Y(T5.y + (y1 + y2) / 2) + 1) + '" text-anchor="middle" ' + TXT + ' font-size="2.3" fill="' + DIM + '">' + t + "</text>";
+    });
+
+    // Commandes (coin de module validé) : cartes, plots, fenêtres, capuchons, bouton.
+    s += rect(NK.x, NK.y, NK.x + NK.l, NK.y + NK.w, "none", DIM, ".25", DASH);
+    s += rect(8.25, 8.25, 33.75, 33.75, "none", DIM, ".25", DASH);
+    s += rect(18, 31.5, 24, 35.5, "none", DIM, ".22", DASH) + small(X(21), Y(35.5) - 1.5, "QT");
+    s += small(X(21), Y(8.25) + 4, "encodeur tourné de 90°");
+    NK_HOLES.concat(EN_HOLES).concat(T5_PLOTS).forEach(([x, y]) => {
+      s += '<circle cx="' + X(x) + '" cy="' + Y(y) + '" r="' + 1.8 * k + '" fill="none" stroke="' + DIM + '" stroke-width=".3"' + DASH + "/>";
+    });
+    // Pattes de la carte (sur le dos).
+    T5_PLOTS.forEach(([x, y], i) => {
+      const y1 = i < 2 ? y - 3 : T5.y + T5.w - 2, y2 = i < 2 ? T5.y + 2 : Math.min(y + 2.7, HM - EP - 0.2);
+      s += rect(x - 4, y1, x + 4, y2, "none", WARN, ".3", ' stroke-dasharray=".8 .6"');
+    });
+    KX.forEach(cx => {
+      s += rect(cx - 6.5, YC - 6.5, cx + 6.5, YC + 6.5, HOLE, LINE, ".42");
+      s += '<rect x="' + X(cx - 9) + '" y="' + Y(YC + 9) + '" width="' + 18 * k + '" height="' + 18 * k + '" rx="' + 1.5 * k + '" fill="none" stroke="' + DIM + '" stroke-width=".3" stroke-dasharray=".6 1"/>';
+    });
+    s += '<circle cx="' + X(XM) + '" cy="' + Y(YC) + '" r="' + 3.7 * k + '" fill="' + HOLE + '" stroke="' + LINE + '" stroke-width=".42"/>';
+    s += '<circle cx="' + X(XM) + '" cy="' + Y(YC) + '" r="' + 12.5 * k + '" fill="none" stroke="' + DIM + '" stroke-width=".3" stroke-dasharray=".6 1"/>';
+
+    // Trou de l'USB-C dans la paroi droite (vu par la tranche).
+    s += rect(LM - EP, USB_Y - 6.5, LM, USB_Y + 6.5, HOLE, LINE, ".42");
+    s += leader(X(LM), Y(USB_Y), X(LM) + 10, Y(USB_Y) - 10, "USB-C", "start");
+
+    // Ligne de coupe B-B (x = 74).
+    s += axis(X(74), Y(HM) - 6, X(74), Y(0) + 6) + small(X(74) + 2.5, Y(HM) - 6, "B", "start") + small(X(74) + 2.5, Y(0) + 8, "B", "start");
+
+    // Cotes.
+    s += dimH(X(0), X(LM), Y(HM) - 10, "125");
+    s += dimH(X(0), X(WIN.x1), Y(HM) - 3.5, String(WIN.x1.toFixed(1)).replace(".", ","));
+    s += dimH(X(WIN.x2), X(LM), Y(HM) - 3.5, String((LM - WIN.x2).toFixed(1)).replace(".", ","));
+    s += dimV(X(0) - 30, Y(HM), Y(0), "115");
+    s += dimV(X(0) - 21, Y(T5.y), Y(0), "44");
+    s += dimV(X(0) - 21, Y(T5.y + T5.w), Y(T5.y), "63,07");
+    s += dimV(X(0) - 12, Y(HM), Y(WIN.y2), String((HM - WIN.y2).toFixed(1)).replace(".", ","));
+    s += dimV(X(LM) + 22, Y(USB_Y), Y(0), String(USB_Y.toFixed(1)).replace(".", ","));
+    s += dimH(X(T5.x), X(T5.x + T5.l), Y(0) + 9, "carte T5 118,07");
+    s += leader(X(12), Y(T5.y - 3), X(0) - 6, Y(T5.y - 12), "plot + patte", "end");
+    s += small(X(62.5), Y(0) + 16, "pointillés : au dos de la façade · orange : pattes de la carte, posées par le dos");
+    s += viewLabel(X(62.5), H - 23, "FACE · TRANSPARENCE");
+    s += cartouche(W, H, "MAQUETTE · FACE", "2,2:1");
+    document.getElementById("sheet-face").innerHTML = svg("f", W, H, "Façade du module complet : fenêtre de l'écran, carte T5 et ses composants, commandes, plots et trou de l'USB-C", s);
+  })();
+
+  // ----- Planche 2 : coupe B-B (2,4:1), y vers la droite, z vers le haut -----
+  (function () {
+    const W = 360, H = 175, k = 2.4, ox = 30, oz = 112;
+    const X = (y) => r2(ox + y * k), Z = (z) => r2(oz - z * k);
+    const P = (pts) => pts.map(([y, z]) => [X(y), Z(z)]);
+    const box = (y1, y2, z1, z2, fill, extra, stroke) => '<rect x="' + X(y1) + '" y="' + Z(z2) + '" width="' + r2((y2 - y1) * k) + '" height="' + r2((z2 - z1) * k) + '" fill="' + fill + '" stroke="' + (stroke || LINE) + '" stroke-width=".35"' + (extra || "") + "/>";
+    const DASH = ' stroke-dasharray="1.2 .8"';
+    const zF = EM - EP, zE = zF - 0.87, zC = zE - 1.6, zH = zC - 8.5, zD = zH - 14;
+    let s = "";
+    // Pièce coupée : parois, façade avec fenêtre des touches et de l'écran.
+    s += poly(P([[0, 0], [0, EM], [14.5, EM], [14.5, zF], [EP, zF], [EP, 0]]), "url(#hatch-s)");
+    s += poly(P([[27.5, zF], [27.5, EM], [WIN.y1, EM], [WIN.y1, zF]]), "url(#hatch-s)");
+    s += poly(P([[WIN.y2, zF], [WIN.y2, EM], [HM, EM], [HM, 0], [HM - EP, 0], [HM - EP, zF]]), "url(#hatch-s)");
+    // Dos et batterie (v2, à venir).
+    s += box(EP, HM - EP, 0, 2, "none", DASH, DIM) + small(X(20), Z(0) + 4.5, "dos (pièce à venir) 2");
+    s += box(BATT.y1, BATT.y2, 2, 7, "none", ' stroke-dasharray="3 1.5"', DIM) + small(X(72), Z(4.5) + 1, "batterie v2 · 5");
+    // Écran et carte T5.
+    s += box(T5.y + 0.285, T5.y + 0.285 + 62.5, zE, zF, "#3a454c");
+    s += box(T5.y, T5.y + T5.w, zC, zE, "#2a3237");
+    // Connecteur 2×20 et câble 4209 (broches mâles), qui dépasse sous le dos.
+    s += box(T5.y + 1.4, T5.y + 5.8, zH, zC, "none");
+    s += box(T5.y + 2.3, T5.y + 4.84, zD, zH, "none", ' stroke-dasharray=".8 .6"', WARN);
+    s += '<path d="M' + X(T5.y + 3.57) + " " + Z(zD) + " Q" + X(T5.y + 3.57) + " " + Z(zD - 3) + " " + X(T5.y + 8) + " " + Z(zD - 3) + " H" + X(T5.y + 20) + '" fill="none" stroke="' + WARN + '" stroke-width=".5"/>';
+    s += '<line x1="' + X(0) + '" y1="' + Z(2) + '" x2="' + X(HM) + '" y2="' + Z(2) + '" stroke="' + WARN + '" stroke-width=".25" stroke-dasharray="2 1"/>';
+    // NeoKey dans l'axe du switch 2 : carte, switch, tige, capuchon.
+    s += box(NK.y, NK.y + NK.w, 13.4, 15, "#2a3237");
+    s += poly(P([[14, 15], [28, 15], [26.05, 26.5], [15.95, 26.5]]), "none");
+    s += box(17.75, 24.25, 26.5, 30.5, "none");
+    s += box(12, 30, 30.5, 33.5, "none", ' stroke-dasharray=".6 1"', DIM);
+
+    // Cotes.
+    s += dimV(X(HM) + 8, Z(EM), Z(0), "26");
+    s += dimV(X(HM) + 16, Z(EM), Z(zC), "≈ 5");
+    s += dimV(X(T5.y) - 6, Z(zC), Z(zH), "8,5");
+    s += dimV(X(T5.y) - 14, Z(zH), Z(zD), "≈ 14");
+    s += dimV(X(T5.y) - 22, Z(2), Z(zD - 3), "≈ 6");
+    s += leader(X(80), Z(zF + 1.25), X(95), Z(EM) - 6, "façade 2,5");
+    s += leader(X(90), Z(zE + 0.4), X(100), Z(36), "écran 0,87 · carte 1,6");
+    s += leader(X(T5.y + 3.6), Z(zH + 6), X(70), Z(16), "connecteur femelle 2×20");
+    s += leader(X(T5.y + 4.8), Z(zD + 5), X(66), Z(10.5), "câble 4209 : broches mâles");
+    s += small(X(T5.y + 22), Z(zD - 3) + 4, "dépasse sous le dos", "start");
+    s += leader(X(21), Z(14.2), X(6), Z(-3), "NeoKey", "start");
+    s += small(X(HM / 2), H - 33, "vue de droite : bas du module à gauche, haut à droite · orange : câble 4209 et intérieur du dos");
+    s += viewLabel(X(HM / 2), H - 23, "COUPE B-B · X = 74");
+    s += cartouche(W, H, "MAQUETTE · COUPE B-B", "2,4:1");
+    document.getElementById("sheet-coupe").innerHTML = svg("s", W, H, "Coupe dans l'axe des broches I²C : empilement façade, écran, carte, connecteur et câble 4209 qui dépasse sous le dos", s);
+  })();
+</script>

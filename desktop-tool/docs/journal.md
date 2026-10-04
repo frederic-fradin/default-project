@@ -312,3 +312,21 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - **Décision** : `d_plot` reste à **3,6** (le plus petit qui tient ; 5 ne passe pas entre les
   switches) avec `d_pilote` = **1,8**. La casse venait de l'avant-trou de 1,6. Au montage,
   serrer jusqu'au contact de la carte, sans forcer.
+- Coin de module version 2 (trous NeoKey côté écran à 2 mm, plots Ø 3,6, avant-trous 1,8,
+  4 boucles de paroi) : **impression en cours**.
+
+## 2026-10-04 — Planche de la maquette d'encombrement (P1)
+
+- Cotes de la carte T5 relevées sur le plan officiel LilyGO (`shell/EPD47-S3.dxf` du dépôt
+  LilyGo-EPD47, branche esp32s3), sur la fiche de l'écran ED047TC1 et sur le schéma V2.3.
+  Provisoires jusqu'à la réception de la carte.
+- Constats : carte de 118,07 × 63,07 pour 120 mm entre les parois (moins de 1 mm de jeu par
+  côté) ; zone active décalée côté nappe (bords de fenêtre ≈ 13 et 7,5) ; **USB-C sur le petit
+  côté, pas au dos** ; aucun trou de fixation (pattes à prévoir) ; tous les composants au dos.
+- Point dur : le câble 4209 sur le connecteur femelle 2×20 dépasserait de ≈ 6 mm sous le dos.
+  Piste : prise P5 (PH 2,0 : 3,3 V, IO15, IO16, GND) avec un câble PH 2,0 ↔ STEMMA QT.
+- Planche : `docs/design/maquette-encombrement.html`. À trancher : sens de la carte, branchement
+  I²C, hauteur de l'écran.
+- **Choix** : carte T5 USB-C à droite (connecteur 2×20 en bas) ; écran haut, `y_t5` = 44.
+  Branchement I²C : **en attente des mesures** (boîtier des broches du câble 4209 maintenant,
+  hauteur du connecteur 2×20 à réception).
