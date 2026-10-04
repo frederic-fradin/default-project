@@ -330,3 +330,12 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - **Choix** : carte T5 USB-C à droite (connecteur 2×20 en bas) ; écran haut, `y_t5` = 44.
   Branchement I²C : **en attente des mesures** (boîtier des broches du câble 4209 maintenant,
   hauteur du connecteur 2×20 à réception).
+
+## 2026-10-04 — Coin de module v2 monté : VALIDÉ (P1)
+
+- 8 vis M2 serrées sans fissure (plots Ø 3,6, avant-trous 1,8, 4 parois), les 4 vis de la
+  NeoKey passent.
+- Aucun contact des plots avec les switches ni avec le corps de l'encodeur.
+- Bouton v2 : clic franc, sans frottement, tient bien sur l'axe.
+- Encodeur tourné de 90° : la fiche QT sort côté écran.
+- **Coin de module validé** : il sert de base au bas de la maquette d'encombrement.
