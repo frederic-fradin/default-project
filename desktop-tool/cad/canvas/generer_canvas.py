@@ -23,7 +23,7 @@ KX = [50.5 + i * 19.05 for i in range(4)]  # axes des switches
 YC, XM = 21, 21  # axe des commandes, axe de la molette
 NK = dict(x=40.825, y=10.25, l=76.5, w=21.5)  # carte NeoKey
 NK_TROUS = [(NK["x"] + 19, NK["y"] + 3), (NK["x"] + 57.5, NK["y"] + 3),
-            (NK["x"] + 19, NK["y"] + 18.5), (NK["x"] + 57.5, NK["y"] + 18.5)]
+            (NK["x"] + 19, NK["y"] + 19.5), (NK["x"] + 57.5, NK["y"] + 19.5)]
 EN_TROUS = [(10.75, 10.75), (31.25, 10.75), (10.75, 31.25), (31.25, 31.25)]
 
 
@@ -129,8 +129,8 @@ def coin_facade():
     v.rect(8.25, 8.25, 25.5, 25.5, CACHE, 0.2, "1 0.6")
     # Plots et avant-trous (cachés).
     for x, y in NK_TROUS + EN_TROUS:
-        v.cercle(x, y, 3.6, CACHE, 0.2, "1 0.6")
-        v.cercle(x, y, 1.6, CACHE, 0.2, "0.6 0.4")
+        v.cercle(x, y, 4.2, CACHE, 0.2, "1 0.6")
+        v.cercle(x, y, 1.8, CACHE, 0.2, "0.6 0.4")
     # Fenêtres et trou de bague (traversants).
     for cx in KX:
         v.rect(cx - 6.5, YC - 6.5, 13, 13, TRAIT, 0.35)
@@ -146,7 +146,7 @@ def coin_facade():
     v.cote_v(133, 0, 40, "40")
     v.cote_h(KX[0] - 6.5, KX[0] + 6.5, YC + 8.5, "13")
     v.texte(XM, YC - 7, "Ø 7,4", 2.4)
-    v.texte(NK["x"], NK["y"] - 2.6, "carte NeoKey (cachée) · plots Ø 3,6 · avant-trous Ø 1,6", 2, CACHE, "start")
+    v.texte(NK["x"], NK["y"] - 2.6, "carte NeoKey (cachée) · plots Ø 4,2 · avant-trous Ø 1,8", 2, CACHE, "start")
     v.texte(10, 26.5, "carte encodeur", 2, CACHE, "start")
     v.origine()
     v.etalon(0, -12, 100)
@@ -169,9 +169,9 @@ def coin_coupe():
         v.poly(p, TRAIT, 0.35, "url(#h)")
     # Plots (hors du plan de coupe).
     for x in (NK["x"] + 19, NK["x"] + 57.5):
-        v.rect(x - 1.8, 15, 3.6, 8.5, CACHE, 0.2, "1 0.6")
+        v.rect(x - 2.1, 15, 4.2, 8.5, CACHE, 0.2, "1 0.6")
     for x in (10.75, 31.25):
-        v.rect(x - 1.8, 12, 3.6, 11.5, CACHE, 0.2, "1 0.6")
+        v.rect(x - 2.1, 12, 4.2, 11.5, CACHE, 0.2, "1 0.6")
     # Composants de référence, en gris.
     v.rect(NK["x"], 13.4, NK["l"], 1.6, CACHE, 0.2)
     for cx in KX:
@@ -182,7 +182,7 @@ def coin_coupe():
     v.rect(15, 12, 12, 7, CACHE, 0.2)
     v.rect(17.5, 19, 7, 7, CACHE, 0.2)
     v.rect(18, 26, 6, 8, CACHE, 0.2)
-    v.rect(8.5, 27, 25, 9, CACHE, 0.2, "1 0.6")
+    v.rect(8.5, 28, 25, 8, CACHE, 0.2, "1 0.6")
     v.axe(XM, 8, XM, 38)
     # Cotes.
     v.cote_v(133, 0, 26, "26")
@@ -230,17 +230,17 @@ def bouton_coupe():
     hach = '<pattern id="h" width="1" height="1" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">' \
            f'<line x1="0" y1="0" x2="0" y2="1" stroke="{CACHE}" stroke-width="0.12"/></pattern>'
     v.add(f"<defs>{hach}</defs>")
-    pts = [(-12.5, 0), (-12.5, 8)]
-    pts += [(-12.5 + 1 - math.cos(a) * 1, 8 + math.sin(a) * 1) for a in [i * math.pi / 12 for i in range(1, 6)]]
-    pts += [(-11.5, 9), (5, 9), (5, 8.4), (10, 8.4), (10, 9), (11.5, 9)]
-    pts += [(12.5 - 1 + math.sin(a) * 1, 8 + math.cos(a) * 1) for a in [i * math.pi / 12 for i in range(1, 6)]]
-    pts += [(12.5, 8), (12.5, 0), (1.6, 0), (1.6, 7), (-3.1, 7), (-3.1, 0)]
+    pts = [(-12.5, 0), (-12.5, 7)]
+    pts += [(-12.5 + 1 - math.cos(a) * 1, 7 + math.sin(a) * 1) for a in [i * math.pi / 12 for i in range(1, 6)]]
+    pts += [(-11.5, 8), (5, 8), (5, 7.4), (10, 7.4), (10, 8), (11.5, 8)]
+    pts += [(12.5 - 1 + math.sin(a) * 1, 7 + math.cos(a) * 1) for a in [i * math.pi / 12 for i in range(1, 6)]]
+    pts += [(12.5, 7), (12.5, 0), (1.6, 0), (1.6, 6), (-3.1, 6), (-3.1, 0)]
     v.poly(pts, TRAIT, 0.3, "url(#h)")
-    v.axe(0, -2, 0, 11)
-    v.cote_v(16, 0, 9, "9")
-    v.cote_v(-16, 0, 7, "7")
+    v.axe(0, -2, 0, 10)
+    v.cote_v(16, 0, 8, "8")
+    v.cote_v(-16, 0, 6, "6")
     v.cote_h(-3.1, 1.6, 11, "4,7")
-    v.texte(0, 15, "alésage en D Ø 6,2 sur 7 · repère creux 0,6", 2, COTE)
+    v.texte(0, 14, "alésage en D Ø 6,2 sur 6 · repère creux 0,6", 2, COTE)
     v.origine("0,0", 1.5, 2, -3.2)
     v.etalon(-10, -9, 20, "")
     cartouche(v, ["BOUTON · COUPE · plan XZ", "dessous à z = 0 · jeu 0,2 · 10 px = 1 mm"])

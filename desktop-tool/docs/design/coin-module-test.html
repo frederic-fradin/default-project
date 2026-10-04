@@ -74,15 +74,15 @@
     <div class="sheet" id="sheet-coupe"></div>
     <div class="notes">
       <p><b>Touches.</b> La carte NeoKey est à 11 mm sous le dessus de la façade. Le haut du boîtier des switches dépasse de 0,5 mm dans sa fenêtre, et un capuchon enfoncé s'arrête juste au-dessus : rien ne touche la façade. Les touches dépassent de 7,5 mm au repos.</p>
-      <p><b>Molette.</b> La carte de l'encodeur est à 14 mm sous le dessus de la façade : la bague filetée affleure, l'écrou reste dans le sachet. Le bouton laisse 1 mm sous lui pour la course du clic (0,5 mm).</p>
+      <p><b>Molette.</b> La carte de l'encodeur est à 14 mm sous le dessus de la façade : la bague filetée affleure, l'écrou reste dans le sachet. Le bouton laisse 2 mm sous lui pour la course du clic (0,5 mm) : 1 mm ne suffisait pas au premier test.</p>
     </div>
   </section>
 
   <section class="variant">
-    <div class="variant-head"><h2>Bouton de molette</h2><span class="tag">échelle 3,5:1</span><span class="tag">variante jeu 0,2</span></div>
+    <div class="variant-head"><h2>Bouton de molette</h2><span class="tag">échelle 3,5:1</span><span class="tag">jeu 0,2 · version 2</span></div>
     <div class="sheet" id="sheet-bouton"></div>
     <div class="notes">
-      <p><b>Alésage.</b> Le méplat de l'axe Ø 6 court sur 7 mm, toute la longueur engagée dans le bouton : l'alésage est en D sur toute sa profondeur. Le jeu s'ajoute au diamètre et à l'épaisseur sur le méplat, comme pour la croix des touches.</p>
+      <p><b>Alésage.</b> Le méplat de l'axe Ø 6 court sur 7 mm, toute la longueur engagée dans le bouton : l'alésage est en D sur toute sa profondeur. Le jeu s'ajoute au diamètre et à l'épaisseur sur le méplat, comme pour la croix des touches. Version 2 : alésage de 6, bouton de 8 de haut.</p>
     </div>
   </section>
 
@@ -108,15 +108,16 @@
           <tr><td><code>x_neokey</code></td><td class="num">40,825 mm</td><td class="why">Formule <code>x_touche1 - marge_switch</code></td></tr>
           <tr><td><code>y_neokey</code></td><td class="num">10,25 mm</td><td class="why">Formule <code>y_commandes - w_neokey / 2</code> (switches centrés sur la carte, mesuré : 10,75 au bord haut)</td></tr>
           <tr><td><code>trou_nk_x</code></td><td class="num">19 mm</td><td class="why">Centre des trous NeoKey, depuis chaque bout</td></tr>
-          <tr><td><code>trou_nk_y</code></td><td class="num">3 mm</td><td class="why">Centre des trous NeoKey, depuis chaque grand côté</td></tr>
+          <tr><td><code>trou_nk_y_bas</code></td><td class="num">3 mm</td><td class="why">Centre des trous NeoKey, depuis le grand côté des coins arrondis</td></tr>
+          <tr><td><code>trou_nk_y_haut</code></td><td class="num">2 mm</td><td class="why">Centre des trous NeoKey, depuis le grand côté de l'écran (3 au premier test : 1 mm trop bas)</td></tr>
           <tr><td><code>prof_neokey</code></td><td class="num">11 mm</td><td class="why">Dessus de la carte sous le dessus de la façade</td></tr>
           <tr><td><code>c_encodeur</code></td><td class="num">25,5 mm</td><td class="why">Côté de la carte de l'encodeur</td></tr>
           <tr><td><code>trou_enc</code></td><td class="num">2,5 mm</td><td class="why">Centre des trous de l'encodeur, depuis les bords</td></tr>
           <tr><td><code>prof_encodeur</code></td><td class="num">14 mm</td><td class="why">Dessus de la carte sous le dessus de la façade (bague affleurante)</td></tr>
           <tr><td><code>d_bague</code></td><td class="num">7 mm</td><td class="why">Bague filetée de l'encodeur</td></tr>
           <tr><td><code>jeu_bague</code></td><td class="num">0,2 mm</td><td class="why">Jeu au rayon autour de la bague</td></tr>
-          <tr><td><code>d_plot</code></td><td class="num">3,6 mm</td><td class="why">Plots de fixation, fins pour passer entre les switches</td></tr>
-          <tr><td><code>d_pilote</code></td><td class="num">1,6 mm</td><td class="why">Avant-trou pour vis M2 auto-taraudeuse</td></tr>
+          <tr><td><code>d_plot</code></td><td class="num">4,2 mm</td><td class="why">Plots de fixation, fins pour passer entre les switches (3,6 éclatait au vissage ; à confirmer par la plaquette de plots)</td></tr>
+          <tr><td><code>d_pilote</code></td><td class="num">1,8 mm</td><td class="why">Avant-trou pour vis M2 auto-taraudeuse (1,6 forçait trop)</td></tr>
         </tbody>
       </table>
 
@@ -125,12 +126,12 @@
         <thead><tr><th>Nom</th><th>Valeur</th><th>Rôle</th></tr></thead>
         <tbody>
           <tr><td><code>d_bouton</code></td><td class="num">25 mm</td><td class="why">Diamètre du bouton</td></tr>
-          <tr><td><code>h_bouton</code></td><td class="num">9 mm</td><td class="why">Hauteur du bouton</td></tr>
+          <tr><td><code>h_bouton</code></td><td class="num">8 mm</td><td class="why">Hauteur du bouton (9 au premier test) : le dessus reste à 10 mm au-dessus de la façade</td></tr>
           <tr><td><code>r_conge</code></td><td class="num">1 mm</td><td class="why">Congé de l'arête du dessus</td></tr>
           <tr><td><code>d_axe</code></td><td class="num">6 mm</td><td class="why">Axe mesuré</td></tr>
           <tr><td><code>e_meplat</code></td><td class="num">4,5 mm</td><td class="why">Épaisseur de l'axe sur le méplat</td></tr>
           <tr><td><code>l_meplat</code></td><td class="num">7 mm</td><td class="why">Longueur du méplat depuis le bout, mesurée : au moins <code>p_alesage</code>, d'où un alésage en D sur toute sa profondeur</td></tr>
-          <tr><td><code>p_alesage</code></td><td class="num">7 mm</td><td class="why">Profondeur de l'alésage : le bouton flotte 1 mm au-dessus de la façade</td></tr>
+          <tr><td><code>p_alesage</code></td><td class="num">6 mm</td><td class="why">Profondeur de l'alésage : le bouton flotte 2 mm au-dessus de la façade (7 au premier test : 1 mm sous le bouton, il frottait et le clic ne passait pas)</td></tr>
           <tr><td><code>jeu_axe</code></td><td class="num">0,1 / 0,2 / 0,3 mm</td><td class="why">Une valeur par variante</td></tr>
         </tbody>
       </table>
@@ -145,7 +146,7 @@
         <li><b>Modifier › Coque</b> : cliquer la face du dessous (le dos) et la face du haut (y = <code>h_test</code>), épaisseur <code>ep_paroi</code>, vers l'intérieur. Il reste la façade et 3 parois.</li>
         <li><b>Fenêtres</b> : esquisse sur la façade, rectangle à partir du centre de <code>fen_switch</code> × <code>fen_switch</code>, centré à <code>x_touche1</code> du <b>bord gauche</b> et à <code>y_commandes</code> du <b>bord bas</b>, vu de dessus (bord gauche = côté de la molette, bord bas = côté des coins arrondis). Extruder en « Couper » de <code>ep_paroi</code>. Puis <b>Créer › Réseau › Réseau rectangulaire</b>, type d'objet <b>Fonctions</b>, cette découpe, quantité 4, espacement <code>pas_touche</code> sur l'axe X.</li>
         <li><b>Trou de la bague</b> : esquisse sur la façade, cercle de <code>d_bague + 2 * jeu_bague</code> centré à <code>x_molette</code> du bord gauche et à <code>y_commandes</code> du bord bas. Couper de <code>ep_paroi</code>.</li>
-        <li><b>Plots NeoKey</b> : retourner la vue, esquisse sur la face intérieure de la façade. 4 cercles de <code>d_plot</code> en x = <code>x_neokey + trou_nk_x</code> et <code>x_neokey + l_neokey - trou_nk_x</code>, y = <code>y_neokey + trou_nk_y</code> et <code>y_neokey + w_neokey - trou_nk_y</code>. Extruder en « Joindre » vers le dos de <code>prof_neokey - ep_paroi</code> (8,5).</li>
+        <li><b>Plots NeoKey</b> : retourner la vue, esquisse sur la face intérieure de la façade. 4 cercles de <code>d_plot</code> en x = <code>x_neokey + trou_nk_x</code> et <code>x_neokey + l_neokey - trou_nk_x</code>, y = <code>y_neokey + trou_nk_y_bas</code> et <code>y_neokey + w_neokey - trou_nk_y_haut</code>. Extruder en « Joindre » vers le dos de <code>prof_neokey - ep_paroi</code> (8,5).</li>
         <li><b>Plots encodeur</b> : même principe, 4 cercles en <code>x_molette ± (c_encodeur / 2 - trou_enc)</code>, <code>y_commandes ± (c_encodeur / 2 - trou_enc)</code>. Extruder de <code>prof_encodeur - ep_paroi</code> (11,5).</li>
         <li><b>Avant-trous</b> : esquisse sur le bout des plots NeoKey, 4 cercles de <code>d_pilote</code> concentriques, Couper de 6. Idem sur les plots de l'encodeur.</li>
         <li>Enregistrer sous <code>cad/coin-module</code>, exporter en <code>.3mf</code>.</li>
@@ -158,7 +159,7 @@
         <li><b>Alésage en D</b> : esquisse sur la face du dessous, cercle de <code>d_axe + jeu_axe</code> centré, et une ligne verticale qui le coupe à <code>(e_meplat + jeu_axe) - (d_axe + jeu_axe) / 2</code> du centre (1,6). Couper le grand morceau du cercle de <code>p_alesage</code>.</li>
         <li><b>Repère</b> : esquisse sur le dessus, rectangle de 0,8 de large, de 5 à 10 mm du centre. Couper de 0,6.</li>
         <li><b>Points de variante</b> : esquisse sur le dessous, 3 cercles Ø 1 alignés à 9 mm du centre, du côté opposé au méplat, espacés de 2,5. Couper de 0,4 en ne sélectionnant que 1, 2 ou 3 disques selon la variante.</li>
-        <li>Exporter <code>bouton-jeu-02</code>, puis passer <code>jeu_axe</code> à 0,1 avec 1 point, et à 0,3 avec 3 points, et exporter chaque variante.</li>
+        <li>Version 2 : passer <code>h_bouton</code> à 8 et <code>p_alesage</code> à 6 dans <b>Modifier les paramètres</b>, garder <code>jeu_axe</code> à 0,2 (2 points), exporter <code>bouton-v2</code>.</li>
       </ol>
     </div>
 
@@ -172,17 +173,64 @@
       <ul>
         <li>Profil <b>0.20mm Standard</b>, plaque texturée.</li>
         <li><b>Coin de module</b>, couleur du corps : <b>façade contre le plateau</b> (touche F, comme les capuchons), parois et plots vers le haut, sans support.</li>
-        <li><b>Boutons</b>, couleur d'accent : <b>dessus contre le plateau</b>, alésage vers le haut. Les 3 variantes ensemble.</li>
-        <li>Montage : 8 vis M2 auto-taraudeuses de 6 mm, posées par le dos à travers les cartes.</li>
+        <li><b>Bouton</b> (version 2, jeu 0,2), couleur d'accent : <b>dessus contre le plateau</b>, alésage vers le haut.</li>
+        <li><b>Plots</b> : dans Bambu Studio, <b>4 boucles de paroi</b> (onglet Résistance) pour que les plots soient pleins.</li>
+        <li>Montage : 8 vis M2 auto-taraudeuses de 6 mm, posées par le dos à travers les cartes. Carte de l'encodeur <b>tournée de 90°</b> : un connecteur côté écran, l'autre côté coins arrondis (trous symétriques, rien ne change dans la CAO).</li>
       </ul>
-      <h3>À noter après le test</h3>
+      <h3>Premier test (2026-10-04)</h3>
       <ul>
-        <li><b>Pouce gauche</b>, module tenu en main puis posé : la molette tombe-t-elle sous le pouce ? Les touches sont-elles faciles d'accès ?</li>
-        <li><b>Hauteurs</b> : touches à 7,5 mm, bouton à 10 mm au-dessus de la façade. Trop, pas assez ?</li>
-        <li><b>Fenêtres</b> : aucun frottement des switches ni des capuchons, touches enfoncées comprises.</li>
-        <li><b>Fixation</b> : les vis prennent-elles bien dans les avant-trous ? Les cartes sont-elles fermes ?</li>
-        <li><b>Bague</b> : affleure-t-elle la façade ? <b>Bouton</b> : quelle variante tient sans jeu et s'enlève à la main ? Frotte-t-il la façade au clic ?</li>
-        <li><b>Câbles QT</b> : il reste ≈ 5 mm entre le bout droit de la NeoKey et la paroi, et ≈ 6 mm autour de l'encodeur. Les fiches passent-elles, et par où sortent les câbles ?</li>
+        <li>✅ Alignement des switches et de l'axe, fenêtres sans frottement, hauteur des touches et accès au pouce gauche : validés.</li>
+        <li>❌ Plots Ø 3,6 / avant-trou 1,6 : le plastique éclate au vissage. → plaquette de plots, puis <code>d_plot</code> et <code>d_pilote</code> revus.</li>
+        <li>❌ 2 vis NeoKey sur 4 : les trous côté écran sont 1 mm plus haut. → <code>trou_nk_y_haut</code> = 2.</li>
+        <li>❌ Bouton : frotte la façade au clic, le clic ne passe pas. → bouton version 2, 2 mm sous le bouton.</li>
+        <li>Câbles QT justes mais ça passe ; connecteurs face à face. → encodeur tourné de 90°.</li>
+      </ul>
+      <h3>À noter après le deuxième test</h3>
+      <ul>
+        <li><b>Fixation</b> : les 8 vis prennent-elles, sans fissure ? Les cartes sont-elles fermes ?</li>
+        <li><b>Plots</b> : aucun contact avec les switches ni avec le corps de l'encodeur ?</li>
+        <li><b>Bouton</b> : le clic passe-t-il franchement, sans frotter la façade ? Le bouton tient-il toujours bien sur l'axe avec 6 mm d'alésage ?</li>
+        <li><b>Câbles QT</b> : le câble de l'encodeur sort-il bien côté écran ?</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cols">
+    <div class="card">
+      <h3>Plaquette de plots · fichier plaquette-plots</h3>
+      <p>Avant de réimprimer le coin complet : 3 plots identiques à ceux du coin, seul le diamètre change. 15 minutes d'impression.</p>
+      <table>
+        <thead><tr><th>Nom</th><th>Valeur</th><th>Rôle</th></tr></thead>
+        <tbody>
+          <tr><td><code>l_plaque</code></td><td class="num">50 mm</td><td class="why">Longueur de la plaquette</td></tr>
+          <tr><td><code>w_plaque</code></td><td class="num">16 mm</td><td class="why">Largeur de la plaquette</td></tr>
+          <tr><td><code>ep_plaque</code></td><td class="num">2,5 mm</td><td class="why">Comme la façade</td></tr>
+          <tr><td><code>h_plot</code></td><td class="num">8,5 mm</td><td class="why">Comme les plots NeoKey</td></tr>
+          <tr><td><code>d_pilote</code></td><td class="num">1,8 mm</td><td class="why">Avant-trou, le même pour les 3 plots</td></tr>
+          <tr><td><code>p_pilote</code></td><td class="num">6 mm</td><td class="why">Profondeur de l'avant-trou</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Étapes dans Fusion · fichier plaquette-plots</h3>
+      <ol>
+        <li><b>Modifier les paramètres</b> : créer les paramètres ci-contre.</li>
+        <li><b>Plaque</b> : esquisse sur le plan XY, Rectangle 2 points depuis l'origine, <code>l_plaque</code> × <code>w_plaque</code>. Extruder de <code>ep_plaque</code> vers le haut.</li>
+        <li><b>Plots</b> : esquisse sur le dessus de la plaque, 3 cercles centrés à y = 8 et x = 10, 25, 40, de <b>Ø 3,6, 4,2 et 5</b> (cotes saisies en dur, c'est ce qu'on teste). Extruder en « Joindre » de <code>h_plot</code>.</li>
+        <li><b>Avant-trous</b> : esquisse sur le bout des plots, 3 cercles de <code>d_pilote</code> concentriques, Couper de <code>p_pilote</code>.</li>
+        <li><b>Repères</b> : esquisse sous la plaque, à 4 mm devant chaque plot, 1, 2 et 3 cercles Ø 1 espacés de 2,5 (1 point = Ø 3,6). Couper de 0,4.</li>
+        <li>Enregistrer sous <code>cad/plaquette-plots</code>, exporter en .3mf.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>Impression et test</h3>
+      <ul>
+        <li><b>0.20mm Standard</b>, plaque texturée, plaquette à plat, plots vers le haut, <b>4 boucles de paroi</b>.</li>
+        <li>Visser une vis M2 de 6 mm dans chaque plot <b>à travers un trou de coin de la carte de l'encodeur</b> (1,6 mm d'épaisseur, comme au montage), serrer à fond, dévisser, revisser une fois.</li>
+        <li>Noter pour chaque plot : fissure ou non, la vis tient-elle ferme.</li>
+        <li><b>Règle de choix</b> : garder le <b>plus petit diamètre qui ne casse pas</b>, pour laisser le plus de place aux switches et au corps de l'encodeur. Si Ø 3,6 tient avec l'avant-trou de 1,8, on garde 3,6.</li>
       </ul>
     </div>
   </section>
@@ -256,7 +304,7 @@
   const KX = [0, 1, 2, 3].map(i => 50.5 + i * 19.05);   // axes des switches
   const YC = 21, XM = 21;                                 // axe des commandes, axe de la molette
   const NK = { x: 40.825, y: 10.25, l: 76.5, w: 21.5 };   // carte NeoKey
-  const NK_HOLES = [[NK.x + 19, NK.y + 3], [NK.x + 57.5, NK.y + 3], [NK.x + 19, NK.y + 18.5], [NK.x + 57.5, NK.y + 18.5]];
+  const NK_HOLES = [[NK.x + 19, NK.y + 3], [NK.x + 57.5, NK.y + 3], [NK.x + 19, NK.y + 19.5], [NK.x + 57.5, NK.y + 19.5]];
   const EN_HOLES = [[10.75, 10.75], [31.25, 10.75], [10.75, 31.25], [31.25, 31.25]];
 
   // ----- Planche 1 : façade, vue de face (2,5:1) -----
@@ -275,7 +323,7 @@
     // Cartes et plots cachés.
     s += hid('<rect x="' + X(NK.x) + '" y="' + Y(NK.y + NK.w) + '" width="' + NK.l * k + '" height="' + NK.w * k + '" fill="none" stroke="' + DIM + '" stroke-width=".3"/>');
     s += hid('<rect x="' + X(8.25) + '" y="' + Y(33.75) + '" width="' + 25.5 * k + '" height="' + 25.5 * k + '" fill="none" stroke="' + DIM + '" stroke-width=".3"/>');
-    NK_HOLES.concat(EN_HOLES).forEach(([x, y]) => { s += hid('<circle cx="' + X(x) + '" cy="' + Y(y) + '" r="' + 1.8 * k + '" fill="none" stroke="' + DIM + '" stroke-width=".3"/>'); });
+    NK_HOLES.concat(EN_HOLES).forEach(([x, y]) => { s += hid('<circle cx="' + X(x) + '" cy="' + Y(y) + '" r="' + 2.1 * k + '" fill="none" stroke="' + DIM + '" stroke-width=".3"/>'); });
 
     // Fenêtres, capuchons et bouton en fantôme.
     KX.forEach(cx => {
@@ -300,7 +348,7 @@
     s += dimH(X(0), X(125), 130, "125");
     s += leader(X(KX[1] + 4), Y(YC + 4), X(76), Y(36.5), "fenêtre 13 × 13 (× 4)");
     s += leader(X(XM + 2.6), Y(YC + 2.6), X(36), Y(38), "Ø 7,4 bague");
-    s += leader(X(NK_HOLES[1][0]), Y(NK_HOLES[1][1]), X(100), Y(4.5), "plot Ø 3,6 · avant-trou Ø 1,6", "end");
+    s += leader(X(NK_HOLES[1][0]), Y(NK_HOLES[1][1]), X(100), Y(4.5), "plot Ø 4,2 · avant-trou Ø 1,8", "end");
     s += leader(X(9.5), Y(31), X(5), Y(37.5), "encodeur 25,5");
     s += small(X(NK.x + 2), Y(NK.y) + 4, "NeoKey 76,5 × 21,5", "start");
     s += small(X(XM), Y(YC - 12.5) + 4.5, "bouton Ø 25");
@@ -325,7 +373,7 @@
     s += poly(P([[114.15, 26], [125, 26], [125, 0], [122.5, 0], [122.5, 23.5], [114.15, 23.5]]), "url(#hatch-s)");
 
     // Plots, hors du plan de coupe.
-    [NK.x + 19, NK.x + 57.5].forEach(x => { s += box(x - 1.8, x + 1.8, 15, 23.5, "none", ' stroke-dasharray="1.2 .8"'); });
+    [NK.x + 19, NK.x + 57.5].forEach(x => { s += box(x - 2.1, x + 2.1, 15, 23.5, "none", ' stroke-dasharray="1.2 .8"'); });
     [10.75, 31.25].forEach(x => { s += box(x - 1.8, x + 1.8, 12, 23.5, "none", ' stroke-dasharray="1.2 .8"'); });
 
     // NeoKey : carte, switches (boîtier simplifié), carré de tige, capuchons au repos.
@@ -341,7 +389,7 @@
     s += box(8.25, 33.75, 10.4, 12, "#2a3237");
     s += box(15, 27, 12, 19, "none");
     s += box(17.5, 24.5, 19, 26, "none");
-    s += poly(P([[8.5, 27], [17.9, 27], [17.9, 34], [24.1, 34], [24.1, 27], [33.5, 27], [33.5, 36], [8.5, 36]]), "url(#hatch2-s)");
+    s += poly(P([[8.5, 28], [17.9, 28], [17.9, 34], [24.1, 34], [24.1, 28], [33.5, 28], [33.5, 36], [8.5, 36]]), "url(#hatch2-s)");
     s += box(18, 24, 26, 34, PART);
     s += axis(X(XM), Z(38), X(XM), Z(8));
 
@@ -381,16 +429,16 @@
     s += viewLabel(ax, 126, "DESSUS");
 
     // Coupe dans l'axe, perpendiculaire au méplat, passant par le repère.
-    const cx = 180, zb = 92, zt = zb - 9 * k, L = cx - R, Rr = cx + R;
+    const cx = 180, zb = 92, zt = zb - 8 * k, L = cx - R, Rr = cx + R;
     const bR = 3.1 * k, fl = 1.6 * k;
     const d = "M" + L + " " + zb + " V" + (zt + k) + " Q" + L + " " + zt + " " + (L + k) + " " + zt +
       " H" + r2(cx + 5 * k) + " V" + r2(zt + 0.6 * k) + " H" + r2(cx + 10 * k) + " V" + zt +
       " H" + (Rr - k) + " Q" + Rr + " " + zt + " " + Rr + " " + (zt + k) + " V" + zb +
-      " H" + r2(cx + fl) + " V" + r2(zb - 7 * k) + " H" + r2(cx - bR) + " V" + zb + "Z";
+      " H" + r2(cx + fl) + " V" + r2(zb - 6 * k) + " H" + r2(cx - bR) + " V" + zb + "Z";
     s += '<path d="' + d + '" fill="url(#hatch-b)" stroke="' + LINE + '" stroke-width=".42" stroke-linejoin="miter"/>';
     s += axis(cx, zt - 4, cx, zb + 4);
-    s += dimV(Rr + 8, zt, zb, "9");
-    s += dimV(L - 8, r2(zb - 7 * k), zb, "7");
+    s += dimV(Rr + 8, zt, zb, "8");
+    s += dimV(L - 8, r2(zb - 6 * k), zb, "6");
     s += dimH(r2(cx - bR), r2(cx + bR), zb + 8, "Ø 6,2");
     s += dimH(r2(cx - bR), r2(cx + fl), zt - 5, "4,7");
     s += viewLabel(cx, 126, "COUPE · JEU 0,2");

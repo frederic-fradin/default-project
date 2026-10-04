@@ -268,3 +268,35 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - Règle confirmée sur 3 pièces (logements d'aimant, croix des touches, axe de l'encodeur) :
   **+0,2 mm sur la cote mesurée** pour un emmanchement serré.
 - Coin de module remodélisé de zéro : **impression en cours** (façade contre le plateau).
+
+## 2026-10-04 — Montage des cartes dans le coin de module (P1)
+
+**Test** (coin de module imprimé, NeoKey + 4 touches et encodeur + bouton jeu 0,2 vissés)
+- Alignement : switches centrés dans leurs fenêtres, axe de l'encodeur centré dans son trou.
+- Fenêtres : aucun frottement des switches ni des capuchons.
+- Hauteur des touches (7,5 mm au-dessus de la façade) : **parfaite**. Emplacement des touches
+  et de la molette sous le pouce gauche : **parfait**.
+- Bague filetée : ne touche pas la façade.
+- **Plots** : les vis M2 font éclater le plastique autour de l'avant-trou (plot Ø 3,6, avant-trou
+  Ø 1,6, soit 1 mm de paroi).
+- **Trous NeoKey côté écran** : 2 vis sur 4 seulement ; les 2 plots côté écran sont trop bas,
+  il faut les rapprocher de l'écran de 1 mm. Les 2 plots côté bord arrondi sont justes.
+- **Bouton de molette** : frotte la façade quand on l'enfonce, le clic ne se fait pas. Il faut
+  plus d'espace sous le bouton.
+- Câbles QT : juste, mais ça passe. Les connecteurs des deux cartes se font face : piste,
+  tourner la carte de l'encodeur de 90° pour brancher côté écran.
+
+**Décisions (même jour)**
+- Trous NeoKey : `trou_nk_y` remplacé par `trou_nk_y_bas` = 3 (côté arrondis, inchangé) et
+  `trou_nk_y_haut` = 2 (côté écran) : les trous de la carte ne sont pas symétriques.
+- Plots : avant-trou **1,6 → 1,8**, plot **3,6 → 4,2** à confirmer, 4 boucles de paroi dans
+  Bambu Studio. Avant de réimprimer le coin : **plaquette de 3 plots** (Ø 3,6 / 4,2 / 5,
+  avant-trou 1,8), vissés à travers la carte de l'encodeur ; on garde le plus petit diamètre
+  qui ne casse pas.
+- Bouton de molette version 2 : `p_alesage` **7 → 6** et `h_bouton` **9 → 8** : 2 mm sous le
+  bouton au lieu de 1, dessus toujours à 10 mm de la façade. Coin de module inchangé côté
+  encodeur.
+- Carte de l'encodeur tournée de 90° (connecteur côté écran) : trous symétriques, rien ne
+  change dans la CAO.
+- Planche `coin-module-test.html` et canevas mis à jour.
+- Suite : imprimer la plaquette de plots et le bouton v2, puis réimprimer le coin de module.
