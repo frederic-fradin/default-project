@@ -339,3 +339,12 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - Bouton v2 : clic franc, sans frottement, tient bien sur l'axe.
 - Encodeur tourné de 90° : la fiche QT sort côté écran.
 - **Coin de module validé** : il sert de base au bas de la maquette d'encombrement.
+
+**Câble 4209 (même jour)**
+- Boîtier noir d'une broche mâle : **14 mm** (valeur supposée confirmée).
+- Derrière la carte T5, il reste ≈ 19 mm jusqu'à l'intérieur du dos. Connecteur 2×20 (≈ 8,5)
+  + boîtier (14) + courbure du fil (≈ 3) ≈ 25,5 mm : **le 4209 ne tient pas** dans l'épaisseur,
+  même avec un connecteur plus bas (5 + 14 + 3 = 22 > 19).
+- **Décision** : branchement par la **prise P5** (IO15/IO16) avec le câble Adafruit 4424 (JST PH
+  4 broches ↔ STEMMA QT, 200 mm, ≈ 3 € + port, hors budget accepté). Ordre des fils à refaire
+  avant de brancher : P5 = 3,3 V, IO15, IO16, GND ; câble = GND, V+, SDA, SCL. BOM mise à jour.

@@ -107,8 +107,8 @@
       <h3>Choix (2026-10-04)</h3>
       <h4>1 · Sens de la carte ✅</h4>
       <p><b>Retenu : USB-C à droite</b>, connecteur 2×20 en bas. Le câble sort du côté opposé à la main gauche, et le connecteur I²C est près des touches. L'autre sens (USB-C à gauche) inverserait aussi les bords de l'écran (≈ 7,5 à gauche, ≈ 13 à droite).</p>
-      <h4>2 · Branchement I²C ⏳</h4>
-      <p><b>En attente des mesures</b> (câble 4209 maintenant, connecteur 2×20 à réception). Piste : <b>prise P5</b> (IO15/IO16), avec un câble PH 2,0 4 broches ↔ STEMMA QT (≈ 3 €, <b>hors budget</b> : il reste 0,36 €). Elle est basse, en haut de la carte, et l'ESP32-S3 accepte l'I²C sur n'importe quelles broches (<code>Wire.begin(15, 16)</code>). Autre solution : garder le câble 4209 sur le connecteur 2×20 et ouvrir une fente dans le dos.</p>
+      <h4>2 · Branchement I²C ✅</h4>
+      <p>Boîtier des broches du 4209 mesuré à 14 mm : il ne tient pas. <b>Retenu : prise P5</b> (IO15/IO16), avec le câble Adafruit 4424, JST PH 4 broches ↔ STEMMA QT (≈ 3 €, <b>hors budget</b> accepté). <b>Ordre des fils à refaire avant de brancher</b> (voir <code>hardware/bom.md</code>). Elle est basse, en haut de la carte, et l'ESP32-S3 accepte l'I²C sur n'importe quelles broches (<code>Wire.begin(15, 16)</code>). Écarté : le câble 4209 avec une fente dans le dos.</p>
       <h4>3 · Hauteur de l'écran ✅</h4>
       <p><b>Retenu : <code>y_t5</code> = 44</b>, l'écran à 10 mm du bord haut, comme la maquette validée, avec ≈ 16 mm entre les capuchons et le bas de l'écran. Plus bas (<code>y_t5</code> = 34, le minimum à cause des plots de la molette), l'écran se rapproche des touches mais le bord haut passe à ≈ 20 mm.</p>
       <h4>4 · Constat : USB-C sur le côté</h4>

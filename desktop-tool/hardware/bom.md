@@ -13,6 +13,7 @@ commandes à gauche. Prix indicatifs relevés le 2026-09-26, **hors frais de por
 | 4 | **Adafruit I2C Stemma QT Rotary Encoder Breakout with Encoder** (réf. **5880**, molette déjà soudée — ne pas confondre avec la 4991 vendue sans molette) | Molette crantée + clic + 1 LED RGB, I²C adresse 0x36, carte 25 × 25 mm | 1 | 8,17 € | [DigiKey](https://www.digikey.fr/fr/products/detail/adafruit-industries-llc/5880/22596384) |
 | 5 | Câble **STEMMA QT ↔ broches mâles** (Adafruit 4209, ≈ 150 mm) | Carte (connecteur femelle, broches I²C SDA 18 / SCL 17 / 3,3 V / GND) → NeoKey | 1 | 0,97 € | [DigiKey](https://www.digikey.fr/fr/products/detail/adafruit-industries-llc/4209/10230003) |
 | 6 | Câble STEMMA QT ↔ STEMMA QT ≈ 100 mm (réf. 4210) | NeoKey → molette | 1 | ≈ 1 € | [DigiKey](https://www.digikey.fr/fr/products/detail/adafruit-industries-llc/4210/10230021) |
+| 6b | **Câble JST PH 4 broches ↔ STEMMA QT, 200 mm (Adafruit 4424)** — ajouté le 2026-10-04 | Carte (prise **P5** : 3,3 V, IO15, IO16, GND) → NeoKey, à la place du 4209 qui ne tient pas dans l'épaisseur. ⚠️ Ordre des fils à refaire avant de brancher (voir § 2) | 1 | ≈ 3 € + port | [Opencircuit](https://opencircuit.shop/product/4-pin-jst-ph-to-jst-sh-cable-stemma-to-qt), [LetMeKnow](https://letmeknow.fr/fr/connecteurs/2053-adafruit-cable-jst-ph-a-jst-sh-a-4-broches-stemma-a-qt-qwiic-200mm-de-long-642613795678.html) |
 | 7 | Câble USB-C ↔ USB (A ou C selon le PC), **données**, 1–1,5 m, coudé si possible | Alimentation + communication avec le PC | 1 | ≈ 6–10 € | Amazon |
 | 8 | Vis auto-taraudeuses pour plastique M2/M2,5 (assortiment) | Fixations | 1 lot | ≈ 5–8 € | Amazon |
 | 9 | Aimants néodyme 6 × 2 mm | Fixation du module dans le pupitre (4 + 4) | 1 lot de 20+ | ≈ 4–6 € | Amazon |
@@ -31,6 +32,7 @@ commandes à gauche. Prix indicatifs relevés le 2026-09-26, **hors frais de por
 | 4 | Molette Adafruit 5880 | 📦 Reçu (DigiKey) | 2026-09-26 | 2026-10-02 |
 | 5 | Câble STEMMA QT ↔ broches mâles (4209) | 📦 Reçu (DigiKey) | 2026-09-26 | 2026-10-02 |
 | 6 | Câble STEMMA QT ↔ QT (4210) | 📦 Reçu (DigiKey) | 2026-09-26 | 2026-10-02 |
+| 6b | Câble JST PH ↔ STEMMA QT (4424) | ⏳ À commander (hors budget) | | |
 | 7 | Câble USB-C data | 📦 Reçu (Amazon) | 2026-09-26 | 2026-10-02 |
 | 8–10 | Vis, aimants 6 × 2 mm N52, patins | 📦 Reçu (Amazon) | 2026-09-26 | 2026-10-02 |
 | 11 | Filament PLA | ✅ En stock | | |
@@ -77,6 +79,9 @@ Montants payés, relevés sur les commandes du 2026-09-26.
 Le port DigiKey (30 € TTC) n'était pas prévu dans l'estimation : c'est lui qui consomme presque
 toute la marge. Tout nouvel achat (filament, pièce de rechange) fera dépasser le plafond.
 
+**Dépassement accepté le 2026-10-04** : câble JST PH ↔ STEMMA QT (≈ 3 € + port) pour brancher
+les touches sur la prise P5, le câble 4209 dépassant de ≈ 6 mm sous le dos du module.
+
 ## 2. Branchement (sans soudure)
 
 ```
@@ -86,6 +91,23 @@ PC ──USB-C── [LilyGO T5 4,7"] ──I²C── [NeoKey 1x4] ──I²C�
 
 Les deux modules partagent le bus I²C de la carte (SDA = GPIO 18, SCL = GPIO 17), déjà utilisé
 par l'horloge interne : adresses toutes différentes (0x30 NeoKey, 0x36 molette, 0x51 horloge).
+
+### Branchement retenu (2026-10-04) : prise P5
+
+Le câble 4209 piqué dans le connecteur 2×20 ne tient pas dans l'épaisseur du module (≈ 25,5 mm
+pour ≈ 19 disponibles). On passe par la **prise P5** (JST PH 2,0, 4 broches, en haut de la
+carte) avec le câble Adafruit 4424 ; l'I²C est déclaré sur IO15/IO16 (`Wire.begin(15, 16)`,
+SDA/SCL à confirmer).
+
+```
+PC ──USB-C── [T5, prise P5] ──câble 4424── [NeoKey 1x4] ──câble 4210── [Molette 5880]
+```
+
+⚠️ **Ne pas brancher le 4424 tel quel.** Sur P5 (schéma V2.3) : 1 = 3,3 V, 2 = IO15, 3 = IO16,
+4 = GND. Le câble Adafruit suit l'ordre STEMMA : 1 = GND (noir), 2 = V+ (rouge), 3 = SDA
+(bleu), 4 = SCL (jaune). Branché directement, il mettrait le GND sur le 3,3 V. À réception de la
+carte, repérer la broche 1 de P5, puis déplacer les contacts dans le boîtier PH (on soulève le
+petit ergot avec une aiguille, sans soudure) pour obtenir : rouge, bleu, jaune, noir.
 
 ## 3. Points à vérifier AVANT d'acheter ⚠️
 
