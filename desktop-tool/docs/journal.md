@@ -300,3 +300,5 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
   change dans la CAO.
 - Planche `coin-module-test.html` et canevas mis à jour.
 - Suite : imprimer la plaquette de plots et le bouton v2, puis réimprimer le coin de module.
+- CAO mise à jour : coin de module (trous NeoKey, plots, avant-trous), bouton v2, plaquette de
+  plots modélisée. **Plaquette de plots en impression.**
