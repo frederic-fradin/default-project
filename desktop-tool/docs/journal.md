@@ -356,3 +356,13 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
   (avant-trous de 4 mm, 1 mm de façade sous la vis), trou de l'USB-C dans la paroi droite.
 - Cotes de la carte T5 **provisoires** : le .3mf exporté n'est **pas à imprimer** avant la
   réception de la carte, les mesures et la mise à jour des paramètres.
+
+## 2026-10-04 — Essai des couleurs, Q27 (P1)
+
+- Principe : des pièces à combiner plutôt qu'une plaquette par style. **3 tuiles de façade**
+  (`cad/tuile-couleur` : coin bas gauche de la façade, 60 × 45 × 2,5, coin r 7, fenêtre de la
+  1re touche et trou de la molette) en Charcoal Black, Muted White et Ash Grey, avec les vraies
+  pièces posées dessus.
+- Déjà imprimés : 4 capuchons Muted White, bouton de molette v2 Army Red, **1 capuchon Charcoal
+  Black**. Reste à imprimer : bouton de molette v2 Sunrise Orange.
+- Tuiles : **impression en cours**.
