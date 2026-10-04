@@ -348,3 +348,11 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - **Décision** : branchement par la **prise P5** (IO15/IO16) avec le câble Adafruit 4424 (JST PH
   4 broches ↔ STEMMA QT, 200 mm, ≈ 3 € + port, hors budget accepté). Ordre des fils à refaire
   avant de brancher : P5 = 3,3 V, IO15, IO16, GND ; câble = GND, V+, SDA, SCL. BOM mise à jour.
+
+## 2026-10-04 — Maquette d'encombrement modélisée (P1)
+
+- `cad/module-maquette` créé depuis le coin de module validé : module complet 125 × 115 × 26,
+  4 coins arrondis, dos ouvert, fenêtre de l'écran, 4 plots pour les pattes de la carte
+  (avant-trous de 4 mm, 1 mm de façade sous la vis), trou de l'USB-C dans la paroi droite.
+- Cotes de la carte T5 **provisoires** : le .3mf exporté n'est **pas à imprimer** avant la
+  réception de la carte, les mesures et la mise à jour des paramètres.
