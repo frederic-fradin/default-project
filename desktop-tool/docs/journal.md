@@ -302,3 +302,13 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - Suite : imprimer la plaquette de plots et le bouton v2, puis réimprimer le coin de module.
 - CAO mise à jour : coin de module (trous NeoKey, plots, avant-trous), bouton v2, plaquette de
   plots modélisée. **Plaquette de plots en impression.**
+
+**Plaquette de plots (même jour)** (avant-trou 1,8, 4 boucles de paroi, vis M2 × 6 à travers la
+  carte de l'encodeur)
+- Ø 3,6 (1 point) : vissé, dévissé, revissé, **tient**.
+- Ø 4,2 (2 points) : vissé, puis **cassé à mi-hauteur** (rupture entre deux couches, pas
+  d'éclatement autour de l'avant-trou) : excès de couple probable, pas un problème de diamètre.
+- Ø 5 (3 points) : vissé, dévissé, revissé, rien n'a bougé.
+- **Décision** : `d_plot` reste à **3,6** (le plus petit qui tient ; 5 ne passe pas entre les
+  switches) avec `d_pilote` = **1,8**. La casse venait de l'avant-trou de 1,6. Au montage,
+  serrer jusqu'au contact de la carte, sans forcer.

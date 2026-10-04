@@ -116,7 +116,7 @@
           <tr><td><code>prof_encodeur</code></td><td class="num">14 mm</td><td class="why">Dessus de la carte sous le dessus de la façade (bague affleurante)</td></tr>
           <tr><td><code>d_bague</code></td><td class="num">7 mm</td><td class="why">Bague filetée de l'encodeur</td></tr>
           <tr><td><code>jeu_bague</code></td><td class="num">0,2 mm</td><td class="why">Jeu au rayon autour de la bague</td></tr>
-          <tr><td><code>d_plot</code></td><td class="num">4,2 mm</td><td class="why">Plots de fixation, fins pour passer entre les switches (3,6 éclatait au vissage ; à confirmer par la plaquette de plots)</td></tr>
+          <tr><td><code>d_plot</code></td><td class="num">3,6 mm</td><td class="why">Plots de fixation, fins pour passer entre les switches. Tient avec l'avant-trou de 1,8 et 4 parois (plaquette de plots, 2026-10-04)</td></tr>
           <tr><td><code>d_pilote</code></td><td class="num">1,8 mm</td><td class="why">Avant-trou pour vis M2 auto-taraudeuse (1,6 forçait trop)</td></tr>
         </tbody>
       </table>
@@ -180,14 +180,14 @@
       <h3>Premier test (2026-10-04)</h3>
       <ul>
         <li>✅ Alignement des switches et de l'axe, fenêtres sans frottement, hauteur des touches et accès au pouce gauche : validés.</li>
-        <li>❌ Plots Ø 3,6 / avant-trou 1,6 : le plastique éclate au vissage. → plaquette de plots, puis <code>d_plot</code> et <code>d_pilote</code> revus.</li>
+        <li>❌ Plots Ø 3,6 / avant-trou 1,6 : le plastique éclate au vissage. → plaquette de plots : <code>d_plot</code> reste à 3,6, <code>d_pilote</code> passe à 1,8.</li>
         <li>❌ 2 vis NeoKey sur 4 : les trous côté écran sont 1 mm plus haut. → <code>trou_nk_y_haut</code> = 2.</li>
         <li>❌ Bouton : frotte la façade au clic, le clic ne passe pas. → bouton version 2, 2 mm sous le bouton.</li>
         <li>Câbles QT justes mais ça passe ; connecteurs face à face. → encodeur tourné de 90°.</li>
       </ul>
       <h3>À noter après le deuxième test</h3>
       <ul>
-        <li><b>Fixation</b> : les 8 vis prennent-elles, sans fissure ? Les cartes sont-elles fermes ?</li>
+        <li><b>Fixation</b> : les 8 vis prennent-elles, sans fissure ? Les cartes sont-elles fermes ? Serrer jusqu'au contact de la carte puis s'arrêter : trop de couple casse un plot entre deux couches.</li>
         <li><b>Plots</b> : aucun contact avec les switches ni avec le corps de l'encodeur ?</li>
         <li><b>Bouton</b> : le clic passe-t-il franchement, sans frotter la façade ? Le bouton tient-il toujours bien sur l'axe avec 6 mm d'alésage ?</li>
         <li><b>Câbles QT</b> : le câble de l'encodeur sort-il bien côté écran ?</li>
@@ -323,7 +323,7 @@
     // Cartes et plots cachés.
     s += hid('<rect x="' + X(NK.x) + '" y="' + Y(NK.y + NK.w) + '" width="' + NK.l * k + '" height="' + NK.w * k + '" fill="none" stroke="' + DIM + '" stroke-width=".3"/>');
     s += hid('<rect x="' + X(8.25) + '" y="' + Y(33.75) + '" width="' + 25.5 * k + '" height="' + 25.5 * k + '" fill="none" stroke="' + DIM + '" stroke-width=".3"/>');
-    NK_HOLES.concat(EN_HOLES).forEach(([x, y]) => { s += hid('<circle cx="' + X(x) + '" cy="' + Y(y) + '" r="' + 2.1 * k + '" fill="none" stroke="' + DIM + '" stroke-width=".3"/>'); });
+    NK_HOLES.concat(EN_HOLES).forEach(([x, y]) => { s += hid('<circle cx="' + X(x) + '" cy="' + Y(y) + '" r="' + 1.8 * k + '" fill="none" stroke="' + DIM + '" stroke-width=".3"/>'); });
 
     // Fenêtres, capuchons et bouton en fantôme.
     KX.forEach(cx => {
@@ -348,7 +348,7 @@
     s += dimH(X(0), X(125), 130, "125");
     s += leader(X(KX[1] + 4), Y(YC + 4), X(76), Y(36.5), "fenêtre 13 × 13 (× 4)");
     s += leader(X(XM + 2.6), Y(YC + 2.6), X(36), Y(38), "Ø 7,4 bague");
-    s += leader(X(NK_HOLES[1][0]), Y(NK_HOLES[1][1]), X(100), Y(4.5), "plot Ø 4,2 · avant-trou Ø 1,8", "end");
+    s += leader(X(NK_HOLES[1][0]), Y(NK_HOLES[1][1]), X(100), Y(4.5), "plot Ø 3,6 · avant-trou Ø 1,8", "end");
     s += leader(X(9.5), Y(31), X(5), Y(37.5), "encodeur 25,5");
     s += small(X(NK.x + 2), Y(NK.y) + 4, "NeoKey 76,5 × 21,5", "start");
     s += small(X(XM), Y(YC - 12.5) + 4.5, "bouton Ø 25");
@@ -373,7 +373,7 @@
     s += poly(P([[114.15, 26], [125, 26], [125, 0], [122.5, 0], [122.5, 23.5], [114.15, 23.5]]), "url(#hatch-s)");
 
     // Plots, hors du plan de coupe.
-    [NK.x + 19, NK.x + 57.5].forEach(x => { s += box(x - 2.1, x + 2.1, 15, 23.5, "none", ' stroke-dasharray="1.2 .8"'); });
+    [NK.x + 19, NK.x + 57.5].forEach(x => { s += box(x - 1.8, x + 1.8, 15, 23.5, "none", ' stroke-dasharray="1.2 .8"'); });
     [10.75, 31.25].forEach(x => { s += box(x - 1.8, x + 1.8, 12, 23.5, "none", ' stroke-dasharray="1.2 .8"'); });
 
     // NeoKey : carte, switches (boîtier simplifié), carré de tige, capuchons au repos.

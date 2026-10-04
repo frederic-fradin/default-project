@@ -129,7 +129,7 @@ def coin_facade():
     v.rect(8.25, 8.25, 25.5, 25.5, CACHE, 0.2, "1 0.6")
     # Plots et avant-trous (cachés).
     for x, y in NK_TROUS + EN_TROUS:
-        v.cercle(x, y, 4.2, CACHE, 0.2, "1 0.6")
+        v.cercle(x, y, 3.6, CACHE, 0.2, "1 0.6")
         v.cercle(x, y, 1.8, CACHE, 0.2, "0.6 0.4")
     # Fenêtres et trou de bague (traversants).
     for cx in KX:
@@ -146,7 +146,7 @@ def coin_facade():
     v.cote_v(133, 0, 40, "40")
     v.cote_h(KX[0] - 6.5, KX[0] + 6.5, YC + 8.5, "13")
     v.texte(XM, YC - 7, "Ø 7,4", 2.4)
-    v.texte(NK["x"], NK["y"] - 2.6, "carte NeoKey (cachée) · plots Ø 4,2 · avant-trous Ø 1,8", 2, CACHE, "start")
+    v.texte(NK["x"], NK["y"] - 2.6, "carte NeoKey (cachée) · plots Ø 3,6 · avant-trous Ø 1,8", 2, CACHE, "start")
     v.texte(10, 26.5, "carte encodeur", 2, CACHE, "start")
     v.origine()
     v.etalon(0, -12, 100)
@@ -169,9 +169,9 @@ def coin_coupe():
         v.poly(p, TRAIT, 0.35, "url(#h)")
     # Plots (hors du plan de coupe).
     for x in (NK["x"] + 19, NK["x"] + 57.5):
-        v.rect(x - 2.1, 15, 4.2, 8.5, CACHE, 0.2, "1 0.6")
+        v.rect(x - 1.8, 15, 3.6, 8.5, CACHE, 0.2, "1 0.6")
     for x in (10.75, 31.25):
-        v.rect(x - 2.1, 12, 4.2, 11.5, CACHE, 0.2, "1 0.6")
+        v.rect(x - 1.8, 12, 3.6, 11.5, CACHE, 0.2, "1 0.6")
     # Composants de référence, en gris.
     v.rect(NK["x"], 13.4, NK["l"], 1.6, CACHE, 0.2)
     for cx in KX:
