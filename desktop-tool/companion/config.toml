@@ -1,0 +1,3 @@
+# Connexion à l'objet : "sim" pour le simulateur, ou le port série de la carte (ex. "COM5")
+[link]
+target = "sim"

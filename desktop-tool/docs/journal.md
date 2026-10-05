@@ -397,3 +397,19 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - Validés : appui long détecté par le PC, pas de compression en v1, dernière page conservée si
   le PC s'éteint, ordre des pixels d'epdiy à vérifier sur la carte.
 - Cadrage v1.12. Suite : squelette du compagnon et simulateur.
+
+## 2026-10-05 — Compagnon et simulateur : premier dialogue (P1)
+
+- `companion/` créé : `protocol.py` (trames de l'ADR 007), `image.py` (4 bits par pixel),
+  `link.py` (simulateur ou port série), `pages.py`, `app.py`, `main.py`, `simulator.py`.
+  Conventions du projet f1 (pas de classes, fonctions pures) dans `companion/CLAUDE.md`.
+- 19 tests pytest (trames, recalage, CRC, conversion d'image). Conversion d'une page entière :
+  ≈ 15 ms.
+- Simulateur tkinter : écran 960 × 540, molette Army Red, 4 touches Charcoal Black avec leurs
+  symboles, LED en contour, délais de l'e-paper imités (flash du rafraîchissement complet).
+- **Critère de fin de P1 atteint dans le simulateur** : page « hello », la touche 1 allume
+  sa LED, la touche 3 et la molette sont affichées.
+- Piège : clavier AZERTY, la touche « 1 » produit « & » → le simulateur lit le code de touche
+  Windows (rangée du haut et pavé numérique).
+- Provisoire : position des étiquettes au-dessus des touches (`KEY_X`), à recaler sur la
+  maquette.

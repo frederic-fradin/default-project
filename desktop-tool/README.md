@@ -14,5 +14,5 @@ Document de référence : [docs/cadrage.md](docs/cadrage.md)
 | `cad/` | Modèles 3D sources (CAO), exports STL/3MF, profils d'impression |
 | `hardware/` | Nomenclature (BOM), schémas de câblage, fiches composants |
 | `firmware/` | Code embarqué de l'objet |
-| `companion/` | Application compagnon Python sur le PC (à créer en P1) |
+| `companion/` | Application compagnon Python sur le PC et simulateur de l'objet ([README](companion/README.md)) |
 | `images/` | Images de référence pour le design |
