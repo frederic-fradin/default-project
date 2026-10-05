@@ -373,6 +373,7 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
   vraies pièces posées dessus.
 - **Choix : style A** : module **Charcoal Black**, **4 touches Charcoal Black**, molette
   **Army Red**. La station prend la couleur du corps (Charcoal Black).
-- Bouton de molette Sunrise Orange : plus nécessaire. Capuchons Charcoal Black : 1 imprimé,
-  3 à imprimer.
+- Bouton de molette Sunrise Orange : plus nécessaire.
+- 3 capuchons Charcoal Black imprimés : **jeu complet de 4 touches noires** (1, 2, 3 barres,
+  maison) avec le bouton de molette v2 Army Red.
 - Cadrage v1.10.
