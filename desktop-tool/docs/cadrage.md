@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | v1.11 — station modulaire suspendue jusqu'à la fin du module (ADR 005) |
+| **Version** | v1.12 — pages dessinées par le PC et protocole de messages (ADR 007) |
 | **Date** | 2026-09-26 |
 | **Auteur** | Frédéric Fradin |
 | **Statut** | ✅ Cadrage validé le 2026-09-26 — document de référence. Les éléments encore marqués `[À VALIDER]` seront tranchés en P1 |
@@ -309,7 +309,7 @@ Voir la fiche de décision [`decisions/001-architecture-objet-compagnon.md`](dec
                            │ 1 câble USB-C (alimentation + données série)
 ┌──────────────────────────┴──────────────────────────────────┐
 │  Objet desktop-tool (ESP32-S3 + e-paper 4,7" paysage)         │
-│   ├─ Affiche des gabarits génériques (liste, carte, horloge…) │
+│   ├─ Affiche les images envoyées par le PC (ADR 007)          │
 │   ├─ 4 touches à LED + molette (I²C, sans soudure)            │
 │   └─ Renvoie les événements (« touche 2 », « molette +1 »)    │
 └─────────────────────────────────────────────────────────────┘
@@ -319,9 +319,12 @@ Voir la fiche de décision [`decisions/001-architecture-objet-compagnon.md`](dec
 événements) sont définis une fois pour toutes ; en v1 ils passent par le câble USB, en v2 par
 Wi-Fi ou Bluetooth **sans changer le reste du code**.
 
-**Principe clé : un firmware générique.** L'objet ne connaît pas Outlook ni la to-do ; il sait
-afficher quelques **gabarits de page** que le PC remplit. Nouvelle fonctionnalité = nouveau
-module Python sur le PC, **sans reprogrammer l'objet**.
+**Principe clé : un firmware générique.** L'objet ne connaît pas Outlook ni la to-do ; il
+affiche les **pages déjà dessinées par le PC** (Python/Pillow, 960 × 540 en 16 gris, page entière
+ou zone) et renvoie les événements des touches et de la molette. Nouvelle fonctionnalité =
+nouveau module Python sur le PC, **sans reprogrammer l'objet**. Trames et messages :
+[ADR 007](decisions/007-pages-rendues-par-le-pc.md) ; un **simulateur** Python reçoit les mêmes
+trames et permet de développer le compagnon sans la carte.
 
 ### 7.2 Choix techniques
 
@@ -486,3 +489,4 @@ Jalons                           J1              J2          J3
 | v1.9 | 2026-10-03 | ADR 005 révisée : tenons intégrés remplacés par **4 chevilles séparées** imprimées couchées (impression sans support, bras plus solides) |
 | v1.10 | 2026-10-05 | Q27 tranchée : module, touches et station **Charcoal Black**, molette **Army Red** |
 | v1.11 | 2026-10-05 | ADR 005 suspendue : socle et chevilles mis de côté, le support du module sera réévalué à l'usage une fois le module terminé (Q28) |
+| v1.12 | 2026-10-05 | ADR 007 : pages dessinées par le PC (plus de gabarits sur l'objet), trame commune à tous les transports, 8 messages ; développement du compagnon avec un simulateur avant la carte |

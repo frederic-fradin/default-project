@@ -384,3 +384,16 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
   sera évalué à l'usage, une fois le module terminé.
 - Pièce test des chevilles abandonnée pour l'instant. ADR 005 marquée suspendue, question Q28
   ouverte, cadrage v1.11.
+
+## 2026-10-05 — Protocole PC ↔ objet, ADR 007 (P1)
+
+- Constat : la programmation peut commencer **avant la carte**, l'essentiel du code étant en
+  Python sur le PC, testé avec un simulateur de l'objet.
+- **Décision (ADR 007)** : le PC dessine les pages (Pillow, 960 × 540, 16 gris, page entière ou
+  zone, rafraîchissement complet ou rapide) ; le firmware affiche, règle les LED et renvoie les
+  événements. Trame `DT` + type + longueur + charge + CRC32, identique en USB, en TCP
+  (simulateur) et en v2 sans fil. 8 messages : `HELLO_REQ`, `HELLO`, `DRAW`, `LED`, `KEY`,
+  `WHEEL`, `DONE`, `ERROR`.
+- Validés : appui long détecté par le PC, pas de compression en v1, dernière page conservée si
+  le PC s'éteint, ordre des pixels d'epdiy à vérifier sur la carte.
+- Cadrage v1.12. Suite : squelette du compagnon et simulateur.

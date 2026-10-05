@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Date** | 2026-09-26 |
-| **Statut** | ✅ Acceptée |
+| **Statut** | ✅ Acceptée — précisée par l'[ADR 007](007-pages-rendues-par-le-pc.md) : le PC envoie des pages déjà dessinées, plus de gabarits sur l'objet |
 
 ## Contexte
 
