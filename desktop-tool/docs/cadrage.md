@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | v1.10 — couleurs choisies : Charcoal Black + molette Army Red (Q27) |
+| **Version** | v1.11 — station modulaire suspendue jusqu'à la fin du module (ADR 005) |
 | **Date** | 2026-09-26 |
 | **Auteur** | Frédéric Fradin |
 | **Statut** | ✅ Cadrage validé le 2026-09-26 — document de référence. Les éléments encore marqués `[À VALIDER]` seront tranchés en P1 |
@@ -231,7 +231,7 @@ météo, qualité de l'air, tableaux de bord perso (ex. F1)…
 | Couleurs | ✅ **Style A** (PLA mat Panchroma), choisi le 2026-10-05 après l'essai des tuiles de façade : module **Charcoal Black**, **4 touches Charcoal Black**, molette **Army Red** (seule touche de couleur). **Station de la couleur du corps du module**, donc Charcoal Black. Styles B (Muted White + Sunrise Orange) et C (Ash Grey + Muted White + Sunrise Orange) écartés |
 | Touches | **Symboles neutres** : **1, 2 et 3 barres** sur les touches 1 à 3, **maison** sur la touche 4 ; **fonction de chaque touche affichée à l'écran**, en face d'elle (ADR 004). Symboles **gravés en creux**, touche imprimée **face visible contre le plateau** |
 | Lumière | Aucune lumière émise par l'écran ; seules les LED des touches s'allument, **à faible intensité**, pour les alertes |
-| Posture sur le bureau | **Station modulaire** (ADR 005) : socle percé de trous ronds (12 colonnes), pupitre du module et pupitre MagSafe clipsés dessus, inclinés à 65°, 2 colonnes libres |
+| Posture sur le bureau | ⏸️ *Suspendue le 2026-10-05, à réévaluer à l'usage une fois le module terminé (Q28).* **Station modulaire** (ADR 005) : socle percé de trous ronds (12 colonnes), pupitre du module et pupitre MagSafe clipsés dessus, inclinés à 65°, 2 colonnes libres |
 
 Esquisse de disposition (vue de face, échelle approximative), **en paysage depuis l'ADR 006** :
 
@@ -276,7 +276,7 @@ Voir la fiche [`decisions/003-module-pupitre-batterie.md`](decisions/003-module-
 | Élément | Choix |
 |---|---|
 | **Module** | Variante 1 **tournée en paysage** (ADR 006) : écran en haut, molette en bas à gauche, 4 touches en ligne en bas à droite (3 raccourcis + Accueil), USB-C au dos. **125 × 115 × 26 mm** |
-| **Station** ✅ (ADR 005, remplace le pupitre ci-dessous) | **Socle** 250 × 90 × 10 mm **percé de 48 trous ronds** (12 colonnes × 4 rangées, pas de 20 mm) ; **éléments clipsés** par 4 chevilles fendues séparées : pupitre du module (6 colonnes, lame à 65°, connecteur USB-C magnétique noyé dans la lame) et pupitre MagSafe (4 colonnes, iPhone 13 Pro en portrait, palet déjà possédé, sans rebord devant) ; **2 colonnes libres** pour un futur élément ; station de la couleur du module |
+| **Station** ⏸️ (ADR 005, suspendue le 2026-10-05 : à réévaluer à l'usage une fois le module terminé) | **Socle** 250 × 90 × 10 mm **percé de 48 trous ronds** (12 colonnes × 4 rangées, pas de 20 mm) ; **éléments clipsés** par 4 chevilles fendues séparées : pupitre du module (6 colonnes, lame à 65°, connecteur USB-C magnétique noyé dans la lame) et pupitre MagSafe (4 colonnes, iPhone 13 Pro en portrait, palet déjà possédé, sans rebord devant) ; **2 colonnes libres** pour un futur élément ; station de la couleur du module |
 | ~~Pupitre~~ *(abandonné, trop massif)* | Objet séparé qui **reprend la forme du module** (mêmes arrondis, mêmes plaques), **décalé vers la droite** pour laisser le bord gauche libre à la prise en main. Le module s'y dépose et tient par **4 aimants** (Ø6 mm au dos). Forme retenue ✅ : **volume plein, en triangle symétrique de profil** (face et dos à ≈ 55°), avec une **empreinte de 26 mm** où le module s'incruste sur **toute son épaisseur** (façade au même niveau que le pupitre, seules touches et molette dépassent) ; **aucun rebord devant la façade** ; empreinte **ouverte à gauche et en haut** : le module dépasse de 12 mm à gauche ; pupitre avec **bordures droite et basse de 25 mm** et **arrêté 36 mm sous le haut du module** ; arêtes arrondies ; aimants hauts du module à redescendre vers ≈ 75 mm pour rester sur le pupitre |
 | **Module seul** | Dos plat avec patins : se pose à plat ou se prend en main |
 | **Batterie (v2)** | Emplacement réservé derrière la carte pour une LiPo plate ≈ 5 × 40 × 60 mm (≈ 2 000 mAh). La carte intègre déjà le circuit de charge |
@@ -451,6 +451,7 @@ Jalons                           J1              J2          J3
 
 | # | Question | Impact | Statut |
 |---|---|---|---|
+| Q28 | Support du module sur le bureau : station modulaire (ADR 005) ou autre solution, **à réévaluer à l'usage une fois le module terminé** | Conception P3 | ⏸️ |
 | Q26 | Pupitre, à confirmer à l'essai en P1 : **stabilité** avec l'incrustation à 100 % (appuis sur les touches et la molette), **facilité pour retirer le module** (prévoir une encoche pour le doigt si besoin), angle de 55° | Conception P3 (n'empêche pas la commande) | ⏳ |
 
 ---
@@ -484,3 +485,4 @@ Jalons                           J1              J2          J3
 | v1.8 | 2026-09-27 | ADR 006 : module en paysage (écran en haut, commandes en bas) ; R16 levé ; station à 12 colonnes (250 × 90 mm) percée de 48 trous ronds, sans rainure à stylo, iPhone 13 Pro, 2 colonnes libres |
 | v1.9 | 2026-10-03 | ADR 005 révisée : tenons intégrés remplacés par **4 chevilles séparées** imprimées couchées (impression sans support, bras plus solides) |
 | v1.10 | 2026-10-05 | Q27 tranchée : module, touches et station **Charcoal Black**, molette **Army Red** |
+| v1.11 | 2026-10-05 | ADR 005 suspendue : socle et chevilles mis de côté, le support du module sera réévalué à l'usage une fois le module terminé (Q28) |

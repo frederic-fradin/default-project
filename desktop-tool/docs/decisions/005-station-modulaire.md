@@ -4,7 +4,7 @@
 |---|---|
 | **Date** | 2026-09-27 |
 | **Statut** | ✅ Acceptée — remplace la forme du pupitre de l'[ADR 003](003-module-pupitre-batterie.md) |
-| **Réexamen** | ⏸️ 2026-10-03 : principe du socle à éléments clipsés **en attente** pour le pupitre du module (pas encore certain de le garder) ; pièce test des chevilles suspendue |
+| **Réexamen** | ⏸️ 2026-10-03 : principe du socle à éléments clipsés **en attente** pour le pupitre du module (pas encore certain de le garder) ; pièce test des chevilles suspendue<br>⏸️ **2026-10-05 : suspendue.** Socle et chevilles mis de côté : l'intérêt d'un support sera évalué **à l'usage, une fois le module terminé** (cadrage, Q28) |
 
 ## Contexte
 

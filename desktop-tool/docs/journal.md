@@ -377,3 +377,10 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - 3 capuchons Charcoal Black imprimés : **jeu complet de 4 touches noires** (1, 2, 3 barres,
   maison) avec le bouton de molette v2 Army Red.
 - Cadrage v1.10.
+
+## 2026-10-05 — Station modulaire suspendue (P1)
+
+- **Décision** : l'idée du socle est **mise de côté pour le moment**. L'intérêt d'un support
+  sera évalué à l'usage, une fois le module terminé.
+- Pièce test des chevilles abandonnée pour l'instant. ADR 005 marquée suspendue, question Q28
+  ouverte, cadrage v1.11.
