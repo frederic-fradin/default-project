@@ -366,3 +366,13 @@ pupitre Fossil Grey. À confirmer avec une plaquette test.
 - Déjà imprimés : 4 capuchons Muted White, bouton de molette v2 Army Red, **1 capuchon Charcoal
   Black**. Reste à imprimer : bouton de molette v2 Sunrise Orange.
 - Tuiles : **impression en cours**.
+
+## 2026-10-05 — Couleurs choisies, Q27 tranchée (P1)
+
+- Tuiles de façade imprimées (Charcoal Black, Muted White, Ash Grey) et comparées avec les
+  vraies pièces posées dessus.
+- **Choix : style A** : module **Charcoal Black**, **4 touches Charcoal Black**, molette
+  **Army Red**. La station prend la couleur du corps (Charcoal Black).
+- Bouton de molette Sunrise Orange : plus nécessaire. Capuchons Charcoal Black : 1 imprimé,
+  3 à imprimer.
+- Cadrage v1.10.

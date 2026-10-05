@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | v1.9 — chevilles séparées pour fixer les éléments de la station (ADR 005) |
+| **Version** | v1.10 — couleurs choisies : Charcoal Black + molette Army Red (Q27) |
 | **Date** | 2026-09-26 |
 | **Auteur** | Frédéric Fradin |
 | **Statut** | ✅ Cadrage validé le 2026-09-26 — document de référence. Les éléments encore marqués `[À VALIDER]` seront tranchés en P1 |
@@ -228,7 +228,7 @@ météo, qualité de l'air, tableaux de bord perso (ex. F1)…
 | Format | Encombrement max **≈ 5" × 5" (127 × 127 mm)** en façade |
 | Écran | **Noir et blanc (e-paper)**, **en paysage** depuis l'ADR 006 (portrait auparavant), typographie forte comme l'image 5 |
 | Commandes | **En bas** (ADR 006) : molette en bas à gauche, sous le pouce gauche (utilisateur gaucher) ; 4 touches en ligne en bas à droite |
-| Couleurs | **Trois styles en balance** (PLA mat Panchroma) : **A** module **Charcoal Black** + molette **Army Red** ; **B** module **Muted White** + molette **Sunrise Orange** ; **C** module **Ash Grey** + touches **Muted White** + molette **Sunrise Orange** (image desktop-9, préférée). **Station de la couleur du corps du module.** `[À VALIDER]` en P1 |
+| Couleurs | ✅ **Style A** (PLA mat Panchroma), choisi le 2026-10-05 après l'essai des tuiles de façade : module **Charcoal Black**, **4 touches Charcoal Black**, molette **Army Red** (seule touche de couleur). **Station de la couleur du corps du module**, donc Charcoal Black. Styles B (Muted White + Sunrise Orange) et C (Ash Grey + Muted White + Sunrise Orange) écartés |
 | Touches | **Symboles neutres** : **1, 2 et 3 barres** sur les touches 1 à 3, **maison** sur la touche 4 ; **fonction de chaque touche affichée à l'écran**, en face d'elle (ADR 004). Symboles **gravés en creux**, touche imprimée **face visible contre le plateau** |
 | Lumière | Aucune lumière émise par l'écran ; seules les LED des touches s'allument, **à faible intensité**, pour les alertes |
 | Posture sur le bureau | **Station modulaire** (ADR 005) : socle percé de trous ronds (12 colonnes), pupitre du module et pupitre MagSafe clipsés dessus, inclinés à 65°, 2 colonnes libres |
@@ -444,13 +444,13 @@ Jalons                           J1              J2          J3
 | Q22 | Variante ? | **Variante 1**, en module + pupitre clipsable (aimants) |
 | Q24 | Commande ? | ✅ Carte LilyGO T5 4,7" V2.3 ESP32-S3 « Welded » commandée le 2026-09-26, livraison mi-octobre ; autres composants à commander (voir `hardware/bom.md`) |
 | Q25 | Lanceur de commandes ? | **Gardé en v1.0** (et `desk show` en v0.2) |
+| Q27 | Couleurs ? | **Charcoal Black** (module, touches, station) + molette **Army Red**, après essai de 3 tuiles de façade (2026-10-05) |
 | — | Batterie, sans-fil ? | Pris en compte dès maintenant dans les dimensions (26 mm) et l'architecture ; activés en v2 |
 
 ### 11.2 À trancher pendant la P1
 
 | # | Question | Impact | Statut |
 |---|---|---|---|
-| Q27 | Couleurs : choix entre les styles A, B et C (station de la couleur du module), validation définitive après une plaquette test imprimée | Design | ⏳ |
 | Q26 | Pupitre, à confirmer à l'essai en P1 : **stabilité** avec l'incrustation à 100 % (appuis sur les touches et la molette), **facilité pour retirer le module** (prévoir une encoche pour le doigt si besoin), angle de 55° | Conception P3 (n'empêche pas la commande) | ⏳ |
 
 ---
@@ -483,3 +483,4 @@ Jalons                           J1              J2          J3
 | v1.7 | 2026-09-27 | Style C « gris chaud + orange » (image desktop-9) ajouté ; station de la couleur du corps du module |
 | v1.8 | 2026-09-27 | ADR 006 : module en paysage (écran en haut, commandes en bas) ; R16 levé ; station à 12 colonnes (250 × 90 mm) percée de 48 trous ronds, sans rainure à stylo, iPhone 13 Pro, 2 colonnes libres |
 | v1.9 | 2026-10-03 | ADR 005 révisée : tenons intégrés remplacés par **4 chevilles séparées** imprimées couchées (impression sans support, bras plus solides) |
+| v1.10 | 2026-10-05 | Q27 tranchée : module, touches et station **Charcoal Black**, molette **Army Red** |
